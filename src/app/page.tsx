@@ -3,6 +3,7 @@ import Button from "@/components/Button";
 import FeatureCard from "@/components/FeatureCard";
 import Hero from "@/components/Hero";
 import ClientCarousel from "@/components/ClientCarousel";
+import CTASection from "@/components/CTASection";
 
 export default function Home() {
   return (
@@ -11,9 +12,9 @@ export default function Home() {
 
       {/* Trusted local delivery (single combined section with image) */}
       <Section className="pt-0">
-        <div className="rounded-3xl bg-[#EAFBF3] p-6 shadow-lg ring-1 ring-black/5 dark:bg-[#102016] dark:ring-white/5 md:p-10">
+        <div className="rounded-4xl overflow-clip bg-[#EAFBF3] shadow-lg ring-1 ring-black/5 dark:bg-[#102016] dark:ring-white/5">
           <div className="grid items-center gap-8 md:grid-cols-2">
-            <div>
+            <div className="p-6 md:p-10">
               <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[--color-secondary] shadow-sm ring-1 ring-black/5 dark:bg-[#0f1112] dark:text-[--color-primary]">
                 <span>⚡</span> Speed and reliability
               </div>
@@ -30,7 +31,7 @@ export default function Home() {
                 Get started free <span className="transition-transform duration-300">→</span>
               </a>
             </div>
-            <div className="overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-black/5 dark:bg-[#0f1112] dark:ring-white/10">
+            <div className="ring-black/5 dark:bg-[#0f1112] dark:ring-white/10">
               <img
                 src="/image.png"
                 alt="Courier handing over a package"
@@ -172,31 +173,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section className="py-12 md:py-16">
-        <div className="rounded-3xl bg-[--color-primary] px-8 py-12 text-center text-white shadow-2xl ring-1 ring-black/10 dark:ring-white/10 md:px-12 md:py-16">
-          <h3 className="text-3xl font-bold tracking-tight md:text-4xl">
-            Ready to streamline your delivery operations?
-          </h3>
-          <p className="mt-4 text-base opacity-90 md:text-lg">
-            Start your free trial or request a demo today.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Button
-              href="#get-app"
-              className="bg-white px-8 py-4 text-base text-[--color-primary] shadow-lg transition-all hover:scale-105 hover:shadow-xl hover:bg-gray-100"
-            >
-              Get the App
-            </Button>
-            <Button
-              href="/contact"
-              variant="ghost"
-              className="bg-white/10 px-8 py-4 text-base text-white transition-all hover:bg-white/20 hover:scale-105"
-            >
-              Request a Demo
-            </Button>
-        </div>
-        </div>
-      </Section>
+      <CTASection />
     </div>
   );
 }
