@@ -1,0 +1,35 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Secure Retirement</title>
+  <desc id="desc">Shield with checkmark and growing chart bars representing secure, growing savings.</desc>
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF6B00"/>
+      <stop offset="1" stop-color="#1A1A2E"/>
+    </linearGradient>
+    <clipPath id="clip">
+      <rect x="16" y="10" width="96" height="108" rx="12"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background badge -->
+  <rect x="8" y="8" width="112" height="112" rx="24" fill="#FF6B00" fill-opacity="0.08" stroke="#FF6B00" stroke-opacity="0.25"/>
+
+  <g clip-path="url(#clip)">
+    <!-- Shield -->
+    <path d="M64 18c-9 6-18 9-28 10v28c0 22 14 34 28 42 14-8 28-20 28-42V28c-10-1-19-4-28-10z" fill="url(#grad)"/>
+    <path d="M64 25c-7 4-15 7-24 8v23c0 18 12 28 24 35 12-7 24-17 24-35V33c-9-1-17-4-24-8z" fill="#FFFFFF" fill-opacity="0.9"/>
+
+    <!-- Checkmark -->
+    <path d="M46 57l10 10 20-20" stroke="#FF6B00" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Growing bars -->
+  <g transform="translate(22,86)">
+    <rect x="0" y="12" width="10" height="16" rx="2" fill="#1A1A2E" fill-opacity="0.15"/>
+    <rect x="16" y="6" width="10" height="22" rx="2" fill="#1A1A2E" fill-opacity="0.25"/>
+    <rect x="32" y="0" width="10" height="28" rx="2" fill="#FF6B00"/>
+    <!-- Trend line arrow -->
+    <path d="M54 24l12-12 8 8 20-20" stroke="#FF6B00" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M94 0h-8v8" stroke="#FF6B00" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>

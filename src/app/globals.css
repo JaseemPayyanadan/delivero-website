@@ -15,7 +15,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: GraphikSemibold, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
@@ -36,8 +36,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, -apple-system, Segoe UI,
-    Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: GraphikSemibold, sans-serif;
 }
 
 /* Accessible focus styles */
