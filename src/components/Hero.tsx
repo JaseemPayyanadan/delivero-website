@@ -20,14 +20,9 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Phone mockups */}
-      <div className="mx-auto mt-12 grid max-w-5xl grid-cols-2 gap-4 animate-fade-in-up md:gap-6">
-        <div className="aspect-9/19 w-full overflow-hidden rounded-3xl border border-black/10 bg-surface p-2 shadow-2xl ring-1 ring-black/5 transition-all duration-500 hover:shadow-3xl dark:border-white/10 dark:ring-white/5">
-          <div className="h-full rounded-2xl bg-linear-to-b from-[--color-primary]/10 via-white to-gray-50 shadow-inner dark:from-[#0f1112] dark:via-[#1a1c1e] dark:to-[#252728]" />
-        </div>
-        <div className="aspect-9/19 w-full overflow-hidden rounded-3xl border border-black/10 bg-surface p-2 shadow-2xl ring-1 ring-black/5 transition-all duration-500 hover:shadow-3xl dark:border-white/10 dark:ring-white/5">
-          <div className="h-full rounded-2xl bg-linear-to-b from-[--color-secondary]/10 via-white to-gray-50 shadow-inner dark:from-[#0f1112] dark:via-[#1a1c1e] dark:to-[#252728]" />
-        </div>
+      {/* Showcase image below buttons */}
+      <div className="mx-auto mt-12 w-full max-w-6xl animate-fade-in-up overflow-hidden rounded-3xl border border-black/10 bg-surface shadow-2xl ring-1 ring-black/5 dark:border-white/10 dark:ring-white/5">
+        <img src="/hero.png" alt="App dashboard and map preview" className="h-full w-full object-cover" />
       </div>
     </section>
   );

@@ -9,32 +9,34 @@ export default function Home() {
     <div>
       <Hero />
 
-      {/* Value prop split section */}
+      {/* Trusted local delivery (single combined section with image) */}
       <Section className="pt-0">
-        <div className="grid items-stretch gap-8 md:grid-cols-2">
-          <div className="group rounded-3xl border border-black/10 bg-[#EAFBF3] p-8 shadow-lg ring-1 ring-black/5 transition-all duration-300 hover:shadow-xl dark:border-white/10 dark:bg-[#102016] dark:ring-white/5 md:p-12">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[--color-secondary] shadow-sm ring-1 ring-black/5 transition-all duration-300 group-hover:scale-105 dark:bg-[#0f1112] dark:text-[--color-primary]">
-              <span>⚡</span> Speed and reliability
+        <div className="rounded-3xl bg-[#EAFBF3] p-6 shadow-lg ring-1 ring-black/5 dark:bg-[#102016] dark:ring-white/5 md:p-10">
+          <div className="grid items-center gap-8 md:grid-cols-2">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[--color-secondary] shadow-sm ring-1 ring-black/5 dark:bg-[#0f1112] dark:text-[--color-primary]">
+                <span>⚡</span> Speed and reliability
+              </div>
+              <h2 className="mt-6 text-4xl font-bold leading-tight tracking-tight md:text-5xl">
+                Trusted local delivery platform.
+              </h2>
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-[--color-secondary]/80 dark:text-white/70 md:text-lg">
+                Shipday makes it easy for delivery services to scale their business while maintaining the speed of operations and reliability of services.
+              </p>
+              <a
+                href="#get-app"
+                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-(--color-secondary) transition-all duration-300 hover:gap-3 hover:text-(--color-primary)"
+              >
+                Get started free <span className="transition-transform duration-300">→</span>
+              </a>
             </div>
-            <h2 className="mt-6 text-4xl font-bold leading-tight tracking-tight md:text-5xl">
-              Trusted local delivery platform.
-            </h2>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted md:text-lg">
-              Shipday makes it easy for delivery services to scale their business while maintaining the speed of operations and reliability of services.
-            </p>
-            <a
-              href="#get-app"
-              className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-(--color-secondary) transition-all duration-300 hover:gap-3 hover:text-(--color-primary)"
-            >
-              Get started free <span className="transition-transform duration-300">→</span>
-            </a>
-          </div>
-          <div className="overflow-hidden rounded-3xl border border-black/10 bg-white shadow-lg ring-1 ring-black/5 transition-all duration-300 hover:shadow-xl dark:border-white/10 dark:bg-[#0f1112] dark:ring-white/5">
-            <img
-              src="/window.svg"
-              alt="Courier handing over a package"
-              className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-            />
+            <div className="overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-black/5 dark:bg-[#0f1112] dark:ring-white/10">
+              <img
+                src="/image.png"
+                alt="Courier handing over a package"
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </Section>
@@ -192,7 +194,7 @@ export default function Home() {
             >
               Request a Demo
             </Button>
-          </div>
+        </div>
         </div>
       </Section>
     </div>
