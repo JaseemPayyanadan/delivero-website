@@ -2,28 +2,32 @@ import Button from "@/components/Button";
 
 export default function Hero() {
   return (
-    <section className="relative mx-auto w-full max-w-none bg-hero px-6 pb-16 pt-14 text-center">
-      <div className="mx-auto max-w-4xl">
-        <h1 className="text-5xl font-semibold leading-tight tracking-tight md:text-6xl">
-          Grocery Admin Dashboard
+    <section className="relative mx-auto w-full max-w-none bg-hero px-6 pb-20 pt-20 text-center md:pb-24 md:pt-24">
+      <div className="mx-auto max-w-4xl animate-fade-in-up">
+        <h1 className="text-5xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl">
+          Deliver Faster. Manage Smarter.
         </h1>
-        <p className="mt-3 text-4xl font-semibold leading-tight tracking-tight text-[--color-secondary]">
-          Simple, Smart & Powerful
+        <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted md:text-lg lg:text-xl">
+          One app for owners and delivery teams—manage customers, assign orders, plan routes, and track status in real time.
         </p>
-        <p className="mx-auto mt-4 max-w-2xl text-sm text-muted">
-          This is our custom-built delivery management dashboard, designed to make store
-          management faster and easier. Manage products, track orders, update inventory,
-          view sales reports, and monitor customer activity.
-        </p>
-        <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-          <Button className="rounded-full px-5 py-3">Download on the Play Store</Button>
-          <Button variant="secondary" className="rounded-full px-5 py-3">Download on the Apple store</Button>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <Button href="#get-app" className="rounded-full px-6 py-3 text-base shadow-lg transition-all hover:scale-105">
+            Get the App
+          </Button>
+          <Button href="/contact" variant="secondary" className="rounded-full px-6 py-3 text-base shadow-lg transition-all hover:scale-105">
+            Request a Demo
+          </Button>
         </div>
       </div>
 
-      {/* Mock dashboard card */}
-      <div className="mx-auto mt-10 w-full max-w-6xl rounded-3xl border border-black/10 bg-surface p-3 shadow-xl ring-1 ring-black/5 dark:border-white/10 dark:ring-white/5">
-        <div className="h-[360px] rounded-2xl bg-white shadow-sm dark:bg-[#0f1112]" />
+      {/* Phone mockups */}
+      <div className="mx-auto mt-12 grid max-w-5xl grid-cols-2 gap-4 animate-fade-in-up md:gap-6">
+        <div className="aspect-9/19 w-full overflow-hidden rounded-3xl border border-black/10 bg-surface p-2 shadow-2xl ring-1 ring-black/5 transition-all duration-500 hover:shadow-3xl dark:border-white/10 dark:ring-white/5">
+          <div className="h-full rounded-2xl bg-linear-to-b from-[--color-primary]/10 via-white to-gray-50 shadow-inner dark:from-[#0f1112] dark:via-[#1a1c1e] dark:to-[#252728]" />
+        </div>
+        <div className="aspect-9/19 w-full overflow-hidden rounded-3xl border border-black/10 bg-surface p-2 shadow-2xl ring-1 ring-black/5 transition-all duration-500 hover:shadow-3xl dark:border-white/10 dark:ring-white/5">
+          <div className="h-full rounded-2xl bg-linear-to-b from-[--color-secondary]/10 via-white to-gray-50 shadow-inner dark:from-[#0f1112] dark:via-[#1a1c1e] dark:to-[#252728]" />
+        </div>
       </div>
     </section>
   );
