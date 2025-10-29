@@ -34,8 +34,8 @@ export default function NavBar() {
             <Link
               key={l.href}
               href={l.href}
-              className={`text-base font-medium transition-colors hover:text-(--color-primary) ${
-                pathname === l.href ? "text-(--color-primary)" : "text-(--color-secondary)"
+              className={`text-base font-medium transition-colors hover:text-[--color-primary] ${
+                pathname === l.href ? "text-[--color-primary]" : "text-[--color-secondary]"
               }`}
             >
               {l.label}
@@ -56,7 +56,7 @@ export default function NavBar() {
         {/* Mobile hamburger */}
         <button
           type="button"
-          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-black/10 text-(--color-secondary) hover:bg-black/5 dark:border-white/20"
+          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-black/10 text-[--color-secondary] hover:bg-black/5 dark:border-white/20"
           aria-label="Toggle menu"
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
@@ -107,8 +107,8 @@ export default function NavBar() {
               <Link
                 key={l.href}
                 href={l.href}
-                className={`block rounded-lg px-3 py-3 text-base font-medium transition-colors hover:text-(--color-primary) ${
-                  pathname === l.href ? "text-(--color-primary)" : "text-(--color-secondary)"
+                className={`block rounded-lg px-3 py-3 text-base font-medium transition-colors hover:text-[--color-primary] ${
+                  pathname === l.href ? "text-[--color-primary]" : "text-[--color-secondary]"
                 }`}
                 onClick={() => setIsOpen(false)}
               >
