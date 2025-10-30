@@ -139,7 +139,7 @@ export default function Home() {
             </p>
             <div className="mt-6 text-sm text-muted">Swipe to explore our client work</div>
           </div>
-          <ClientCarousel />
+          {/* <ClientCarousel /> */}
         </div>
 
         <div className="mt-16 grid gap-8 sm:grid-cols-3">
