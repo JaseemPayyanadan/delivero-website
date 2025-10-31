@@ -19,7 +19,7 @@ const clients: Client[] = [
 export default function ClientCarousel() {
   const swiperRef = useRef<SwiperType | null>(null);
   return (
-    <div className="relative">
+    <div className="w-full">
       <Swiper
         modules={[Navigation, A11y]}
         navigation
@@ -27,7 +27,7 @@ export default function ClientCarousel() {
         slidesPerView={1.2}
         spaceBetween={16}
         breakpoints={{
-          640: { slidesPerView: 2, spaceBetween: 16 },
+          640: { slidesPerView: 1, spaceBetween: 16 },
           1024: { slidesPerView: 2.2, spaceBetween: 24 },
         }}
         className="pb-8!"
