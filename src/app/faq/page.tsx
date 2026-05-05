@@ -4,7 +4,7 @@ import Script from "next/script";
 export const metadata = { title: "FAQ" };
 
 const faqs = [
-  { q: "How do I install the app?", a: "Download from the Play Store (package: com.delivero.fooddistribution) and sign in." },
+  { q: "How do I install the app?", a: "Download from the Play Store (package: delivero.com) and sign in." },
   { q: "Which devices are supported?", a: "Android 8.0+; works on phones and small tablets." },
   { q: "Does it work offline?", a: "Core actions cache offline and sync when back online." },
   { q: "What roles are available?", a: "Owner/Manager and Driver roles with appropriate permissions." },

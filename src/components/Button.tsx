@@ -17,8 +17,14 @@ export default function Button({ href, children, variant = "primary", className 
       : "border border-black/10 bg-transparent text-[color:var(--color-secondary)] hover:bg-black/5 dark:border-white/20";
 
   if (href) {
+    const isExternal = /^https?:\/\//i.test(href);
     return (
-      <a href={href} className={`${base} ${styles} ${className}`}>
+      <a
+        href={href}
+        className={`${base} ${styles} ${className}`}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
+      >
         {children}
       </a>
     );

@@ -145,7 +145,7 @@ export default function PricingPage() {
     </Section>
 
     {/* FAQ Section */}
-    <Section title="Frequently Asked Questions" subtitle="Common questions about Food Distribution app.">
+    <Section title="Frequently Asked Questions" subtitle="Common questions about Delivero.">
         <div className="grid gap-4 md:grid-cols-2">
           <details className="group rounded-xl border border-black/10 bg-surface p-5 transition-all hover:border-(--color-primary)/30 dark:border-white/10">
             <summary className="cursor-pointer text-base font-semibold text-(--color-secondary) transition-colors hover:text-(--color-primary) [&::-webkit-details-marker]:hidden">
@@ -156,7 +156,7 @@ export default function PricingPage() {
                 </svg>
               </div>
             </summary>
-            <p className="mt-3 text-sm leading-relaxed text-muted">Download from the Play Store (package: com.delivero.fooddistribution) and sign in with your account credentials.</p>
+            <p className="mt-3 text-sm leading-relaxed text-muted">Download from the Play Store (package: delivero.com) and sign in with your account credentials.</p>
           </details>
 
           <details className="group rounded-xl border border-black/10 bg-surface p-5 transition-all hover:border-(--color-primary)/30 dark:border-white/10">
