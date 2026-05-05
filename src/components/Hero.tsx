@@ -2,78 +2,138 @@ import Button from "@/components/Button";
 
 export default function Hero() {
   return (
-    <section className="relative mx-auto w-full max-w-none bg-hero px-4 pb-16 pt-16 text-center sm:px-6 md:pb-24 md:pt-24">
-      <div className="mx-auto max-w-4xl animate-fade-in-up">
-        <h1 className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
-          Delivery, simplified.
-        </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted sm:mt-5 sm:text-lg md:mt-6 md:text-xl lg:text-2xl">
-          Delivero helps owners and drivers stay in sync: set up routes, add items, manage customers, create orders, and track deliveries in real time.
-        </p>
-        <div className="mt-6 flex flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:items-center sm:justify-center sm:gap-4">
-          <Button href="https://play.google.com/store/apps/details?id=delivero.com" className="rounded-full px-6 py-3.5 text-base shadow-lg transition-all hover:scale-105 sm:px-7 sm:py-4 sm:text-lg">
-            Get the App
-          </Button>
-          <Button href="/contact" variant="secondary" className="rounded-full px-6 py-3.5 text-base shadow-lg transition-all hover:scale-105 sm:px-7 sm:py-4 sm:text-lg">
-            Request a Demo
-          </Button>
-        </div>
+    <section className="relative mx-auto w-full max-w-none bg-hero px-4 pb-16 pt-14 sm:px-6 md:pb-24 md:pt-20">
+      {/* Ambient animated blobs */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-(--color-primary)/20 blur-3xl animate-float" />
+        <div className="absolute -bottom-28 right-[-3rem] h-80 w-80 rounded-full bg-(--color-accent)/20 blur-3xl animate-float" style={{ animationDelay: "0.8s" }} />
       </div>
 
-      {/* Hero “preview” (no external assets) */}
-      <div className="mx-auto mt-10 w-full max-w-6xl animate-fade-in-up px-2 sm:px-0">
-        <div className="grid gap-4 md:grid-cols-3">
-          <div className="rounded-2xl border border-black/10 bg-surface p-5 text-left shadow-sm dark:border-white/10">
-            <div className="text-xs font-semibold text-muted">Setup guide</div>
-            <div className="mt-3 space-y-3">
-              {[
-                { t: "Setup delivery routes", d: "Assign drivers and stops" },
-                { t: "Add food items", d: "Menu and pricing" },
-                { t: "Add customers", d: "Assign to routes" },
-                { t: "Create orders", d: "Track from start to delivery" },
-              ].map((s, idx) => (
-                <div key={s.t} className="flex items-start gap-3">
-                  <div className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-(--color-primary)/10 text-xs font-bold text-(--color-primary)">
-                    {idx + 1}
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold">{s.t}</div>
-                    <div className="text-xs text-muted">{s.d}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+      <div className="mx-auto grid w-full max-w-6xl items-start gap-10 md:grid-cols-2 md:gap-12">
+        {/* Left: message + CTAs */}
+        <div className="animate-fade-in-up text-center md:pt-6 md:text-left">
 
-          <div className="rounded-2xl border border-black/10 bg-surface p-5 text-left shadow-sm dark:border-white/10 md:col-span-2">
+          <h1 className="mt-5 text-balance text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+            Delivery operations,
+            <span className="text-(--color-primary)"> simplified.</span>
+          </h1>
+
+          <p className="mx-auto mt-5 max-w-2xl text-pretty text-base leading-relaxed text-muted sm:text-lg md:mx-0 md:text-xl">
+            Set up routes, add items, manage customers, and dispatch orders. Drivers update delivery status in real time—everyone stays in sync.
+          </p>
+
+          <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center md:justify-start">
+            <Button
+              href="https://play.google.com/store/apps/details?id=delivero.com"
+              className="rounded-full px-6 py-3.5 text-base shadow-lg transition-all hover:scale-105 sm:px-7 sm:py-4"
+            >
+              Get the App
+            </Button>
+            <Button
+              href="/contact"
+              variant="secondary"
+              className="rounded-full px-6 py-3.5 text-base shadow-lg transition-all hover:scale-105 sm:px-7 sm:py-4"
+            >
+              Request a Demo
+            </Button>
+          </div>
+        </div>
+
+        {/* Right: product preview (asset-free) */}
+        <div className="animate-fade-in-up md:pt-2">
+          <div className="relative rounded-3xl border border-black/10 bg-surface/80 p-5 shadow-lg ring-1 ring-black/5 backdrop-blur-sm dark:border-white/10 dark:ring-white/5">
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 rounded-3xl bg-linear-to-r from-(--color-primary)/10 via-transparent to-(--color-accent)/10 animate-gradient" />
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
                 <div className="text-sm font-semibold">Today’s deliveries</div>
-                <div className="text-xs text-muted">Live status updates for drivers and dispatch.</div>
+                <div className="text-xs text-muted">Dispatch view with live driver status.</div>
               </div>
               <div className="inline-flex items-center gap-2 rounded-full bg-black/5 px-3 py-1 text-xs font-semibold text-(--color-secondary) dark:bg-white/10">
-                Realtime tracking
+                <span className="inline-block h-2 w-2 rounded-full bg-emerald-500 animate-pulse-soft" />
+                Realtime
               </div>
             </div>
+
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
               {[
-                { label: "Pending", value: "6", tone: "bg-(--color-accent)/20 text-(--color-secondary)" },
+                { label: "Pending", value: "6", tone: "bg-(--color-accent)/25 text-(--color-secondary)" },
                 { label: "Out for delivery", value: "9", tone: "bg-(--color-primary)/15 text-(--color-primary)" },
-                { label: "Delivered", value: "24", tone: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400" },
+                { label: "Delivered", value: "24", tone: "bg-emerald-500/15 text-emerald-700 dark:text-emerald-300" },
               ].map((c) => (
-                <div key={c.label} className="rounded-xl border border-black/10 p-4 dark:border-white/10">
+                <div key={c.label} className="rounded-2xl border border-black/10 bg-white/70 p-4 transition-all hover:-translate-y-0.5 hover:shadow-md dark:border-white/10 dark:bg-[#0f1112]/40">
                   <div className="text-xs text-muted">{c.label}</div>
                   <div className="mt-2 flex items-center justify-between">
-                    <div className="text-2xl font-bold">{c.value}</div>
+                    <div className="text-2xl font-bold tracking-tight">{c.value}</div>
                     <div className={`rounded-full px-2.5 py-1 text-xs font-semibold ${c.tone}`}>Status</div>
                   </div>
                 </div>
               ))}
             </div>
-            <div className="mt-4 rounded-xl bg-linear-to-r from-black/5 via-black/0 to-black/5 p-4 text-xs text-muted dark:from-white/10 dark:via-white/0 dark:to-white/10">
-              Owners manage customers/orders; drivers update delivery status—everyone stays in sync.
+
+            <div className="mt-4 rounded-2xl border border-black/10 bg-white/70 p-4 dark:border-white/10 dark:bg-[#0f1112]/40">
+              <div className="flex items-center justify-between">
+                <div className="text-xs font-semibold text-muted">Setup guide</div>
+                <div className="text-xs text-muted">4 steps</div>
+              </div>
+              <div className="mt-3 grid gap-2">
+                {[
+                  "Setup delivery routes",
+                  "Add food items",
+                  "Add customers",
+                  "Create orders",
+                ].map((t, idx) => (
+                  <div key={t} className="flex items-center gap-3">
+                    <div className="grid h-6 w-6 place-items-center rounded-full bg-(--color-primary)/12 text-xs font-bold text-(--color-primary)">
+                      {idx + 1}
+                    </div>
+                    <div className="text-sm font-semibold text-foreground">{t}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-4 rounded-2xl bg-linear-to-r from-black/5 via-black/0 to-black/5 p-4 text-xs text-muted dark:from-white/10 dark:via-white/0 dark:to-white/10">
+              Owners manage customers/orders; drivers update delivery status—no more WhatsApp spreadsheets.
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Features scrollable chips */}
+      <div className="mt-16 w-full overflow-hidden">
+        <div className="relative">
+          {/* Fading edges for smoother transition */}
+           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-linear-to-r from-white via-white/50 to-transparent dark:from-[#151718] dark:via-[#151718]/50" />
+           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-linear-to-l from-white via-white/50 to-transparent dark:from-[#151718] dark:via-[#151718]/50" />
+          
+          <ul className="flex w-max animate-marquee gap-4 pb-4">
+            {[
+              { t: "Route-first setup", d: "Assign drivers and stops in minutes." },
+              { t: "Fast dispatch", d: "Create orders and keep the queue clear." },
+              { t: "Live tracking", d: "Status updates from pickup to delivery." },
+              { t: "Real-time sync", d: "Everyone stays on the same page." },
+              { t: "Proof of delivery", d: "Capture signatures and photos." },
+            ].concat([
+              { t: "Route-first setup", d: "Assign drivers and stops in minutes." },
+              { t: "Fast dispatch", d: "Create orders and keep the queue clear." },
+              { t: "Live tracking", d: "Status updates from pickup to delivery." },
+              { t: "Real-time sync", d: "Everyone stays on the same page." },
+              { t: "Proof of delivery", d: "Capture signatures and photos." },
+            ]).map((f, idx) => (
+              <li
+                key={`${f.t}-${idx}`}
+                className="flex min-w-[250px] shrink-0 items-center gap-3 rounded-full border border-black/10 bg-surface/50 py-2.5 pl-2.5 pr-6 backdrop-blur-sm transition-all hover:border-(--color-primary)/30 dark:border-white/10 dark:bg-white/5"
+              >
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-(--color-primary)/15 text-sm text-(--color-primary)">
+                  ✓
+                </span>
+                <div className="flex flex-col">
+                  <span className="text-sm font-bold text-foreground">{f.t}</span>
+                  <span className="text-[10px] leading-tight text-muted">{f.d}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
