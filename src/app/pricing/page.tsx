@@ -180,7 +180,7 @@ export default function PricingPage() {
                 </svg>
               </div>
             </summary>
-            <p className="mt-3 text-sm leading-relaxed text-muted">Core actions are cached offline and automatically sync when you're back online.</p>
+            <p className="mt-3 text-sm leading-relaxed text-muted">Core actions are cached offline and automatically sync when you&apos;re back online.</p>
           </details>
 
           <details className="group rounded-xl border border-black/10 bg-surface p-5 transition-all hover:border-(--color-primary)/30 dark:border-white/10">

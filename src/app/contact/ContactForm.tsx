@@ -6,7 +6,7 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div className="mx-auto max-w-xl rounded-2xl border border-black/10 bg-surface p-6 text-center text-sm dark:border-white/10">
-        Thank you! We'll get back to you shortly.
+        Thank you! We&apos;ll get back to you shortly.
       </div>
     );
   }
