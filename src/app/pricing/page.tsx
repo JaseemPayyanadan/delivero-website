@@ -1,146 +1,113 @@
 "use client";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
+import CTASection from "@/components/CTASection";
 
 export default function PricingPage() {
   return (
     <>
-    <Section title="Pricing" subtitle="Simple, transparent pricing. Free trial available.">
+    <Section title="Pricing" subtitle="Simple plans for restaurants and delivery teams.">
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {/* Starter Plan */}
-        <div className="rounded-2xl border border-black/10 bg-surface p-6 shadow-sm dark:border-white/10">
-          <h3 className="text-lg font-bold text-center">Starter</h3>
-          <p className="mt-2 text-center text-sm text-muted">Perfect for small restaurants getting started with delivery</p>
-          
-          <div className="mt-4 text-center">
-            <div className="text-sm text-muted">Free forever</div>
-            <div className="mt-1 text-3xl font-bold">$0<span className="text-lg font-normal text-muted">/month</span></div>
-            <div className="mt-2 text-xs text-muted">Everything you need to manage deliveries efficiently</div>
-          </div>
-
-          <div className="mt-6">
-            <Button 
-              href="/contact" 
-              variant="ghost" 
-              className="w-full rounded-full border border-black/10 bg-white px-6 py-3 text-base hover:bg-gray-50 dark:border-white/20 dark:bg-surface"
-            >
-              Get Started Free
-            </Button>
-          </div>
-
-          <ul className="mt-6 space-y-3 text-sm">
-            {[
+        {[
+          {
+            name: "Starter",
+            price: "$0",
+            note: "Free forever",
+            desc: "For small teams getting started.",
+            cta: "Get started",
+            tone: "border-black/10 dark:border-white/10",
+            features: [
               "Up to 5 driver accounts",
               "1 owner/dispatch account",
-              "Customer management",
-              "Order creation & management",
-              "Basic route planning",
-              "Live delivery tracking",
-              "Proof of delivery",
-              "Basic sales reports",
+              "Customers, orders, and routes",
+              "Live status tracking",
+              "Basic reports",
               "Email support",
-            ].map((feature) => (
-              <li key={feature} className="flex items-start gap-2">
-                <svg className="h-5 w-5 shrink-0 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-muted">{feature}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Professional Plan - Most Popular */}
-        <div className="relative rounded-2xl border-2 border-(--color-primary) bg-surface p-6 shadow-lg dark:border-(--color-primary)">
-          <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-(--color-primary) px-4 py-1 text-xs font-semibold text-white">
-            Most Popular
-          </div>
-          
-          <h3 className="mt-2 text-lg font-bold text-center text-(--color-primary)">Professional</h3>
-          <p className="mt-2 text-center text-sm text-muted">For growing restaurants that need advanced features</p>
-          
-          <div className="mt-4 text-center">
-            <div className="text-sm text-muted">Starting at</div>
-            <div className="mt-1 text-3xl font-bold">$49<span className="text-lg font-normal text-muted">/month</span></div>
-            <div className="mt-2 text-xs text-muted">Unlimited orders and drivers</div>
-          </div>
-
-          <div className="mt-6">
-            <Button 
-              href="/contact" 
-              className="w-full rounded-full px-6 py-3 text-base font-medium shadow-lg hover:opacity-90"
-            >
-              Get Started
-            </Button>
-          </div>
-
-          <ul className="mt-6 space-y-3 text-sm">
-            {[
-              "Unlimited driver accounts",
+            ],
+          },
+          {
+            name: "Professional",
+            price: "$49",
+            note: "per month",
+            desc: "For growing restaurants that dispatch daily.",
+            cta: "Start a demo",
+            highlight: true,
+            tone: "border-(--color-primary)",
+            features: [
+              "Unlimited drivers",
               "Up to 5 dispatch/staff accounts",
               "Advanced customer management",
-              "Smart route optimization",
-              "Automated order dispatch",
-              "Real-time order status updates",
-              "Delivery progress tracking",
-              "Advanced sales reports & analytics",
-              "SMS notifications",
+              "Smart route planning",
+              "Realtime status updates",
+              "Advanced reports",
               "Priority support",
-            ].map((feature) => (
-              <li key={feature} className="flex items-start gap-2">
-                <svg className="h-5 w-5 shrink-0 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-muted">{feature}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Business Plan */}
-        <div className="rounded-2xl border border-black/10 bg-surface p-6 shadow-sm dark:border-white/10">
-          <h3 className="text-lg font-bold text-center">Business</h3>
-          <p className="mt-2 text-center text-sm text-muted">Enterprise features for large restaurant operations</p>
-          
-          <div className="mt-4 text-center">
-            <div className="text-sm text-muted">Custom pricing</div>
-            <div className="mt-1 text-3xl font-bold">Custom<span className="text-lg font-normal text-muted"></span></div>
-            <div className="mt-2 text-xs text-muted">Tailored for your business needs</div>
-          </div>
-
-          <div className="mt-6">
-            <Button 
-              href="/contact" 
-              variant="ghost" 
-              className="w-full rounded-full border border-black/10 bg-white px-6 py-3 text-base hover:bg-gray-50 dark:border-white/20 dark:bg-surface"
-            >
-              Request a Demo
-            </Button>
-          </div>
-
-          <ul className="mt-6 space-y-3 text-sm">
-            {[
+            ],
+          },
+          {
+            name: "Business",
+            price: "Custom",
+            note: "Let’s talk",
+            desc: "For multi-location operations.",
+            cta: "Request a demo",
+            tone: "border-black/10 dark:border-white/10",
+            features: [
               "Unlimited everything",
-              "Unlimited dispatch/staff accounts",
-              "All Professional features",
-              "Custom reporting & analytics",
-              "API access & integrations",
-              "White-label options",
-              "Advanced automation workflows",
-              "Geo-fencing & zone management",
-              "Dedicated account manager",
+              "Custom reporting",
+              "Integrations / API options",
+              "Dedicated onboarding",
               "24/7 priority support",
-              "Custom training & onboarding",
-            ].map((feature) => (
-              <li key={feature} className="flex items-start gap-2">
-                <svg className="h-5 w-5 shrink-0 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-muted">{feature}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+              "Training for teams",
+            ],
+          },
+        ].map((p) => (
+          <div
+            key={p.name}
+            className={`relative rounded-3xl border bg-surface p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg md:p-8 ${p.tone}`}
+          >
+            {p.highlight ? (
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-(--color-primary) px-4 py-1 text-xs font-semibold text-white shadow-md">
+                Most popular
+              </div>
+            ) : null}
+
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <div className={`text-sm font-semibold ${p.highlight ? "text-(--color-primary)" : "text-(--color-secondary)"}`}>{p.name}</div>
+                <div className="mt-2 text-sm text-muted">{p.desc}</div>
+              </div>
+              <div className={`rounded-full px-3 py-1 text-xs font-semibold ${p.highlight ? "bg-(--color-primary)/12 text-(--color-primary)" : "bg-black/5 text-(--color-secondary) dark:bg-white/10"}`}>
+                {p.note}
+              </div>
+            </div>
+
+            <div className="mt-6">
+              <div className="flex items-end gap-2">
+                <div className="text-4xl font-bold tracking-tight">{p.price}</div>
+                {p.price !== "Custom" ? <div className="pb-1 text-sm text-muted">/mo</div> : null}
+              </div>
+            </div>
+
+            <div className="mt-6">
+              <Button
+                href="/contact"
+                className={`w-full rounded-full px-6 py-3 text-base shadow-lg transition-all hover:-translate-y-0.5 ${p.highlight ? "" : "btn-secondary"}`}
+              >
+                {p.cta}
+              </Button>
+            </div>
+
+            <ul className="mt-6 space-y-3 text-sm">
+              {p.features.map((feature) => (
+                <li key={feature} className="flex items-start gap-2">
+                  <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-300">
+                    ✓
+                  </span>
+                  <span className="text-muted">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </Section>
 
@@ -225,6 +192,8 @@ export default function PricingPage() {
           </Button>
         </div>
     </Section>
+
+    <CTASection />
     </>
   );
 }

@@ -8,6 +8,36 @@ export default function Home() {
     <div>
       <Hero />
 
+      <section className="w-full bg-(--color-primary) py-10">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid gap-6 text-white sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
+            {[
+              { k: "Installed", v: "1K+", d: "Active installs across teams" },
+              { k: "Customers", v: "100+", d: "Customer records managed" },
+              { k: "Dispatch speed", v: "Fast", d: "Routes → items → customers → orders" },
+              { k: "Support", v: "1 day", d: "Typical response time" },
+            ].map((s, idx, arr) => (
+              <div
+                key={s.k}
+                className="relative px-4 py-1 sm:px-0 sm:py-0 lg:px-8"
+              >
+                {/* vertical separators on large screens */}
+                {idx === arr.length - 1 ? null : (
+                  <div
+                    aria-hidden="true"
+                    className="hidden lg:block absolute right-0 top-1/2 h-12 w-px -translate-y-1/2 bg-white/30"
+                  />
+                )}
+
+                <div className="text-xs font-semibold text-white/85">{s.k}</div>
+                <div className="mt-2 text-3xl font-extrabold tracking-tight">{s.v}</div>
+                <div className="mt-2 text-xs text-white/85">{s.d}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Section title="Why Delivero" subtitle="Built for owners and drivers—fast setup, clear workflow, real-time tracking.">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           <FeatureCard title="Route-first setup" description="Create delivery routes and assign drivers in minutes." />

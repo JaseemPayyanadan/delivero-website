@@ -2,7 +2,7 @@ import Section from "@/components/Section";
 
 export const metadata = { title: "Terms of Service" };
 
-const APP_NAME = "Food Distribution";
+const APP_NAME = "Delivero";
 const SUPPORT_EMAIL = "support@fooddistribution.app";
 const EFFECTIVE_DATE = "May 5, 2026";
 

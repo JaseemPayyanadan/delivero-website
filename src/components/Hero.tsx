@@ -103,8 +103,8 @@ export default function Hero() {
       <div className="mt-16 w-full overflow-hidden">
         <div className="relative">
           {/* Fading edges for smoother transition */}
-           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-linear-to-r from-white via-white/50 to-transparent dark:from-[#151718] dark:via-[#151718]/50" />
-           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-linear-to-l from-white via-white/50 to-transparent dark:from-[#151718] dark:via-[#151718]/50" />
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-32 bg-linear-to-r from-white via-white/50 to-transparent dark:from-[#151718] dark:via-[#151718]/50" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-32 bg-linear-to-l from-white via-white/50 to-transparent dark:from-[#151718] dark:via-[#151718]/50" />
           
           <ul className="flex w-max animate-marquee gap-4 pb-4">
             {[

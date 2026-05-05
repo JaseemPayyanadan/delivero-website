@@ -1,5 +1,6 @@
 import Section from "@/components/Section";
 import Script from "next/script";
+import CTASection from "@/components/CTASection";
 
 export const metadata = { title: "FAQ" };
 
@@ -15,16 +16,30 @@ const faqs = [
 export default function FAQPage() {
   return (
     <>
-      <Section title="FAQ" subtitle="Answers to common questions.">
+      <Section title="FAQ" subtitle="Quick answers for owners, dispatchers, and drivers.">
         <div className="grid gap-4 md:grid-cols-2">
           {faqs.map((f) => (
-            <details key={f.q} className="rounded-xl border border-black/10 bg-surface p-4 dark:border-white/10">
-              <summary className="cursor-pointer text-sm font-semibold">{f.q}</summary>
-              <p className="mt-2 text-sm text-muted">{f.a}</p>
+            <details
+              key={f.q}
+              className="group rounded-2xl border border-black/10 bg-white/60 p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg dark:border-white/10 dark:bg-[#0f1112]/40"
+            >
+              <summary className="cursor-pointer list-none text-sm font-semibold text-(--color-secondary) [&::-webkit-details-marker]:hidden">
+                <div className="flex items-center justify-between gap-4">
+                  <span>{f.q}</span>
+                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-black/5 text-(--color-secondary) transition-transform group-open:rotate-180 dark:bg-white/10">
+                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
+                </div>
+              </summary>
+              <p className="mt-3 text-sm leading-relaxed text-muted">{f.a}</p>
             </details>
           ))}
         </div>
       </Section>
+
+      <CTASection title="Still have a question?" description="Request a demo or email support and we’ll help you get set up." />
       <Script
         id="faq-schema"
         type="application/ld+json"
