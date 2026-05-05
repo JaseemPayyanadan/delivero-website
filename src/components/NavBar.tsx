@@ -18,14 +18,10 @@ export default function NavBar() {
     <header className="sticky top-0 z-50 w-full border-b border-black/6 bg-surface/80 backdrop-blur-md dark:border-white/8">
       <nav className="relative mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo - Left */}
-        <Link href="/" className="flex items-center gap-2 text-lg font-semibold" aria-label="Food Distribution home">
-          <img
-            src="/logo.png"
-            alt="Delivero logo"
-            width={160}
-            height={40}
-            className="object-contain"
-          />
+        <Link href="/" className="flex items-center gap-2 text-lg font-semibold" aria-label="Delivero home">
+          <span className="tracking-tight">
+            <span className="text-(--color-primary)">Del</span>ivero
+          </span>
         </Link>
 
         {/* Desktop nav - Center */}
@@ -46,7 +42,7 @@ export default function NavBar() {
         {/* Desktop Button - Right */}
         <div className="hidden md:flex">
           <Link
-            href="#get-app"
+            href="https://play.google.com/store/apps/details?id=delivero.com"
             className="rounded-full px-4 py-2 text-sm font-medium btn-primary"
           >
             Get the App
@@ -116,7 +112,7 @@ export default function NavBar() {
               </Link>
             ))}
             <Link
-              href="#get-app"
+              href="https://play.google.com/store/apps/details?id=delivero.com"
               className="mt-2 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-medium btn-primary"
               onClick={() => setIsOpen(false)}
             >

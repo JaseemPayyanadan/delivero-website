@@ -7,10 +7,10 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-6 py-10 sm:grid-cols-3">
         <div>
           <div className="text-lg font-semibold">
-            <span className="text-(--color-primary)">Food</span> Distribution
+            <span className="text-(--color-primary)">Del</span>ivero
           </div>
           <p className="mt-2 text-sm text-muted">
-            Deliver Faster. Manage Smarter.
+            Delivery, simplified.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-6 sm:col-span-2 sm:grid-cols-4">
@@ -38,12 +38,17 @@ export default function Footer() {
           </div>
           <div>
             <div className="mb-2 text-sm font-semibold">Get the app</div>
-            <a href="#get-app" className="inline-block rounded-full px-3 py-1 text-xs btn-primary">Get the App</a>
+            <a
+              href="https://play.google.com/store/apps/details?id=delivero.com"
+              className="inline-block rounded-full px-3 py-1 text-xs btn-primary"
+            >
+              Get the App
+            </a>
           </div>
         </div>
       </div>
       <div className="border-t border-black/6 py-4 text-center text-xs text-muted dark:border-white/8">
-        © {year} Food Distribution
+        © {year} Delivero
       </div>
     </footer>
   );

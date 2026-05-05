@@ -15,7 +15,7 @@ export default function CTASection({
   title = "Ready to streamline your delivery operations?",
   description = "Start your free trial or request a demo today.",
   primaryButtonText = "Get the App",
-  primaryButtonHref = "#get-app",
+  primaryButtonHref = "https://play.google.com/store/apps/details?id=delivero.com",
   secondaryButtonText = "Request a Demo",
   secondaryButtonHref = "/contact",
   className = "",

@@ -17,12 +17,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://fooddistribution.app"),
   title: {
-    default: "Food Distribution – Deliver Faster. Manage Smarter.",
-    template: "%s – Food Distribution",
+    default: "Delivero – Delivery, simplified",
+    template: "%s – Delivero",
   },
   description:
-    "Restaurant delivery management app for owners and delivery teams. Plan routes, track orders, and view sales summaries.",
-  applicationName: "Food Distribution",
+    "Delivery operations app for restaurant owners and drivers. Set up routes, add items, manage customers, create orders, and track deliveries.",
+  applicationName: "Delivero",
   keywords: [
     "restaurant delivery management",
     "food delivery workflow",
@@ -34,16 +34,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://fooddistribution.app",
-    title: "Food Distribution – Deliver Faster. Manage Smarter.",
+    title: "Delivero – Delivery, simplified",
     description:
-      "One app for owners and delivery teams—manage customers, assign orders, plan routes, and track status in real time.",
-    siteName: "Food Distribution",
+      "One app for owners and drivers—set up routes, create orders, and track deliveries in real time.",
+    siteName: "Delivero",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Food Distribution – Deliver Faster. Manage Smarter.",
+    title: "Delivero – Delivery, simplified",
     description:
-      "Manage customers, assign orders, plan routes, and track status in real time.",
+      "Set up routes, create orders, and track deliveries in real time.",
   },
   alternates: {
     canonical: "/",
@@ -75,7 +75,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'SoftwareApplication',
-              name: 'Food Distribution',
+              name: 'Delivero',
               applicationCategory: 'BusinessApplication',
               operatingSystem: 'Android',
               offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
