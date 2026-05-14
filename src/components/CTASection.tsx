@@ -12,11 +12,11 @@ type CTASectionProps = {
 };
 
 export default function CTASection({
-  title = "Ready to streamline your delivery operations?",
-  description = "Start your free trial or request a demo today.",
-  primaryButtonText = "Get the App",
-  primaryButtonHref = "https://play.google.com/store/apps/details?id=delivero.com",
-  secondaryButtonText = "Request a Demo",
+  title = "Book a demo of Delivero",
+  description = "See how Delivero can help your business manage orders, routes, drivers, payments, and delivery updates from one connected system.",
+  primaryButtonText = "Get Started",
+  primaryButtonHref = "https://delivero-flutter.vercel.app/#/owner",
+  secondaryButtonText = "Request Demo",
   secondaryButtonHref = "/contact",
   className = "",
 }: CTASectionProps) {
@@ -69,4 +69,3 @@ export default function CTASection({
     </Section>
   );
 }
-

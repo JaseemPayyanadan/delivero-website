@@ -22,14 +22,16 @@ export default function ScreenshotsPage() {
   return (
     <>
       <Section
-        title="Screenshots"
-        subtitle="A quick look at the owner and driver experiences. (Replace placeholders with real screenshots anytime.)"
+        title="See Delivero in action"
+        subtitle="From business setup to final delivery updates, Delivero keeps every step connected across owner and driver workflows."
       >
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <Shot title="Owner Dashboard" subtitle="Today’s summary and quick actions." />
-          <Shot title="Routes" subtitle="Assign drivers and manage stops." />
-          <Shot title="Orders" subtitle="Create, filter, and track status." />
-          <Shot title="Reports" subtitle="Sales and performance summaries." />
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <Shot title="Dashboard overview" subtitle="Business snapshot and quick actions." />
+          <Shot title="Order management" subtitle="Create and manage daily, one-time, and special orders." />
+          <Shot title="Route setup" subtitle="Create routes by area and keep assignments clear." />
+          <Shot title="Driver assignments" subtitle="Assign drivers to routes and sync daily work." />
+          <Shot title="Assigned deliveries" subtitle="Drivers see only their assigned deliveries and update status." />
+          <Shot title="Customer records" subtitle="Addresses, phone numbers, route, history, and payments." />
         </div>
       </Section>
 
@@ -37,5 +39,4 @@ export default function ScreenshotsPage() {
     </>
   );
 }
-
 

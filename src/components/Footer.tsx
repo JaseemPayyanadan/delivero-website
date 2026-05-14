@@ -7,24 +7,22 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-6 py-10 sm:grid-cols-3">
         <div>
           <div className="text-lg font-semibold">
-            <span className="text-(--color-primary)">Del</span>ivero
+            <span className="inline-flex items-baseline tracking-tight leading-none whitespace-nowrap">
+              <span className="text-(--color-primary)">Del</span>
+              <span>ivero</span>
+            </span>
           </div>
           <p className="mt-2 text-sm text-muted">
-            Delivery, simplified.
+            Delivero helps delivery businesses run orders, routes, drivers, and payments in one simple system.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-6 sm:col-span-2 sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-6 sm:col-span-2 sm:grid-cols-3">
           <div>
-            <div className="mb-2 text-sm font-semibold">Product</div>
+            <div className="mb-2 text-sm font-semibold">Links</div>
             <ul className="space-y-1 text-sm text-muted">
+              <li><Link href="/">Home</Link></li>
               <li><Link href="/features">Features</Link></li>
-              <li><Link href="/screenshots">Screenshots</Link></li>
-              <li><Link href="/pricing">Pricing</Link></li>
-            </ul>
-          </div>
-          <div>
-            <div className="mb-2 text-sm font-semibold">Company</div>
-            <ul className="space-y-1 text-sm text-muted">
+              <li><Link href="/#how-it-works">How It Works</Link></li>
               <li><Link href="/faq">FAQ</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>
@@ -37,12 +35,12 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <div className="mb-2 text-sm font-semibold">Get the app</div>
+            <div className="mb-2 text-sm font-semibold">Get started</div>
             <a
-              href="https://play.google.com/store/apps/details?id=delivero.com"
+              href="https://delivero-flutter.vercel.app/#/owner"
               className="inline-block rounded-full px-3 py-1 text-xs btn-primary"
             >
-              Get the App
+              Get Started
             </a>
           </div>
         </div>
@@ -53,5 +51,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-

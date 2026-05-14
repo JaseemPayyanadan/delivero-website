@@ -6,8 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://fooddistribution.app/sitemap.xml',
+    sitemap: 'https://delivero.app/sitemap.xml',
   };
 }
-
 

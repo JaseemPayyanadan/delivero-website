@@ -3,7 +3,7 @@ import Section from "@/components/Section";
 export const metadata = { title: "Privacy Policy" };
 
 const APP_NAME = "Delivero";
-const SUPPORT_EMAIL = "support@fooddistribution.app";
+const SUPPORT_EMAIL = "support@delivero.app";
 const EFFECTIVE_DATE = "May 5, 2026";
 
 export default function PrivacyPage() {
@@ -128,4 +128,3 @@ export default function PrivacyPage() {
     </Section>
   );
 }
-

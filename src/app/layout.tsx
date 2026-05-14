@@ -15,35 +15,35 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fooddistribution.app"),
+  metadataBase: new URL("https://delivero.app"),
   title: {
     default: "Delivero – Delivery, simplified",
     template: "%s – Delivero",
   },
   description:
-    "Delivery operations app for restaurant owners and drivers. Set up routes, add items, manage customers, create orders, and track deliveries.",
+    "Manage daily deliveries, orders, routes, and drivers in one simple system. Delivero connects owners and drivers across web and mobile.",
   applicationName: "Delivero",
   keywords: [
-    "restaurant delivery management",
-    "food delivery workflow",
+    "delivery management",
+    "delivery operations",
     "order tracking app",
-    "route planning",
+    "route management",
     "delivery dashboard",
-    "sales reports for restaurants",
+    "driver app",
   ],
   openGraph: {
     type: "website",
-    url: "https://fooddistribution.app",
+    url: "https://delivero.app",
     title: "Delivero – Delivery, simplified",
     description:
-      "One app for owners and drivers—set up routes, create orders, and track deliveries in real time.",
+      "One connected system for orders, routes, drivers, payments, and delivery updates.",
     siteName: "Delivero",
   },
   twitter: {
     card: "summary_large_image",
     title: "Delivero – Delivery, simplified",
     description:
-      "Set up routes, create orders, and track deliveries in real time.",
+      "Manage orders, routes, drivers, payments, and delivery updates in one connected system.",
   },
   alternates: {
     canonical: "/",
@@ -78,8 +78,7 @@ export default function RootLayout({
               name: 'Delivero',
               applicationCategory: 'BusinessApplication',
               operatingSystem: 'Android',
-              offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-              aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', ratingCount: '26' },
+              url: 'https://delivero.app',
             }),
           }}
         />

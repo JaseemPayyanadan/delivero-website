@@ -1,23 +1,42 @@
 import Section from "@/components/Section";
+import Link from "next/link";
 import Script from "next/script";
 import CTASection from "@/components/CTASection";
 
 export const metadata = { title: "FAQ" };
 
 const faqs = [
-  { q: "How do I install the app?", a: "Download from the Play Store (package: delivero.com) and sign in." },
-  { q: "Which devices are supported?", a: "Android 8.0+; works on phones and small tablets." },
-  { q: "Does it work offline?", a: "Core actions cache offline and sync when back online." },
-  { q: "What roles are available?", a: "Owner/Manager and Driver roles with appropriate permissions." },
-  { q: "How is my data secured?", a: "Encrypted in transit and at rest; role-based access controls." },
-  { q: "How do I get support?", a: "Email support is included; SLA options on Scale plan." },
+  {
+    q: "How do drivers get orders?",
+    a: "Owners assign drivers to routes, and drivers automatically see the orders connected to their assigned route.",
+  },
+  {
+    q: "What is a Special order type?",
+    a: "Special orders stay separate and do not merge into existing daily or one-time orders.",
+  },
+  {
+    q: "Does Delivero work on web and mobile?",
+    a: "Yes. Delivero is available on Flutter Web and Android.",
+  },
+  {
+    q: "Can payments be tracked?",
+    a: "Yes. Orders can be marked as paid, unpaid, or partial, and the amount paid can also be recorded.",
+  },
+  {
+    q: "Who is Delivero built for?",
+    a: "Delivero is built for delivery-based businesses such as bakeries, milk delivery services, meal providers, grocery delivery teams, water suppliers, and local distributors.",
+  },
+  {
+    q: "What can drivers do in the app?",
+    a: "Drivers can view assigned orders, open order details, access customer address and phone information, and mark deliveries as completed.",
+  },
 ];
 
 export default function FAQPage() {
   return (
     <>
-      <Section title="FAQ" subtitle="Quick answers for owners, dispatchers, and drivers.">
-        <div className="grid gap-4 md:grid-cols-2">
+      <Section title="FAQ" subtitle="Quick answers for owners and drivers.">
+        <div className="grid gap-4 lg:grid-cols-2">
           {faqs.map((f) => (
             <details
               key={f.q}
@@ -37,9 +56,16 @@ export default function FAQPage() {
             </details>
           ))}
         </div>
+        <div className="mt-10 text-center text-sm text-muted">
+          Not seeing your question?{" "}
+          <Link href="/contact" className="font-semibold text-(--color-primary) hover:underline">
+            Request a demo
+          </Link>
+          .
+        </div>
       </Section>
 
-      <CTASection title="Still have a question?" description="Request a demo or email support and we’ll help you get set up." />
+      <CTASection title="Still have a question?" description="Request a demo and we’ll help you map Delivero to your routes, drivers, and daily orders." />
       <Script
         id="faq-schema"
         type="application/ld+json"
@@ -58,5 +84,3 @@ export default function FAQPage() {
     </>
   );
 }
-
-
