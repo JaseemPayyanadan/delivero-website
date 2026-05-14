@@ -83,7 +83,10 @@ export default function Hero() {
                   <div className="text-xs text-muted">{c.label}</div>
                   <div className="mt-2 flex items-center justify-between">
                     <div className="text-2xl font-bold tracking-tight">{c.value}</div>
-                    <span className={`pointer-events-none select-none rounded-md px-2 py-0.5 text-[10px] font-semibold ${c.tone}`}>
+                    <span
+                      style={{ WebkitTapHighlightColor: "transparent" }}
+                      className={`pointer-events-none select-none cursor-default rounded-md px-2 py-0.5 text-[10px] font-semibold ${c.tone}`}
+                    >
                       Status
                     </span>
                   </div>

@@ -8,7 +8,11 @@ export default function ContactForm() {
   if (status === "submitted") {
     return (
       <div className="rounded-2xl border border-black/10 bg-white/60 p-6 text-center text-sm shadow-sm dark:border-white/10 dark:bg-[#0f1112]/40">
-        Thank you! We&apos;ll get back to you shortly.
+        <div className="mx-auto grid h-10 w-10 place-items-center rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-300">
+          ✓
+        </div>
+        <div className="mt-3 font-semibold text-foreground">Request received</div>
+        <div className="mt-1 text-muted">Thanks! We&apos;ll get back to you shortly.</div>
       </div>
     );
   }
@@ -22,7 +26,7 @@ export default function ContactForm() {
         const honeypot = formData.get("company_website");
         if (honeypot) return; // spam trap
         setStatus("submitting");
-        setTimeout(() => setStatus("submitted"), 450);
+        setTimeout(() => setStatus("submitted"), 900);
       }}
     >
       <div className="grid gap-4 sm:grid-cols-2">

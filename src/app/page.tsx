@@ -71,6 +71,104 @@ export default function Home() {
       </Section>
 
       <Section
+        id="use-cases"
+        title="Use cases"
+        subtitle="Built for local delivery businesses that run recurring and one-time drops—without enterprise complexity."
+      >
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            {
+              t: "Bakery deliveries",
+              d: "Create morning routes, assign drivers, and track delivered vs pending orders by customer.",
+              icon: (
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M7 11h10" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 9l2-5h10l2 5" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 9v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9" />
+                </svg>
+              ),
+            },
+            {
+              t: "Milk / subscription delivery",
+              d: "Manage recurring quantities, special orders, and payment status while keeping drivers focused on assigned drops.",
+              icon: (
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 2h6" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M10 2v4l-2 3v12a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V9l-2-3V2" />
+                </svg>
+              ),
+            },
+            {
+              t: "Meal deliveries",
+              d: "Handle daily order creation, route grouping, and status updates so owners can monitor delivery progress in real time.",
+              icon: (
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 3h16" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 3v7a3 3 0 0 0 6 0V3" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M16 3v7" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M16 10c0 2.5-1.5 4-4 4H8" />
+                </svg>
+              ),
+            },
+            {
+              t: "Water supply runs",
+              d: "Keep large, route-based deliveries organized with clear driver assignment and customer contact access on the go.",
+              icon: (
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 2s6 6 6 11a6 6 0 1 1-12 0c0-5 6-11 6-11z" />
+                </svg>
+              ),
+            },
+            {
+              t: "Grocery distribution",
+              d: "Track customer records, orders, and payments across routes while reducing mistakes from spreadsheets and chats.",
+              icon: (
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h15l-1.5 8h-12z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 6 5 3H2" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M18 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                </svg>
+              ),
+            },
+            {
+              t: "Local distributors",
+              d: "Manage multiple products, customers, and drivers with role-based access so the right people see the right data.",
+              icon: (
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 7l9-4 9 4-9 4-9-4z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 17l9 4 9-4" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l9 4 9-4" />
+                </svg>
+              ),
+            },
+          ].map((u) => (
+            <div
+              key={u.t}
+              className="group rounded-3xl border border-black/10 bg-surface p-6 shadow-sm transition-all duration-300 hover:border-[--color-primary]/30 hover:shadow-lg hover:-translate-y-0.5 dark:border-white/10 md:p-8"
+            >
+              <div className="flex items-start gap-3">
+                <span className="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-(--color-primary)/12 text-(--color-primary)">
+                  {u.icon}
+                </span>
+                <div>
+                  <div className="text-base font-semibold text-foreground">{u.t}</div>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{u.d}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-8 text-center text-sm text-muted">
+          Have a different workflow?{" "}
+          <Link href="/contact" className="font-semibold text-(--color-primary) hover:underline">
+            Request a demo
+          </Link>{" "}
+          and we’ll map Delivero to your routes and order types.
+        </div>
+      </Section>
+
+      <Section
         id="how-it-works"
         title="How Delivero works"
       >
@@ -215,11 +313,11 @@ export default function Home() {
           ))}
         </div>
         <div className="mt-8 text-center text-sm text-muted">
-          Want real screenshots here? Add them once and they’ll show on the{" "}
-          <Link href="/screenshots" className="font-semibold text-(--color-primary) hover:underline">
-            Screens
-          </Link>{" "}
-          page.
+          <span className="text-foreground font-semibold">Screenshots gallery coming soon.</span> For a full walkthrough,{" "}
+          <Link href="/contact" className="font-semibold text-(--color-primary) hover:underline">
+            request a demo
+          </Link>
+          .
         </div>
       </Section>
 

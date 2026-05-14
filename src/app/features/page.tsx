@@ -87,8 +87,8 @@ export default function FeaturesPage() {
       </Section>
 
       <CTASection
-        title="See Delivero in action"
-        description="From business setup to final delivery updates, Delivero keeps every step connected across owner and driver workflows."
+        title="Ready to get started?"
+        description="Request a demo to see how Delivero fits your routes, drivers, and daily orders."
       />
     </>
   );

@@ -18,7 +18,7 @@ export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-black/6 bg-surface/95 shadow-sm backdrop-blur-md dark:border-white/8">
+    <header className="sticky top-0 z-50 w-full border-b border-black/6 bg-surface shadow-sm backdrop-blur-md dark:border-white/8">
       <nav className="relative mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo - Left */}
         <Link href="/" className="flex items-center gap-2 text-lg font-semibold whitespace-nowrap" aria-label="Delivero home">
