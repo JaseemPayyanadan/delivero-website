@@ -15,7 +15,7 @@ export default function PricingPage() {
             note: "Free forever",
             desc: "For small teams getting started.",
             cta: "Get started",
-            tone: "border-black/10 dark:border-white/10",
+            tone: "border-white/8",
             features: [
               "Up to 5 driver accounts",
               "1 owner/dispatch account",
@@ -32,7 +32,7 @@ export default function PricingPage() {
             desc: "For growing restaurants that dispatch daily.",
             cta: "Start a demo",
             highlight: true,
-            tone: "border-(--color-primary)",
+            tone: "border-white/15",
             features: [
               "Unlimited drivers",
               "Up to 5 dispatch/staff accounts",
@@ -49,7 +49,7 @@ export default function PricingPage() {
             note: "Let’s talk",
             desc: "For multi-location operations.",
             cta: "Request a demo",
-            tone: "border-black/10 dark:border-white/10",
+            tone: "border-white/8",
             features: [
               "Unlimited everything",
               "Custom reporting",
@@ -62,20 +62,20 @@ export default function PricingPage() {
         ].map((p) => (
           <div
             key={p.name}
-            className={`relative rounded-3xl border bg-surface p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg md:p-8 ${p.tone}`}
+            className={`relative rounded-3xl border bg-surface p-6 transition-all duration-200 ease-out hover:border-white/15 hover:-translate-y-0.5 md:p-8 ${p.tone}`}
           >
             {p.highlight ? (
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-(--color-primary) px-4 py-1 text-xs font-semibold text-white shadow-md">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full border border-white/15 bg-white/10 px-4 py-1 text-xs font-semibold tracking-[0.08em] uppercase text-white">
                 Most popular
               </div>
             ) : null}
 
             <div className="flex items-start justify-between gap-4">
               <div>
-                <div className={`text-sm font-semibold ${p.highlight ? "text-(--color-primary)" : "text-(--color-secondary)"}`}>{p.name}</div>
+                <div className={`text-sm font-semibold ${p.highlight ? "text-(--color-primary)" : "text-white"}`}>{p.name}</div>
                 <div className="mt-2 text-sm text-muted">{p.desc}</div>
               </div>
-              <div className={`rounded-full px-3 py-1 text-xs font-semibold ${p.highlight ? "bg-(--color-primary)/12 text-(--color-primary)" : "bg-black/5 text-(--color-secondary) dark:bg-white/10"}`}>
+              <div className={`rounded-full px-3 py-1 text-xs font-semibold ${p.highlight ? "bg-(--color-primary)/15 text-(--color-primary)" : "bg-white/10 text-white"}`}>
                 {p.note}
               </div>
             </div>
@@ -90,7 +90,7 @@ export default function PricingPage() {
             <div className="mt-6">
               <Button
                 href="/contact"
-                className={`w-full rounded-full px-6 py-3 text-base shadow-lg transition-all hover:-translate-y-0.5 ${p.highlight ? "" : "btn-secondary"}`}
+                className={`w-full rounded-full px-6 py-3.5 text-base font-semibold ${p.highlight ? "" : "btn-secondary"}`}
               >
                 {p.cta}
               </Button>
@@ -99,7 +99,7 @@ export default function PricingPage() {
             <ul className="mt-6 space-y-3 text-sm">
               {p.features.map((feature) => (
                 <li key={feature} className="flex items-start gap-2">
-                  <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-300">
+                  <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-300">
                     ✓
                   </span>
                   <span className="text-muted">{feature}</span>
@@ -113,12 +113,12 @@ export default function PricingPage() {
 
     {/* FAQ Section */}
     <Section title="Frequently Asked Questions" subtitle="Common questions about Delivero.">
-        <div className="grid gap-4 md:grid-cols-2">
-          <details className="group rounded-xl border border-black/10 bg-surface p-5 transition-all hover:border-(--color-primary)/30 dark:border-white/10">
-            <summary className="cursor-pointer text-base font-semibold text-(--color-secondary) transition-colors hover:text-(--color-primary) [&::-webkit-details-marker]:hidden">
+        <div className="grid gap-4 lg:grid-cols-2">
+          <details className="group rounded-2xl border border-white/8 bg-surface p-5 transition-all duration-200 ease-out hover:border-white/15">
+            <summary className="cursor-pointer text-base font-semibold text-white transition-colors [&::-webkit-details-marker]:hidden">
               <div className="flex items-center justify-between">
                 <span>How do I install the app?</span>
-                <svg className="h-5 w-5 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-5 w-5 shrink-0 transition-transform group-open:rotate-180 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
@@ -126,11 +126,11 @@ export default function PricingPage() {
             <p className="mt-3 text-sm leading-relaxed text-muted">Download from the Play Store (package: delivero.com) and sign in with your account credentials.</p>
           </details>
 
-          <details className="group rounded-xl border border-black/10 bg-surface p-5 transition-all hover:border-(--color-primary)/30 dark:border-white/10">
-            <summary className="cursor-pointer text-base font-semibold text-(--color-secondary) transition-colors hover:text-(--color-primary) [&::-webkit-details-marker]:hidden">
+          <details className="group rounded-2xl border border-white/8 bg-surface p-5 transition-all duration-200 ease-out hover:border-white/15">
+            <summary className="cursor-pointer text-base font-semibold text-white transition-colors [&::-webkit-details-marker]:hidden">
               <div className="flex items-center justify-between">
                 <span>Which devices are supported?</span>
-                <svg className="h-5 w-5 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-5 w-5 shrink-0 transition-transform group-open:rotate-180 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
@@ -138,11 +138,11 @@ export default function PricingPage() {
             <p className="mt-3 text-sm leading-relaxed text-muted">The app supports Android 8.0+ and works on phones and small tablets.</p>
           </details>
 
-          <details className="group rounded-xl border border-black/10 bg-surface p-5 transition-all hover:border-(--color-primary)/30 dark:border-white/10">
-            <summary className="cursor-pointer text-base font-semibold text-(--color-secondary) transition-colors hover:text-(--color-primary) [&::-webkit-details-marker]:hidden">
+          <details className="group rounded-2xl border border-white/8 bg-surface p-5 transition-all duration-200 ease-out hover:border-white/15">
+            <summary className="cursor-pointer text-base font-semibold text-white transition-colors [&::-webkit-details-marker]:hidden">
               <div className="flex items-center justify-between">
                 <span>Does it work offline?</span>
-                <svg className="h-5 w-5 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-5 w-5 shrink-0 transition-transform group-open:rotate-180 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
@@ -150,11 +150,11 @@ export default function PricingPage() {
             <p className="mt-3 text-sm leading-relaxed text-muted">Core actions are cached offline and automatically sync when you&apos;re back online.</p>
           </details>
 
-          <details className="group rounded-xl border border-black/10 bg-surface p-5 transition-all hover:border-(--color-primary)/30 dark:border-white/10">
-            <summary className="cursor-pointer text-base font-semibold text-(--color-secondary) transition-colors hover:text-(--color-primary) [&::-webkit-details-marker]:hidden">
+          <details className="group rounded-2xl border border-white/8 bg-surface p-5 transition-all duration-200 ease-out hover:border-white/15">
+            <summary className="cursor-pointer text-base font-semibold text-white transition-colors [&::-webkit-details-marker]:hidden">
               <div className="flex items-center justify-between">
                 <span>What roles are available?</span>
-                <svg className="h-5 w-5 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-5 w-5 shrink-0 transition-transform group-open:rotate-180 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
@@ -162,11 +162,11 @@ export default function PricingPage() {
             <p className="mt-3 text-sm leading-relaxed text-muted">There are two main roles: Owner/Manager (for managing customers, orders, and reports) and Driver (for viewing orders and updating delivery status).</p>
           </details>
 
-          <details className="group rounded-xl border border-black/10 bg-surface p-5 transition-all hover:border-(--color-primary)/30 dark:border-white/10">
-            <summary className="cursor-pointer text-base font-semibold text-(--color-secondary) transition-colors hover:text-(--color-primary) [&::-webkit-details-marker]:hidden">
+          <details className="group rounded-2xl border border-white/8 bg-surface p-5 transition-all duration-200 ease-out hover:border-white/15">
+            <summary className="cursor-pointer text-base font-semibold text-white transition-colors [&::-webkit-details-marker]:hidden">
               <div className="flex items-center justify-between">
                 <span>How is my data secured?</span>
-                <svg className="h-5 w-5 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-5 w-5 shrink-0 transition-transform group-open:rotate-180 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
@@ -174,11 +174,11 @@ export default function PricingPage() {
             <p className="mt-3 text-sm leading-relaxed text-muted">All data is encrypted in transit and at rest. We use role-based access controls to ensure only authorized users can access relevant information.</p>
           </details>
 
-          <details className="group rounded-xl border border-black/10 bg-surface p-5 transition-all hover:border-(--color-primary)/30 dark:border-white/10">
-            <summary className="cursor-pointer text-base font-semibold text-(--color-secondary) transition-colors hover:text-(--color-primary) [&::-webkit-details-marker]:hidden">
+          <details className="group rounded-2xl border border-white/8 bg-surface p-5 transition-all duration-200 ease-out hover:border-white/15">
+            <summary className="cursor-pointer text-base font-semibold text-white transition-colors [&::-webkit-details-marker]:hidden">
               <div className="flex items-center justify-between">
                 <span>How do I get support?</span>
-                <svg className="h-5 w-5 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-5 w-5 shrink-0 transition-transform group-open:rotate-180 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </div>

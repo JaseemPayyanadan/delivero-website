@@ -12,8 +12,8 @@ export default function ContactPage() {
         subtitle="See how Delivero can help your business manage orders, routes, drivers, payments, and delivery updates from one connected system."
       >
         <div className="grid items-start gap-8 lg:grid-cols-2">
-          <div className="rounded-3xl border border-black/10 bg-surface p-6 shadow-sm dark:border-white/10 md:p-8">
-            <div className="text-sm font-semibold text-(--color-secondary)">Request a demo</div>
+          <div className="rounded-3xl border border-white/8 bg-surface p-6 md:p-8">
+            <div className="text-xs font-semibold tracking-[0.08em] uppercase text-white/80">Request a demo</div>
             <p className="mt-2 text-sm text-muted">
               Share a few details about your business and we’ll reply with next steps.
             </p>
@@ -22,24 +22,24 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-black/10 bg-surface p-6 shadow-sm dark:border-white/10 md:p-8">
-            <div className="text-sm font-semibold text-(--color-secondary)">What happens next</div>
+          <div className="rounded-3xl border border-white/8 bg-surface p-6 md:p-8">
+            <div className="text-xs font-semibold tracking-[0.08em] uppercase text-white/80">What happens next</div>
             <ol className="mt-4 space-y-3 text-sm text-muted">
               <li className="flex gap-3">
                 <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-(--color-primary)/12 text-xs font-bold text-(--color-primary)">1</span>
-                <span><span className="font-semibold text-foreground">We review</span> your request and follow up with a demo link.</span>
+                <span><span className="font-semibold text-white">We review</span> your request and follow up with a demo link.</span>
               </li>
               <li className="flex gap-3">
                 <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-(--color-primary)/12 text-xs font-bold text-(--color-primary)">2</span>
-                <span><span className="font-semibold text-foreground">We schedule</span> a walkthrough focused on your routes, drivers, and order workflow.</span>
+                <span><span className="font-semibold text-white">We schedule</span> a walkthrough focused on your routes, drivers, and order workflow.</span>
               </li>
               <li className="flex gap-3">
                 <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-(--color-primary)/12 text-xs font-bold text-(--color-primary)">3</span>
-                <span><span className="font-semibold text-foreground">We onboard</span> you with products, customers, routes, and drivers.</span>
+                <span><span className="font-semibold text-white">We onboard</span> you with products, customers, routes, and drivers.</span>
               </li>
             </ol>
 
-            <div className="mt-6 rounded-2xl border border-black/10 bg-white/60 p-5 text-sm dark:border-white/10 dark:bg-[#0f1112]/40">
+            <div className="mt-6 rounded-2xl border border-white/8 bg-[#111111] p-5 text-sm">
               <div className="text-xs font-semibold text-muted">Support email</div>
               <a className="mt-2 inline-block font-semibold text-(--color-primary) hover:underline" href="mailto:support@delivero.app">
                 support@delivero.app

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Section from "@/components/Section";
 import FeatureCard from "@/components/FeatureCard";
 import Hero from "@/components/Hero";
@@ -9,37 +10,35 @@ export default function Home() {
     <div>
       <Hero />
 
-      <section className="w-full bg-(--color-primary) py-10">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid gap-4 text-white sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              "Owner dashboard + driver app in one system",
-              "Real-time route and order visibility",
-              "Works on Flutter Web and Android",
-              "Built for recurring and one-time deliveries",
-            ].map((t) => (
-              <div key={t} className="flex items-start gap-3 rounded-2xl bg-white/10 px-4 py-4">
-                <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-white/15 text-xs font-bold text-white">
-                  ✓
-                </span>
-                <div className="text-sm font-semibold leading-snug">{t}</div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-6 text-center text-sm text-white/85">
-            One connected system for orders, routes, drivers, payments, and delivery updates.
-          </div>
+      <Section className="py-16 md:py-20 border-t-0">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            "Owner dashboard + driver app in one system",
+            "Real-time route and order visibility",
+            "Works on Flutter Web and Android",
+            "Built for recurring and one-time deliveries",
+          ].map((t) => (
+            <div key={t} className="flex items-start gap-3 rounded-2xl border border-white/8 bg-surface px-5 py-5">
+              <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-full bg-(--color-primary)/15 text-sm font-semibold text-(--color-primary)">
+                ✓
+              </span>
+              <div className="text-sm font-semibold leading-snug text-white">{t}</div>
+            </div>
+          ))}
         </div>
-      </section>
+        <div className="mt-8 text-center text-sm text-muted">
+          One connected system for orders, routes, drivers, payments, and delivery updates.
+        </div>
+      </Section>
 
       <Section
         title="Still managing deliveries through chats and spreadsheets?"
         subtitle="Manual delivery operations often lead to missed deliveries, duplicate orders, payment confusion, and poor visibility for both owners and drivers. Delivero replaces scattered tools with one connected workflow built for delivery businesses."
       >
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl border border-(--color-accent)/25 bg-(--color-accent)/5 p-6 shadow-sm dark:border-white/10 md:p-8">
-            <div className="flex items-center gap-2 text-sm font-semibold text-(--color-secondary)">
-              <span className="grid h-8 w-8 place-items-center rounded-xl bg-(--color-accent)/15 text-(--color-secondary)">
+          <div className="rounded-3xl border border-white/8 bg-surface p-6 md:p-8">
+            <div className="flex items-center gap-2 text-xs font-semibold tracking-[0.08em] uppercase text-white/80">
+              <span className="grid h-10 w-10 place-items-center rounded-2xl bg-(--color-primary)/15 text-(--color-primary)">
                 <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v4" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 17h.01" />
@@ -48,21 +47,21 @@ export default function Home() {
               </span>
               Problem
             </div>
-            <div className="mt-2 text-xl font-semibold">Still managing deliveries through chats and spreadsheets?</div>
+            <div className="mt-3 text-xl font-semibold text-white">Still managing deliveries through chats and spreadsheets?</div>
             <p className="mt-3 text-sm leading-relaxed text-muted">
               Manual delivery operations often lead to missed deliveries, duplicate orders, payment confusion, and poor visibility for both owners and drivers.
             </p>
           </div>
-          <div className="rounded-3xl border border-(--color-primary)/25 bg-(--color-primary)/5 p-6 shadow-sm dark:border-white/10 md:p-8">
-            <div className="flex items-center gap-2 text-sm font-semibold text-(--color-secondary)">
-              <span className="grid h-8 w-8 place-items-center rounded-xl bg-(--color-primary)/12 text-(--color-primary)">
+          <div className="rounded-3xl border border-white/8 bg-surface p-6 md:p-8">
+            <div className="flex items-center gap-2 text-xs font-semibold tracking-[0.08em] uppercase text-white/80">
+              <span className="grid h-10 w-10 place-items-center rounded-2xl bg-(--color-primary)/15 text-(--color-primary)">
                 <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M20 7 10 17l-5-5" />
                 </svg>
               </span>
               Solution
             </div>
-            <div className="mt-2 text-xl font-semibold">A simpler way to run delivery operations</div>
+            <div className="mt-3 text-xl font-semibold text-white">A simpler way to run delivery operations</div>
             <p className="mt-3 text-sm leading-relaxed text-muted">
               Owners manage products, customers, orders, routes, drivers, and business performance from one dashboard, while drivers only see assigned deliveries and update order status as work gets done.
             </p>
@@ -80,81 +79,51 @@ export default function Home() {
             {
               t: "Bakery deliveries",
               d: "Create morning routes, assign drivers, and track delivered vs pending orders by customer.",
-              icon: (
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M7 11h10" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 9l2-5h10l2 5" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 9v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9" />
-                </svg>
-              ),
+              img: { src: "/image.png", alt: "Delivery handoff", position: "50% 35%" },
             },
             {
               t: "Milk / subscription delivery",
               d: "Manage recurring quantities, special orders, and payment status while keeping drivers focused on assigned drops.",
-              icon: (
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 2h6" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M10 2v4l-2 3v12a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V9l-2-3V2" />
-                </svg>
-              ),
+              img: { src: "/image.png", alt: "Delivery service", position: "65% 40%" },
             },
             {
               t: "Meal deliveries",
               d: "Handle daily order creation, route grouping, and status updates so owners can monitor delivery progress in real time.",
-              icon: (
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 3h16" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 3v7a3 3 0 0 0 6 0V3" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M16 3v7" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M16 10c0 2.5-1.5 4-4 4H8" />
-                </svg>
-              ),
+              img: { src: "/image.png", alt: "Delivery workflow", position: "35% 45%" },
             },
             {
               t: "Water supply runs",
               d: "Keep large, route-based deliveries organized with clear driver assignment and customer contact access on the go.",
-              icon: (
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 2s6 6 6 11a6 6 0 1 1-12 0c0-5 6-11 6-11z" />
-                </svg>
-              ),
+              img: { src: "/hero.png", alt: "Route map", position: "70% 50%" },
             },
             {
               t: "Grocery distribution",
               d: "Track customer records, orders, and payments across routes while reducing mistakes from spreadsheets and chats.",
-              icon: (
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h15l-1.5 8h-12z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 6 5 3H2" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M18 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                </svg>
-              ),
+              img: { src: "/hero.png", alt: "Dispatch map", position: "45% 50%" },
             },
             {
               t: "Local distributors",
               d: "Manage multiple products, customers, and drivers with role-based access so the right people see the right data.",
-              icon: (
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 7l9-4 9 4-9 4-9-4z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 17l9 4 9-4" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l9 4 9-4" />
-                </svg>
-              ),
+              img: { src: "/hero.png", alt: "Deliveries overview", position: "55% 55%" },
             },
           ].map((u) => (
             <div
               key={u.t}
-              className="group rounded-3xl border border-black/10 bg-surface p-6 shadow-sm transition-all duration-300 hover:border-[--color-primary]/30 hover:shadow-lg hover:-translate-y-0.5 dark:border-white/10 md:p-8"
+              className="group rounded-3xl border border-white/8 bg-surface p-6 transition-all duration-200 ease-out hover:border-white/15 hover:-translate-y-0.5 md:p-8"
             >
-              <div className="flex items-start gap-3">
-                <span className="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-(--color-primary)/12 text-(--color-primary)">
-                  {u.icon}
-                </span>
-                <div>
-                  <div className="text-base font-semibold text-foreground">{u.t}</div>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{u.d}</p>
-                </div>
+              <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#111111]">
+                <Image
+                  src={u.img.src}
+                  alt={u.img.alt}
+                  width={1200}
+                  height={675}
+                  className="h-40 w-full object-cover sm:h-44"
+                  style={{ objectPosition: u.img.position }}
+                />
+              </div>
+              <div className="mt-5">
+                <div className="text-base font-semibold text-white">{u.t}</div>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{u.d}</p>
               </div>
             </div>
           ))}
@@ -210,25 +179,22 @@ export default function Home() {
           ].map((s, idx) => (
             <li
               key={s.title}
-              className="group relative rounded-3xl border border-black/10 bg-surface p-6 transition-all duration-300 hover:border-[--color-primary]/30 hover:shadow-lg hover:-translate-y-1 dark:border-white/10 md:p-8"
+              className="group relative rounded-3xl border border-white/8 bg-surface p-6 transition-all duration-200 ease-out hover:border-white/15 hover:-translate-y-0.5 md:p-8"
             >
-              <div className="absolute right-6 top-6 grid h-10 w-10 place-items-center rounded-2xl bg-black/5 text-(--color-secondary) dark:bg-white/10">
+              <div className="absolute right-6 top-6 grid h-10 w-10 place-items-center rounded-2xl bg-white/5 text-white">
                 {s.icon}
               </div>
               <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[--color-primary]/10 text-xl font-bold text-[--color-primary] transition-colors group-hover:bg-[--color-primary] group-hover:text-white">
                 {idx + 1}
               </div>
-              <div className="text-base font-semibold">{s.title}</div>
+              <div className="text-base font-semibold text-white">{s.title}</div>
               <p className="mt-2 text-sm leading-relaxed text-muted">{s.desc}</p>
             </li>
           ))}
         </ol>
       </Section>
 
-      <Section
-        id="features"
-        title="Everything needed to manage deliveries smoothly"
-      >
+      <Section id="features" title="Everything needed to manage deliveries smoothly">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           <FeatureCard title="Owner Dashboard" description="Run your business from one dashboard with quick access to products, customers, routes, drivers, and orders." />
           <FeatureCard title="Product Catalog" description="Add and manage products with pricing, search your catalog quickly, and keep ordering accurate." />
@@ -244,10 +210,10 @@ export default function Home() {
         title="Built for both owners and drivers"
       >
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl border border-(--color-primary)/25 bg-(--color-primary)/5 p-6 shadow-sm dark:border-white/10 md:p-8">
+          <div className="rounded-3xl border border-white/8 bg-surface p-6 md:p-8">
             <div className="flex items-center justify-between gap-4">
-              <div className="text-sm font-semibold text-(--color-secondary)">For owners and managers</div>
-              <div className="rounded-full bg-(--color-primary)/12 px-3 py-1 text-xs font-semibold text-(--color-primary)">Owner</div>
+              <div className="text-xs font-semibold tracking-[0.08em] uppercase text-white/80">For owners and managers</div>
+              <div className="rounded-full bg-(--color-primary)/15 px-3 py-1 text-xs font-semibold text-(--color-primary)">Owner</div>
             </div>
             <p className="mt-3 text-sm leading-relaxed text-muted">
               Manage customers, products, orders, routes, drivers, payments, and daily performance with full access to business operations.
@@ -259,10 +225,10 @@ export default function Home() {
               <li>Order and fulfillment tracking</li>
             </ul>
           </div>
-          <div className="rounded-3xl border border-emerald-500/25 bg-emerald-500/5 p-6 shadow-sm dark:border-white/10 md:p-8">
+          <div className="rounded-3xl border border-white/8 bg-surface p-6 md:p-8">
             <div className="flex items-center justify-between gap-4">
-              <div className="text-sm font-semibold text-(--color-secondary)">For delivery drivers</div>
-              <div className="rounded-full bg-emerald-500/12 px-3 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-300">Driver</div>
+              <div className="text-xs font-semibold tracking-[0.08em] uppercase text-white/80">For delivery drivers</div>
+              <div className="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-300">Driver</div>
             </div>
             <p className="mt-3 text-sm leading-relaxed text-muted">
               Give drivers a simple assigned order list with customer details and the ability to update delivery status quickly.
@@ -277,47 +243,85 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section
-        id="screens"
-        title="See Delivero in action"
-        subtitle="From business setup to final delivery updates, Delivero keeps every step connected across owner and driver workflows."
-      >
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <Section id="screens" className="border-t-0">
+        <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.2fr]">
+          <div>
+            <div className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold tracking-[0.08em] uppercase text-white/80">
+              See Delivero in action
+            </div>
+            <h3 className="mt-5 text-balance text-[clamp(2.25rem,4vw,3.25rem)] font-bold tracking-[-0.02em] text-white">
+              A connected workflow from setup to final delivery updates
+            </h3>
+            <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
+              From products and customers to routes, drivers, and order status, Delivero keeps every step connected across owner and driver workflows.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Link href="/screenshots" className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold btn-primary">
+                View screens
+              </Link>
+              <Link href="/contact" className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold btn-secondary">
+                Request demo
+              </Link>
+            </div>
+            <div className="mt-6 text-sm text-muted">
+              Screenshots gallery coming soon. For now, request a demo for a full walkthrough.
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#111111]">
+              <Image
+                src="/hero.png"
+                alt="Delivero product preview"
+                width={1200}
+                height={675}
+                className="h-[320px] w-full object-cover sm:h-[380px] lg:h-[420px]"
+                style={{ objectPosition: "50% 50%" }}
+                priority={false}
+              />
+              <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_20%,rgba(224,92,42,0.20)_0%,transparent_55%)]" />
+            </div>
+
+            <div className="pointer-events-none absolute -left-3 top-10 hidden w-[260px] -rotate-2 lg:block">
+              <div className="rounded-3xl border border-white/10 bg-[#1a1a1a]/70 p-5 backdrop-blur-[16px]">
+                <div className="text-xs font-semibold tracking-[0.08em] uppercase text-white/70">Driver</div>
+                <div className="mt-2 text-sm font-semibold text-white">Assigned deliveries</div>
+                <div className="mt-1 text-xs text-muted">Only assigned orders and status updates.</div>
+              </div>
+            </div>
+            <div className="pointer-events-none absolute -right-3 bottom-10 hidden w-[280px] rotate-2 lg:block">
+              <div className="rounded-3xl border border-white/10 bg-[#1a1a1a]/70 p-5 backdrop-blur-[16px]">
+                <div className="text-xs font-semibold tracking-[0.08em] uppercase text-white/70">Owner</div>
+                <div className="mt-2 text-sm font-semibold text-white">Routes + payments</div>
+                <div className="mt-1 text-xs text-muted">Track route progress and paid/unpaid status.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { t: "Dashboard overview", d: "Business snapshot and quick actions." },
             { t: "Order management", d: "Daily, one-time, and special orders." },
             { t: "Route setup", d: "Create routes by area and organize stops." },
             { t: "Driver assignments", d: "Assign drivers and sync daily work." },
-            { t: "Assigned deliveries", d: "Drivers see only assigned deliveries." },
-            { t: "Customer records", d: "Address, phone, route, history, payments." },
           ].map((s) => (
             <Link
               key={s.t}
               href="/screenshots"
-              className="group block rounded-3xl border border-black/10 bg-surface p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg dark:border-white/10"
+              className="group block rounded-3xl border border-white/8 bg-surface p-6 transition-all duration-200 ease-out hover:border-white/15 hover:-translate-y-0.5"
             >
-              <div className="relative overflow-hidden rounded-2xl border border-black/10 bg-white/60 dark:border-white/10 dark:bg-[#0f1112]/40">
-                <div className="absolute inset-0 bg-linear-to-br from-(--color-primary)/12 via-transparent to-(--color-accent)/12 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <div className="aspect-16/9 w-full bg-linear-to-b from-black/5 to-transparent" />
+              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-(--color-primary)/15 text-(--color-primary)">
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 4h16v6H4z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 14h7v6H4z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 14h7v6h-7z" />
+                </svg>
               </div>
-              <div className="mt-4 flex items-start justify-between gap-4">
-                <div>
-                  <div className="text-sm font-semibold text-foreground">{s.t}</div>
-                  <div className="mt-1 text-xs text-muted">{s.d}</div>
-                </div>
-                <div className="mt-0.5 text-xs font-semibold text-(--color-primary) opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                  View
-                </div>
-              </div>
+              <div className="mt-4 text-base font-semibold text-white">{s.t}</div>
+              <div className="mt-2 text-sm leading-relaxed text-muted">{s.d}</div>
             </Link>
           ))}
-        </div>
-        <div className="mt-8 text-center text-sm text-muted">
-          <span className="text-foreground font-semibold">Screenshots gallery coming soon.</span> For a full walkthrough,{" "}
-          <Link href="/contact" className="font-semibold text-(--color-primary) hover:underline">
-            request a demo
-          </Link>
-          .
         </div>
       </Section>
 
@@ -326,7 +330,7 @@ export default function Home() {
         title="Clear roles, controlled access"
         subtitle="Delivero uses role-based access so owners can manage full business data while delivery staff only see the orders and updates relevant to their assigned work. This keeps operations organized and reduces mistakes caused by unnecessary access."
       >
-        <div className="rounded-3xl border border-black/10 bg-surface p-6 text-sm text-muted shadow-sm dark:border-white/10 md:p-8">
+        <div className="rounded-3xl border border-white/8 bg-surface p-6 text-sm text-muted md:p-8">
           Owners have full access to manage products, customers, routes, drivers, orders, and payments. Drivers only see assigned deliveries and the status updates needed to complete their work.
         </div>
       </Section>
@@ -361,12 +365,12 @@ export default function Home() {
           ].map((f) => (
             <details
               key={f.q}
-              className="group rounded-2xl border border-black/10 bg-white/60 p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg dark:border-white/10 dark:bg-[#0f1112]/40"
+              className="group rounded-2xl border border-white/8 bg-surface p-5 transition-all duration-200 ease-out hover:border-white/15"
             >
-              <summary className="cursor-pointer list-none text-sm font-semibold text-(--color-secondary) [&::-webkit-details-marker]:hidden">
+              <summary className="cursor-pointer list-none text-sm font-semibold text-white [&::-webkit-details-marker]:hidden">
                 <div className="flex items-center justify-between gap-4">
                   <span>{f.q}</span>
-                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-black/5 text-(--color-secondary) transition-transform group-open:rotate-180 dark:bg-white/10">
+                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-white/5 text-white transition-transform group-open:rotate-180">
                     <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>

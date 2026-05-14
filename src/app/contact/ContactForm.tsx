@@ -7,11 +7,11 @@ export default function ContactForm() {
 
   if (status === "submitted") {
     return (
-      <div className="rounded-2xl border border-black/10 bg-white/60 p-6 text-center text-sm shadow-sm dark:border-white/10 dark:bg-[#0f1112]/40">
+      <div className="rounded-2xl border border-white/8 bg-surface p-6 text-center text-sm">
         <div className="mx-auto grid h-10 w-10 place-items-center rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-300">
           ✓
         </div>
-        <div className="mt-3 font-semibold text-foreground">Request received</div>
+        <div className="mt-3 font-semibold text-white">Request received</div>
         <div className="mt-1 text-muted">Thanks! We&apos;ll get back to you shortly.</div>
       </div>
     );
@@ -31,49 +31,49 @@ export default function ContactForm() {
     >
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label className="mb-1 block text-sm font-medium">Name</label>
+          <label className="mb-1 block text-sm font-medium text-white/70">Name</label>
           <input
             name="name"
             required
             placeholder="Your full name"
-            className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm shadow-sm outline-none transition focus:border-(--color-primary)/40 focus:ring-2 focus:ring-(--color-primary)/20 dark:border-white/10 dark:bg-[#0f1112]"
+            className="w-full rounded-xl border border-white/10 bg-[#111111] px-3 py-2.5 text-sm text-white placeholder:text-[#555555] outline-none transition focus:border-(--color-primary)/60"
           />
         </div>
         <div>
-          <label className="mb-1 block text-sm font-medium">Business name</label>
+          <label className="mb-1 block text-sm font-medium text-white/70">Business name</label>
           <input
             name="business_name"
             required
             placeholder="Your business name"
-            className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm shadow-sm outline-none transition focus:border-(--color-primary)/40 focus:ring-2 focus:ring-(--color-primary)/20 dark:border-white/10 dark:bg-[#0f1112]"
+            className="w-full rounded-xl border border-white/10 bg-[#111111] px-3 py-2.5 text-sm text-white placeholder:text-[#555555] outline-none transition focus:border-(--color-primary)/60"
           />
         </div>
         <div>
-          <label className="mb-1 block text-sm font-medium">Phone number</label>
+          <label className="mb-1 block text-sm font-medium text-white/70">Phone number</label>
           <input
             type="tel"
             name="phone"
             required
             placeholder="+91 9xxxx xxxxx"
-            className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm shadow-sm outline-none transition focus:border-(--color-primary)/40 focus:ring-2 focus:ring-(--color-primary)/20 dark:border-white/10 dark:bg-[#0f1112]"
+            className="w-full rounded-xl border border-white/10 bg-[#111111] px-3 py-2.5 text-sm text-white placeholder:text-[#555555] outline-none transition focus:border-(--color-primary)/60"
           />
         </div>
         <div>
-          <label className="mb-1 block text-sm font-medium">Email</label>
+          <label className="mb-1 block text-sm font-medium text-white/70">Email</label>
           <input
             type="email"
             name="email"
             required
             placeholder="you@company.com"
-            className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm shadow-sm outline-none transition focus:border-(--color-primary)/40 focus:ring-2 focus:ring-(--color-primary)/20 dark:border-white/10 dark:bg-[#0f1112]"
+            className="w-full rounded-xl border border-white/10 bg-[#111111] px-3 py-2.5 text-sm text-white placeholder:text-[#555555] outline-none transition focus:border-(--color-primary)/60"
           />
         </div>
         <div className="sm:col-span-2">
-          <label className="mb-1 block text-sm font-medium">Business type</label>
+          <label className="mb-1 block text-sm font-medium text-white/70">Business type</label>
           <select
             name="business_type"
             required
-            className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm shadow-sm outline-none transition focus:border-(--color-primary)/40 focus:ring-2 focus:ring-(--color-primary)/20 dark:border-white/10 dark:bg-[#0f1112]"
+            className="w-full rounded-xl border border-white/10 bg-[#111111] px-3 py-2.5 text-sm text-white outline-none transition focus:border-(--color-primary)/60"
             defaultValue=""
           >
             <option value="" disabled>
@@ -90,20 +90,20 @@ export default function ContactForm() {
         </div>
       </div>
       <div>
-        <label className="mb-1 block text-sm font-medium">Message</label>
+        <label className="mb-1 block text-sm font-medium text-white/70">Message</label>
         <textarea
           name="message"
           rows={5}
           required
           placeholder="Tell us about your routes, drivers, and daily orders…"
-          className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm shadow-sm outline-none transition focus:border-(--color-primary)/40 focus:ring-2 focus:ring-(--color-primary)/20 dark:border-white/10 dark:bg-[#0f1112]"
+          className="w-full rounded-xl border border-white/10 bg-[#111111] px-3 py-2.5 text-sm text-white placeholder:text-[#555555] outline-none transition focus:border-(--color-primary)/60"
         />
       </div>
       {/* Honeypot */}
       <input type="text" name="company_website" className="hidden" tabIndex={-1} autoComplete="off" />
       <button
         disabled={status === "submitting"}
-        className="btn-primary rounded-full px-5 py-3 text-sm font-medium shadow-lg transition-all hover:-translate-y-0.5 disabled:opacity-70 disabled:hover:translate-y-0"
+        className="btn-primary rounded-full px-6 py-3.5 text-sm font-semibold transition-all duration-200 ease-out disabled:opacity-70"
       >
         {status === "submitting" ? "Sending…" : "Request Demo"}
       </button>

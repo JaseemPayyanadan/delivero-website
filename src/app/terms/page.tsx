@@ -9,7 +9,7 @@ const EFFECTIVE_DATE = "May 5, 2026";
 export default function TermsPage() {
   return (
     <Section title="Terms of Service" subtitle={`Effective date: ${EFFECTIVE_DATE}`}>
-      <div className="mx-auto max-w-3xl rounded-2xl border border-black/10 bg-surface p-6 text-sm leading-relaxed text-muted dark:border-white/10 md:p-10">
+      <div className="mx-auto max-w-3xl rounded-3xl border border-white/8 bg-surface p-6 text-sm leading-relaxed text-muted md:p-10">
         <p className="text-balance">
           These Terms of Service (“Terms”) govern access to and use of <span className="font-semibold text-foreground">{APP_NAME}</span>{" "}
           (the “Service”). By using the Service, you agree to these Terms.

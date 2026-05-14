@@ -12,7 +12,7 @@ export default function PrivacyPage() {
       title="Privacy Policy"
       subtitle={`Effective date: ${EFFECTIVE_DATE}`}
     >
-      <div className="mx-auto max-w-3xl rounded-2xl border border-black/10 bg-surface p-6 text-sm leading-relaxed text-muted dark:border-white/10 md:p-10">
+      <div className="mx-auto max-w-3xl rounded-3xl border border-white/8 bg-surface p-6 text-sm leading-relaxed text-muted md:p-10">
         <p className="text-balance">
           This Privacy Policy explains how <span className="font-semibold text-foreground">{APP_NAME}</span> (“we”, “us”)
           collects, uses, and shares information when you use our mobile application and related services.

@@ -40,12 +40,12 @@ export default function FAQPage() {
           {faqs.map((f) => (
             <details
               key={f.q}
-              className="group rounded-2xl border border-black/10 bg-white/60 p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg dark:border-white/10 dark:bg-[#0f1112]/40"
+              className="group rounded-2xl border border-white/8 bg-surface p-5 transition-all duration-200 ease-out hover:border-white/15"
             >
-              <summary className="cursor-pointer list-none text-sm font-semibold text-(--color-secondary) [&::-webkit-details-marker]:hidden">
+              <summary className="cursor-pointer list-none text-sm font-semibold text-white [&::-webkit-details-marker]:hidden">
                 <div className="flex items-center justify-between gap-4">
                   <span>{f.q}</span>
-                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-black/5 text-(--color-secondary) transition-transform group-open:rotate-180 dark:bg-white/10">
+                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-white/5 text-white transition-transform group-open:rotate-180">
                     <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
