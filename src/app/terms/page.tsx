@@ -3,7 +3,7 @@ import Section from "@/components/Section";
 export const metadata = { title: "Terms of Service" };
 
 const APP_NAME = "Delivero";
-const SUPPORT_EMAIL = "support@fooddistribution.app";
+const SUPPORT_EMAIL = "support@delivero.app";
 const EFFECTIVE_DATE = "May 5, 2026";
 
 export default function TermsPage() {
@@ -19,8 +19,8 @@ export default function TermsPage() {
           <section>
             <h3 className="text-base font-semibold text-foreground">1. Who the Service is for</h3>
             <p className="mt-3">
-              {APP_NAME} is a business application intended for restaurant owners/managers and delivery staff authorized by an
-              organization. Your organization may provide your account and set permissions.
+              {APP_NAME} is a business application intended for delivery-based businesses (including owners/managers and delivery
+              staff) authorized by an organization. Your organization may provide your account and set permissions.
             </p>
           </section>
 
@@ -106,4 +106,3 @@ export default function TermsPage() {
     </Section>
   );
 }
-

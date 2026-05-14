@@ -3,10 +3,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
+const demoHref = "https://delivero-flutter.vercel.app/#/owner";
+
 const links = [
   { href: "/", label: "Home" },
   { href: "/features", label: "Features" },
-  { href: "/pricing", label: "Pricing" },
+  { href: "/#how-it-works", label: "How It Works" },
+  { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -15,12 +18,13 @@ export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-black/6 bg-surface/80 backdrop-blur-md dark:border-white/8">
+    <header className="sticky top-0 z-50 w-full border-b border-black/6 bg-surface shadow-sm backdrop-blur-md dark:border-white/8">
       <nav className="relative mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo - Left */}
-        <Link href="/" className="flex items-center gap-2 text-lg font-semibold" aria-label="Delivero home">
-          <span className="tracking-tight">
-            <span className="text-(--color-primary)">Del</span>ivero
+        <Link href="/" className="flex items-center gap-2 text-lg font-semibold whitespace-nowrap" aria-label="Delivero home">
+          <span className="inline-flex items-baseline tracking-tight leading-none whitespace-nowrap">
+            <span className="text-(--color-primary)">Del</span>
+            <span>ivero</span>
           </span>
         </Link>
 
@@ -40,12 +44,18 @@ export default function NavBar() {
         </div>
 
         {/* Desktop Button - Right */}
-        <div className="hidden md:flex">
+        <div className="hidden items-center gap-2 md:flex">
           <Link
-            href="https://play.google.com/store/apps/details?id=delivero.com"
+            href={demoHref}
             className="rounded-full px-4 py-2 text-sm font-medium btn-primary"
           >
-            Get the App
+            Get Started
+          </Link>
+          <Link
+            href="/contact"
+            className="rounded-full px-4 py-2 text-sm font-medium btn-secondary"
+          >
+            Request Demo
           </Link>
         </div>
 
@@ -112,11 +122,18 @@ export default function NavBar() {
               </Link>
             ))}
             <Link
-              href="https://play.google.com/store/apps/details?id=delivero.com"
+              href={demoHref}
               className="mt-2 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-medium btn-primary"
               onClick={() => setIsOpen(false)}
             >
-              Get the App
+              Get Started
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-medium btn-secondary"
+              onClick={() => setIsOpen(false)}
+            >
+              Request Demo
             </Link>
           </div>
         </div>
@@ -124,5 +141,3 @@ export default function NavBar() {
     </header>
   );
 }
-
-
