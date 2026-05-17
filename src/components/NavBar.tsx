@@ -18,24 +18,26 @@ export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-black/6 bg-surface shadow-sm backdrop-blur-md dark:border-white/8">
-      <nav className="relative mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        {/* Logo - Left */}
-        <Link href="/" className="flex items-center gap-2 text-lg font-semibold whitespace-nowrap" aria-label="Delivero home">
-          <span className="inline-flex items-baseline tracking-tight leading-none whitespace-nowrap">
-            <span className="text-(--color-primary)">Del</span>
-            <span>ivero</span>
+    <header className="sticky top-0 z-50 w-full border-b border-black/8 bg-white/80 backdrop-blur-md">
+      <nav className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
+        <Link href="/" className="flex items-center gap-2 text-base font-semibold text-(--color-secondary)" aria-label="Delivero home">
+          <span className="grid h-8 w-8 place-items-center rounded-xl bg-(--color-primary)/12 text-(--color-primary)">
+            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 7l9-4 9 4-9 4-9-4z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 17l9 4 9-4" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l9 4 9-4" />
+            </svg>
           </span>
+          <span>Delivero</span>
         </Link>
 
-        {/* Desktop nav - Center */}
-        <div className="hidden items-center gap-6 md:flex absolute left-1/2 -translate-x-1/2">
+        <div className="hidden items-center gap-7 md:flex">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className={`text-base font-medium transition-colors hover:text-[--color-primary] ${
-                pathname === l.href ? "text-[--color-primary]" : "text-[--color-secondary]"
+              className={`text-sm font-medium transition-colors hover:text-(--color-secondary) ${
+                pathname === l.href ? "text-(--color-secondary)" : "text-muted"
               }`}
             >
               {l.label}
@@ -43,33 +45,21 @@ export default function NavBar() {
           ))}
         </div>
 
-        {/* Desktop Button - Right */}
         <div className="hidden items-center gap-2 md:flex">
-          <Link
-            href={demoHref}
-            className="rounded-full px-4 py-2 text-sm font-medium btn-primary"
-          >
+          <Link href={demoHref} className="rounded-full px-5 py-2.5 text-sm font-semibold btn-primary">
             Get Started
-          </Link>
-          <Link
-            href="/contact"
-            className="rounded-full px-4 py-2 text-sm font-medium btn-secondary"
-          >
-            Request Demo
           </Link>
         </div>
 
-        {/* Mobile hamburger */}
         <button
           type="button"
-          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-black/10 text-[--color-secondary] hover:bg-black/5 dark:border-white/20"
+          className="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-(--color-secondary) transition-colors hover:bg-black/5"
           aria-label="Toggle menu"
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
           onClick={() => setIsOpen((v) => !v)}
         >
           <span className="sr-only">Open main menu</span>
-          {/* Icon: hamburger/close */}
           <svg
             className={`h-5 w-5 ${isOpen ? "hidden" : "block"}`}
             viewBox="0 0 24 24"
@@ -98,46 +88,40 @@ export default function NavBar() {
             <line x1="6" y1="6" x2="18" y2="18" />
           </svg>
         </button>
-      </nav>
 
-      {/* Mobile menu panel below header */}
-      <div id="mobile-menu" className="md:hidden">
-        <div
-          className={`mx-auto max-w-6xl overflow-hidden border-b border-black/10 bg-surface transition-all duration-200 ease-out dark:border-white/10 ${
-            isOpen ? "max-h-[70vh] opacity-100" : "max-h-0 opacity-0"
-          }`}
-          aria-hidden={!isOpen}
-        >
-          <div className="flex flex-col gap-2 px-6 py-4">
-            {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className={`block rounded-lg px-3 py-3 text-base font-medium transition-colors hover:text-[--color-primary] ${
-                  pathname === l.href ? "text-[--color-primary]" : "text-[--color-secondary]"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {l.label}
-              </Link>
-            ))}
-            <Link
-              href={demoHref}
-              className="mt-2 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-medium btn-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              Get Started
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-medium btn-secondary"
-              onClick={() => setIsOpen(false)}
-            >
-              Request Demo
-            </Link>
+        <div id="mobile-menu" className="md:hidden">
+          <div
+            className={`mx-auto max-w-[1200px] overflow-hidden rounded-3xl border border-black/10 bg-white transition-all duration-200 ease-out ${
+              isOpen ? "mt-4 max-h-[70vh] opacity-100" : "mt-0 max-h-0 opacity-0"
+            }`}
+            aria-hidden={!isOpen}
+          >
+            <div className="flex flex-col gap-1 p-3">
+              {links.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className={`block rounded-2xl px-4 py-3 text-sm font-medium transition-colors hover:bg-black/5 ${
+                    pathname === l.href ? "text-(--color-secondary)" : "text-muted"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {l.label}
+                </Link>
+              ))}
+              <div className="grid gap-2 pt-2">
+                <Link
+                  href={demoHref}
+                  className="inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-semibold btn-primary"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Get Started
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </nav>
     </header>
   );
 }

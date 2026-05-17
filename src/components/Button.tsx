@@ -8,13 +8,13 @@ type ButtonProps = {
 };
 
 export default function Button({ href, children, variant = "primary", className = "" }: ButtonProps) {
-  const base = "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition-colors focus-visible:outline-none";
+  const base = "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition-all duration-200 ease-out focus-visible:outline-none";
   const styles =
     variant === "primary"
       ? "btn-primary"
       : variant === "secondary"
       ? "btn-secondary"
-      : "border border-black/10 bg-transparent text-[color:var(--color-secondary)] hover:bg-black/5 dark:border-white/20";
+      : "border border-black/10 bg-white text-(--color-secondary) hover:bg-black/5";
 
   if (href) {
     const isExternal = /^https?:\/\//i.test(href);
@@ -33,5 +33,3 @@ export default function Button({ href, children, variant = "primary", className 
     <button className={`${base} ${styles} ${className}`}>{children}</button>
   );
 }
-
-
