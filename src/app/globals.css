@@ -1,32 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  /* Light theme tokens */
-  --color-primary: #FF6B00; /* Orange */
-  --color-secondary: #1A1A2E; /* Deep navy */
-  --color-accent: #FFD60A; /* Yellow */
-  --background: #FDFDFD;
-  --foreground: #2D2D2D;
-  --surface: #FFFFFF;
-  --muted: #666666;
-  --ring: var(--color-primary);
+  --color-primary: #635bff;
+  --color-secondary: #111827;
+  --color-accent: #635bff;
+  --background: #f6f7ff;
+  --foreground: #111827;
+  --surface: #ffffff;
+  --muted: #6b7280;
+  --ring: rgba(99, 91, 255, 0.35);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: GraphikSemibold, sans-serif;
+  --font-sans: var(--font-geist-sans), Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark theme tokens */
-    --background: #151718;
-    --foreground: #ECEDEE;
-    --surface: #0F1112;
-    --muted: #A3A3A3;
-  }
 }
 
 html {
@@ -36,7 +25,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: GraphikSemibold, sans-serif;
+  font-family: var(--font-geist-sans), Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
 /* Accessible focus styles */
@@ -60,24 +49,22 @@ body {
 
 /* Button improvements */
 .btn-primary {
-  background-color: var(--color-primary);
+  background-color: #111827;
   color: #ffffff;
+  border: 1px solid rgba(17, 24, 39, 0.12);
   transition: all 0.2s ease;
 }
 .btn-primary:hover {
-  background-color: #e66000;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+  background-color: #0b1220;
 }
 .btn-secondary {
-  background-color: var(--color-secondary);
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #111827;
+  border: 1px solid rgba(17, 24, 39, 0.12);
   transition: all 0.2s ease;
 }
 .btn-secondary:hover {
-  background-color: #141428;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(26, 26, 46, 0.3);
+  background-color: #f3f4f6;
 }
 
 /* Smooth fade-in animations */
@@ -160,9 +147,28 @@ body {
 
 /* Striped, soft gradient hero background */
 .bg-hero {
+  background-color: #f6f7ff;
   background-image:
-    radial-gradient(1200px 200px at 50% -80px, rgba(255, 107, 0, 0.10), rgba(255, 107, 0, 0) 60%),
-    radial-gradient(800px 200px at 50% -60px, rgba(26, 26, 46, 0.12), rgba(26, 26, 46, 0) 60%),
-    repeating-linear-gradient(90deg, rgba(255, 214, 10, 0.18) 0 2px, rgba(255, 214, 10, 0.06) 2px 6px),
-    linear-gradient(to bottom, #fff, #fff0);
+    radial-gradient(900px 420px at 75% 20%, rgba(99, 91, 255, 0.20) 0%, transparent 60%),
+    radial-gradient(700px 380px at 20% 10%, rgba(99, 91, 255, 0.14) 0%, transparent 60%),
+    linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(255,255,255,0));
+}
+
+* {
+  scrollbar-color: #c7c9d6 #f6f7ff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f6f7ff;
+}
+::-webkit-scrollbar-thumb {
+  background: #c7c9d6;
+  border-radius: 9999px;
+  border: 2px solid #f6f7ff;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b2b4c3;
 }

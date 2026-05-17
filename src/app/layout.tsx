@@ -31,6 +31,10 @@ export const metadata: Metadata = {
     "delivery dashboard",
     "driver app",
   ],
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
     type: "website",
     url: "https://delivero.app",
@@ -38,15 +42,19 @@ export const metadata: Metadata = {
     description:
       "One connected system for orders, routes, drivers, payments, and delivery updates.",
     siteName: "Delivero",
+    images: [
+      {
+        url: "/hero.png",
+        alt: "Delivero dashboard preview",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Delivero – Delivery, simplified",
     description:
       "Manage orders, routes, drivers, payments, and delivery updates in one connected system.",
-  },
-  alternates: {
-    canonical: "/",
+    images: ["/hero.png"],
   },
   robots: {
     index: true,
@@ -59,6 +67,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const androidDownloadHref = "https://play.google.com/store/apps/details?id=delivero.com";
+
   return (
     <html lang="en">
       <body
@@ -73,12 +83,37 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'SoftwareApplication',
-              name: 'Delivero',
-              applicationCategory: 'BusinessApplication',
-              operatingSystem: 'Android',
-              url: 'https://delivero.app',
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://delivero.app/#organization",
+                  name: "Delivero",
+                  url: "https://delivero.app",
+                  logo: {
+                    "@type": "ImageObject",
+                    url: "https://delivero.app/logo.png",
+                  },
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://delivero.app/#website",
+                  url: "https://delivero.app",
+                  name: "Delivero",
+                  publisher: { "@id": "https://delivero.app/#organization" },
+                  inLanguage: "en",
+                },
+                {
+                  "@type": "SoftwareApplication",
+                  "@id": "https://delivero.app/#software",
+                  name: "Delivero",
+                  applicationCategory: "BusinessApplication",
+                  operatingSystem: ["Android", "Web"],
+                  url: "https://delivero.app",
+                  downloadUrl: androidDownloadHref,
+                  publisher: { "@id": "https://delivero.app/#organization" },
+                },
+              ],
             }),
           }}
         />

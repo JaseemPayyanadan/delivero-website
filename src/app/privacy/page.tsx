@@ -1,6 +1,10 @@
 import Section from "@/components/Section";
 
-export const metadata = { title: "Privacy Policy" };
+export const metadata = {
+  title: "Privacy Policy",
+  description: "Privacy Policy for Delivero.",
+  alternates: { canonical: "/privacy" },
+};
 
 const APP_NAME = "Delivero";
 const SUPPORT_EMAIL = "support@delivero.app";
@@ -12,7 +16,7 @@ export default function PrivacyPage() {
       title="Privacy Policy"
       subtitle={`Effective date: ${EFFECTIVE_DATE}`}
     >
-      <div className="mx-auto max-w-3xl rounded-2xl border border-black/10 bg-surface p-6 text-sm leading-relaxed text-muted dark:border-white/10 md:p-10">
+      <div className="mx-auto max-w-3xl rounded-3xl border border-black/8 bg-surface p-6 text-sm leading-relaxed text-muted shadow-sm md:p-10">
         <p className="text-balance">
           This Privacy Policy explains how <span className="font-semibold text-foreground">{APP_NAME}</span> (“we”, “us”)
           collects, uses, and shares information when you use our mobile application and related services.
