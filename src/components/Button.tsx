@@ -14,7 +14,7 @@ export default function Button({ href, children, variant = "primary", className 
       ? "btn-primary"
       : variant === "secondary"
       ? "btn-secondary"
-      : "border border-white/15 bg-white/10 text-white hover:bg-white/18";
+      : "border border-black/10 bg-white text-(--color-secondary) hover:bg-black/5";
 
   if (href) {
     const isExternal = /^https?:\/\//i.test(href);
@@ -33,4 +33,3 @@ export default function Button({ href, children, variant = "primary", className 
     <button className={`${base} ${styles} ${className}`}>{children}</button>
   );
 }
-

@@ -18,113 +18,81 @@ export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-4 z-50 w-full px-4">
-      <nav className="relative mx-auto max-w-[1200px]">
-        <div className="pointer-events-auto grid grid-cols-[1fr_auto_1fr] items-center gap-3">
-          <div className="justify-self-start">
+    <header className="sticky top-0 z-50 w-full border-b border-black/8 bg-white/80 backdrop-blur-md">
+      <nav className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
+        <Link href="/" className="flex items-center gap-2 text-base font-semibold text-(--color-secondary)" aria-label="Delivero home">
+          <span className="grid h-8 w-8 place-items-center rounded-xl bg-(--color-primary)/12 text-(--color-primary)">
+            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 7l9-4 9 4-9 4-9-4z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 17l9 4 9-4" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l9 4 9-4" />
+            </svg>
+          </span>
+          <span>Delivero</span>
+        </Link>
+
+        <div className="hidden items-center gap-7 md:flex">
+          {links.map((l) => (
             <Link
-              href="/"
-              aria-label="Delivero home"
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#1a1a1a]/85 px-3 py-2 backdrop-blur-[16px]"
+              key={l.href}
+              href={l.href}
+              className={`text-sm font-medium transition-colors hover:text-(--color-secondary) ${
+                pathname === l.href ? "text-(--color-secondary)" : "text-muted"
+              }`}
             >
-              <span className="grid h-7 w-7 place-items-center rounded-full bg-(--color-primary)/15 text-(--color-primary)">
-                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 7l9-4 9 4-9 4-9-4z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 17l9 4 9-4" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l9 4 9-4" />
-                </svg>
-              </span>
-              <span className="text-sm font-semibold tracking-tight text-white whitespace-nowrap">
-                Delivero
-              </span>
+              {l.label}
             </Link>
-          </div>
-
-          <div className="hidden justify-self-center md:block">
-            <div className="rounded-full border border-white/10 bg-[#1a1a1a]/85 px-6 py-3 backdrop-blur-[16px]">
-              <div className="flex items-center gap-6">
-                {links.map((l) => (
-                  <Link
-                    key={l.href}
-                    href={l.href}
-                    className={`text-sm font-medium transition-colors hover:text-white ${
-                      pathname === l.href ? "text-white" : "text-white/60"
-                    }`}
-                  >
-                    {l.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="justify-self-end flex items-center gap-2">
-            <div className="hidden items-center gap-2 md:flex">
-              <Link
-                href={demoHref}
-                aria-label="Get started"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-[#1a1a1a]/85 text-white backdrop-blur-[16px] transition-colors hover:bg-white/10"
-              >
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 6l6 6-6 6" />
-                </svg>
-              </Link>
-              <Link
-                href="/contact"
-                aria-label="Request demo"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-[#1a1a1a]/85 text-white backdrop-blur-[16px] transition-colors hover:bg-white/10"
-              >
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </Link>
-            </div>
-
-            <button
-              type="button"
-              className="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-[#1a1a1a]/85 text-white backdrop-blur-[16px] transition-colors hover:bg-white/10"
-              aria-label="Toggle menu"
-              aria-expanded={isOpen}
-              aria-controls="mobile-menu"
-              onClick={() => setIsOpen((v) => !v)}
-            >
-              <span className="sr-only">Open main menu</span>
-              <svg
-                className={`h-5 w-5 ${isOpen ? "hidden" : "block"}`}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
-              </svg>
-              <svg
-                className={`h-5 w-5 ${isOpen ? "block" : "hidden"}`}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
-            </button>
-          </div>
+          ))}
         </div>
+
+        <div className="hidden items-center gap-2 md:flex">
+          <Link href={demoHref} className="rounded-full px-5 py-2.5 text-sm font-semibold btn-primary">
+            Get Started
+          </Link>
+        </div>
+
+        <button
+          type="button"
+          className="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-(--color-secondary) transition-colors hover:bg-black/5"
+          aria-label="Toggle menu"
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+          onClick={() => setIsOpen((v) => !v)}
+        >
+          <span className="sr-only">Open main menu</span>
+          <svg
+            className={`h-5 w-5 ${isOpen ? "hidden" : "block"}`}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+          <svg
+            className={`h-5 w-5 ${isOpen ? "block" : "hidden"}`}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
 
         <div id="mobile-menu" className="md:hidden">
           <div
-            className={`mt-3 overflow-hidden rounded-3xl border border-white/10 bg-[#1a1a1a]/90 backdrop-blur-[16px] transition-all duration-200 ease-out ${
-              isOpen ? "max-h-[70vh] opacity-100" : "max-h-0 opacity-0"
+            className={`mx-auto max-w-[1200px] overflow-hidden rounded-3xl border border-black/10 bg-white transition-all duration-200 ease-out ${
+              isOpen ? "mt-4 max-h-[70vh] opacity-100" : "mt-0 max-h-0 opacity-0"
             }`}
             aria-hidden={!isOpen}
           >
@@ -133,8 +101,8 @@ export default function NavBar() {
                 <Link
                   key={l.href}
                   href={l.href}
-                  className={`block rounded-2xl px-4 py-3 text-sm font-medium transition-colors hover:bg-white/5 hover:text-white ${
-                    pathname === l.href ? "text-white" : "text-muted"
+                  className={`block rounded-2xl px-4 py-3 text-sm font-medium transition-colors hover:bg-black/5 ${
+                    pathname === l.href ? "text-(--color-secondary)" : "text-muted"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
@@ -148,13 +116,6 @@ export default function NavBar() {
                   onClick={() => setIsOpen(false)}
                 >
                   Get Started
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-semibold btn-secondary"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Request Demo
                 </Link>
               </div>
             </div>

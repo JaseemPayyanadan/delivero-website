@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #e05c2a;
-  --color-secondary: #ffffff;
-  --color-accent: #e05c2a;
-  --background: #0d0d0d;
-  --foreground: #ffffff;
-  --surface: #1a1a1a;
-  --muted: #a0a0a0;
-  --ring: rgba(224, 92, 42, 0.6);
+  --color-primary: #635bff;
+  --color-secondary: #111827;
+  --color-accent: #635bff;
+  --background: #f6f7ff;
+  --foreground: #111827;
+  --surface: #ffffff;
+  --muted: #6b7280;
+  --ring: rgba(99, 91, 255, 0.35);
 }
 
 @theme inline {
@@ -49,22 +49,22 @@ body {
 
 /* Button improvements */
 .btn-primary {
-  background-color: #ffffff;
-  color: #0d0d0d;
-  border: 1px solid rgba(255,255,255,0.12);
+  background-color: #111827;
+  color: #ffffff;
+  border: 1px solid rgba(17, 24, 39, 0.12);
   transition: all 0.2s ease;
 }
 .btn-primary:hover {
-  background-color: #f0f0f0;
+  background-color: #0b1220;
 }
 .btn-secondary {
-  background-color: rgba(255,255,255,0.12);
-  color: #ffffff;
-  border: 1px solid rgba(255,255,255,0.15);
+  background-color: #ffffff;
+  color: #111827;
+  border: 1px solid rgba(17, 24, 39, 0.12);
   transition: all 0.2s ease;
 }
 .btn-secondary:hover {
-  background-color: rgba(255,255,255,0.18);
+  background-color: #f3f4f6;
 }
 
 /* Smooth fade-in animations */
@@ -147,27 +147,28 @@ body {
 
 /* Striped, soft gradient hero background */
 .bg-hero {
-  background-color: #0d0d0d;
+  background-color: #f6f7ff;
   background-image:
-    radial-gradient(ellipse at 50% 60%, rgba(224, 92, 42, 0.18) 0%, transparent 70%),
-    radial-gradient(900px 260px at 50% 10%, rgba(224, 92, 42, 0.10) 0%, transparent 70%);
+    radial-gradient(900px 420px at 75% 20%, rgba(99, 91, 255, 0.20) 0%, transparent 60%),
+    radial-gradient(700px 380px at 20% 10%, rgba(99, 91, 255, 0.14) 0%, transparent 60%),
+    linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(255,255,255,0));
 }
 
 * {
-  scrollbar-color: #333333 #0d0d0d;
+  scrollbar-color: #c7c9d6 #f6f7ff;
 }
 
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0d0d0d;
+  background: #f6f7ff;
 }
 ::-webkit-scrollbar-thumb {
-  background: #333333;
+  background: #c7c9d6;
   border-radius: 9999px;
-  border: 2px solid #0d0d0d;
+  border: 2px solid #f6f7ff;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #444444;
+  background: #b2b4c3;
 }

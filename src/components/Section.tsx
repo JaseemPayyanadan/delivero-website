@@ -10,10 +10,10 @@ type SectionProps = {
 
 export default function Section({ id, title, subtitle, children, className = "" }: SectionProps) {
   return (
-    <section id={id} className={`mx-auto w-full max-w-[1200px] px-6 py-[120px] border-t border-white/8 ${className}`}>
+    <section id={id} className={`mx-auto w-full max-w-[1200px] px-6 py-20 md:py-24 ${className}`}>
       {title ? (
         <div className="mb-12 text-center md:mb-14">
-          <h2 className="text-balance text-[clamp(2rem,4vw,3.5rem)] font-bold tracking-[-0.02em] text-white">
+          <h2 className="text-balance text-[clamp(2rem,4vw,3.5rem)] font-bold tracking-[-0.02em] text-(--color-secondary)">
             {title}
           </h2>
           {subtitle ? (

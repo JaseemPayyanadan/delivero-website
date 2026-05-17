@@ -4,6 +4,9 @@ import CTASection from "@/components/CTASection";
 
 export const metadata = {
   title: "Features",
+  description:
+    "Explore Delivero features for owners and drivers: products, customers, orders, routes, driver assignments, and payment visibility.",
+  alternates: { canonical: "/features" },
 };
 
 const iconClassName = "h-5 w-5";
@@ -88,7 +91,7 @@ export default function FeaturesPage() {
 
       <CTASection
         title="Ready to get started?"
-        description="Request a demo to see how Delivero fits your routes, drivers, and daily orders."
+        description="Get started and see how Delivero fits your routes, drivers, and daily orders."
       />
     </>
   );
