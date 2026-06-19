@@ -102,7 +102,7 @@ export default function Home() {
             {
               t: "Water supply delivery management",
               d: "Keep large, route-based deliveries organized with clear driver assignment and customer contact access on the go.",
-              img: { src: "/image copy 4.png", alt: "Water supply delivery management", position: "50% 50%" },
+              img: { src: "/image copy 5.png", alt: "Water supply delivery management", position: "50% 50%" },
             },
             {
               t: "Grocery delivery management",
