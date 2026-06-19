@@ -2,7 +2,6 @@ import Link from "next/link";
 
 export default function Footer() {
   const year = new Date().getFullYear();
-  const androidDownloadHref = "https://play.google.com/store/apps/details?id=delivero.com";
 
   return (
     <footer className="mt-16 border-t border-black/8 bg-transparent">
