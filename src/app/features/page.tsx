@@ -1,13 +1,14 @@
 import Section from "@/components/Section";
 import FeatureCard from "@/components/FeatureCard";
 import CTASection from "@/components/CTASection";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Features",
+export const metadata = buildMetadata({
+  title: "Last-mile delivery & route management features",
   description:
-    "Explore Delivero features for owners and drivers: products, customers, orders, routes, driver assignments, and payment visibility.",
-  alternates: { canonical: "/features" },
-};
+    "Explore Delivero features: last-mile delivery tracking, route optimization, proof of delivery, driver app, and subscription order management for Kerala businesses.",
+  path: "/features",
+});
 
 const iconClassName = "h-5 w-5";
 
@@ -15,7 +16,8 @@ export default function FeaturesPage() {
   return (
     <>
       <Section
-        title="Everything needed to manage deliveries smoothly"
+        as="h1"
+        title="Last-mile delivery & route management features"
         subtitle="Owner dashboard + driver app in one connected system."
       >
         <p className="mx-auto mb-10 max-w-3xl text-center text-sm leading-relaxed text-muted md:text-base">
@@ -83,6 +85,36 @@ export default function FeaturesPage() {
               <svg className={iconClassName} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 18h6" />
+              </svg>
+            }
+          />
+          <FeatureCard
+            title="Last-mile delivery tracking"
+            description="Track every delivery from dispatch to doorstep. Owners see real-time order status across all active routes."
+            icon={
+              <svg className={iconClassName} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 0 1 3 16.382V5.618a1 1 0 0 1 1.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0 0 21 18.382V7.618a1 1 0 0 0-.553-.894L15 4m0 13V4m0 0L9 7" />
+              </svg>
+            }
+          />
+          <FeatureCard
+            title="Route optimization & driver assignment"
+            description="Build optimized routes by area, assign drivers, and keep daily runs organized without manual coordination."
+            icon={
+              <svg className={iconClassName} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 12h18" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 6h18" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 18h18" />
+              </svg>
+            }
+          />
+          <FeatureCard
+            title="Proof of delivery & order status"
+            description="Drivers mark orders delivered and owners see instant status updates — no calls needed to confirm completed drops."
+            icon={
+              <svg className={iconClassName} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
               </svg>
             }
           />
