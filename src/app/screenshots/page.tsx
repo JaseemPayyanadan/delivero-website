@@ -42,7 +42,7 @@ export default function ScreenshotsPage() {
           <Shot title="Dashboard overview" subtitle="Business snapshot and quick actions." src="/image copy.png" />
           <Shot title="Order management" subtitle="Create and manage daily, one-time, and special orders." src="/image copy 2.png" />
           <Shot title="Route setup" subtitle="Create routes by area and keep assignments clear." src="/image copy 3.png" />
-          <Shot title="Driver assignments" subtitle="Assign drivers to routes and sync daily work." src="/image copy 4.png" />
+          <Shot title="Driver assignments" subtitle="Assign drivers to routes and sync daily work." src="/image copy 6.png" />
           <Shot title="Assigned deliveries" subtitle="Drivers see only their assigned deliveries and update status." src="/image copy 7.png" />
           <Shot title="Customer records" subtitle="Addresses, phone numbers, route, history, and payments." src="/image copy 8.png" />
         </div>
