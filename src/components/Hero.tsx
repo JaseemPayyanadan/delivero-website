@@ -12,15 +12,16 @@ export default function Hero() {
             <span className="rounded-full bg-(--color-primary)/12 px-2 py-0.5 text-[10px] font-semibold tracking-[0.08em] uppercase text-(--color-primary)">
               New
             </span>
-            Delivery operations, simplified.
+            Built for Kerala&apos;s daily delivery businesses.
           </div>
 
           <h1 className="mt-4 text-balance text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold leading-[1.08] tracking-[-0.03em] text-(--color-secondary)">
-            Manage deliveries in one system.
+            Delivery management software for Kerala businesses.
           </h1>
 
           <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-muted md:text-lg">
-            Create orders, assign routes & drivers, and track delivery status.
+            Manage last-mile delivery, route optimization, and subscription orders.
+            Proof of delivery and driver app included.
             <br />
             Works on web and Android.
           </p>
