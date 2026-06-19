@@ -121,7 +121,7 @@ export default function PricingPage() {
                   <div className="text-4xl font-bold tracking-tight">{p.price}</div>
                   {p.priceInr ? (
                     <div className="pb-1 text-sm text-muted">/ {p.priceInr} /mo</div>
-                  ) : p.price !== "Custom" ? (
+                  ) : p.price !== "Custom" && p.price !== "Free" ? (
                     <div className="pb-1 text-sm text-muted">/mo</div>
                   ) : null}
                 </div>
