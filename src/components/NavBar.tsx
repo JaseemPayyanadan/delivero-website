@@ -8,6 +8,7 @@ const demoHref = "https://delivero-flutter.vercel.app/#/owner";
 const links = [
   { href: "/", label: "Home" },
   { href: "/features", label: "Features" },
+  { href: "/pricing", label: "Pricing" },
   { href: "/#how-it-works", label: "How It Works" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
