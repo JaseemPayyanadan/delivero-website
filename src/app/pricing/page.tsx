@@ -4,9 +4,9 @@ import CTASection from "@/components/CTASection";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Delivery management software pricing",
+  title: "Delivery management software pricing — Kerala",
   description:
-    "Transparent delivery management software pricing for Kerala small businesses. Free plan available. INR pricing for milk, bakery, grocery, and meal delivery teams.",
+    "Delivery management software pricing for Kerala businesses. Free plan available. INR pricing for milk, bakery, grocery, and meal delivery teams.",
   path: "/pricing",
   keywords: [
     "how much does delivery software cost",
@@ -93,7 +93,7 @@ export default function PricingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(offerJsonLd) }}
       />
-      <Section as="h1" title="Delivery management software pricing" subtitle="Simple plans for restaurants and delivery teams.">
+      <Section as="h1" title="Delivery management software pricing — Kerala" subtitle="Simple plans for restaurants and delivery teams.">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {plans.map((p) => (
             <div

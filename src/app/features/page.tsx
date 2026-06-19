@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Last-mile delivery & route management features",
   description:
-    "Explore Delivero features: last-mile delivery tracking, route optimization, proof of delivery, driver app, and subscription order management for Kerala businesses.",
+    "Delivero features: last-mile delivery tracking, route optimization, proof of delivery, driver app, and subscription order management for Kerala businesses.",
   path: "/features",
 });
 
