@@ -4,19 +4,14 @@ import Section from "@/components/Section";
 import FeatureCard from "@/components/FeatureCard";
 import Hero from "@/components/Hero";
 import CTASection from "@/components/CTASection";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata = {
-  alternates: { canonical: "/" },
-  title: "Delivero – Delivery, simplified",
+export const metadata = buildMetadata({
+  title: "Delivery management software for Kerala",
   description:
-    "Manage daily deliveries, orders, routes, and drivers in one simple system. Delivero connects owners and drivers across web and mobile.",
-  openGraph: {
-    url: "/",
-    title: "Delivero – Delivery, simplified",
-    description:
-      "Manage daily deliveries, orders, routes, and drivers in one simple system.",
-  },
-};
+    "Manage last-mile delivery, route optimization, and subscription orders in one system. Delivero connects owners and drivers across web and Android.",
+  path: "/",
+});
 
 export default function Home() {
   return (
@@ -62,7 +57,7 @@ export default function Home() {
             </div>
             <div className="mt-3 text-xl font-semibold text-(--color-secondary)">Still managing deliveries through chats and spreadsheets?</div>
             <p className="mt-3 text-sm leading-relaxed text-muted">
-              Manual delivery operations often lead to missed deliveries, duplicate orders, payment confusion, and poor visibility for both owners and drivers.
+              Manual delivery operations often lead to missed deliveries, duplicate orders, payment confusion, and poor visibility for both owners and drivers. Replace spreadsheets and WhatsApp chats with a system built for daily delivery runs.
             </p>
           </div>
           <div className="rounded-3xl border border-black/8 bg-surface p-6 shadow-sm md:p-8">
@@ -90,34 +85,34 @@ export default function Home() {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
-              t: "Bakery deliveries",
-              d: "Create morning routes, assign drivers, and track delivered vs pending orders by customer.",
-              img: { src: "/image1.png", alt: "Bakery deliveries", position: "50% 50%" },
+              t: "Bakery delivery software",
+              d: "Create morning routes, assign drivers, and track delivered vs pending orders by customer. Popular with Kerala bakeries that run daily drops.",
+              img: { src: "/image1.png", alt: "Bakery delivery software", position: "50% 50%" },
             },
             {
-              t: "Milk / subscription delivery",
-              d: "Manage recurring quantities, special orders, and payment status while keeping drivers focused on assigned drops.",
-              img: { src: "/image copy 2.png", alt: "Milk subscription delivery", position: "50% 50%" },
+              t: "Milk delivery software",
+              d: "Manage recurring quantities, subscription orders, and payment status while keeping drivers focused on assigned drops. Built for Kerala milk and dairy runs.",
+              img: { src: "/image copy 2.png", alt: "Milk delivery software", position: "50% 50%" },
             },
             {
-              t: "Meal deliveries",
+              t: "Meal delivery software",
               d: "Handle daily order creation, route grouping, and status updates so owners can monitor delivery progress in real time.",
-              img: { src: "/image copy 3.png", alt: "Meal deliveries", position: "50% 50%" },
+              img: { src: "/image copy 3.png", alt: "Meal delivery software", position: "50% 50%" },
             },
             {
-              t: "Water supply runs",
+              t: "Water supply delivery management",
               d: "Keep large, route-based deliveries organized with clear driver assignment and customer contact access on the go.",
-              img: { src: "/image copy 4.png", alt: "Water supply deliveries", position: "50% 50%" },
+              img: { src: "/image copy 4.png", alt: "Water supply delivery management", position: "50% 50%" },
             },
             {
-              t: "Grocery distribution",
-              d: "Track customer records, orders, and payments across routes while reducing mistakes from spreadsheets and chats.",
-              img: { src: "/image copy 5.png", alt: "Grocery distribution", position: "50% 50%" },
+              t: "Grocery delivery management",
+              d: "Track customer records, orders, and payments across routes while replacing spreadsheets and WhatsApp chats with one connected workflow.",
+              img: { src: "/image copy 5.png", alt: "Grocery delivery management", position: "50% 50%" },
             },
             {
-              t: "Local distributors",
+              t: "Local distributor management",
               d: "Manage multiple products, customers, and drivers with role-based access so the right people see the right data.",
-              img: { src: "/image copy 6.png", alt: "Local distributors", position: "50% 50%" },
+              img: { src: "/image copy 6.png", alt: "Local distributor management", position: "50% 50%" },
             },
           ].map((u) => (
             <div

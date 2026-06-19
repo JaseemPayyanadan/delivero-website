@@ -1,12 +1,14 @@
 import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
 import Image from "next/image";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Screenshots",
-  description: "Preview Delivero screens for the owner dashboard and driver experience.",
-  alternates: { canonical: "/screenshots" },
-};
+export const metadata = buildMetadata({
+  title: "See Delivero in action",
+  description:
+    "Preview Delivero screens for the owner dashboard and driver delivery app. Built for Kerala delivery businesses.",
+  path: "/screenshots",
+});
 
 function Shot({ title, subtitle, src }: { title: string; subtitle: string; src: string }) {
   return (
@@ -32,6 +34,7 @@ export default function ScreenshotsPage() {
   return (
     <>
       <Section
+        as="h1"
         title="See Delivero in action"
         subtitle="From business setup to final delivery updates, Delivero keeps every step connected across owner and driver workflows."
       >

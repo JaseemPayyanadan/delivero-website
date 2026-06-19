@@ -17,19 +17,22 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://delivero.app"),
   title: {
-    default: "Delivero – Delivery, simplified",
+    default: "Delivero – Delivery Management Software for Kerala",
     template: "%s – Delivero",
   },
   description:
-    "Manage daily deliveries, orders, routes, and drivers in one simple system. Delivero connects owners and drivers across web and mobile.",
+    "Delivery management software for Kerala businesses. Manage last-mile delivery, routes, subscription orders, and drivers in one system.",
   applicationName: "Delivero",
   keywords: [
-    "delivery management",
-    "delivery operations",
-    "order tracking app",
-    "route management",
-    "delivery dashboard",
-    "driver app",
+    "delivery management software",
+    "last mile delivery software",
+    "route optimization software",
+    "subscription delivery management",
+    "milk delivery software",
+    "proof of delivery app",
+    "delivery driver app",
+    "daily delivery management Kerala",
+    "delivery management app Kerala",
   ],
   icons: {
     icon: "/logo.png",
@@ -59,6 +62,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  verification: {
+    google: "HuHNK8QfBeVQr5VTjAD6oB6YivA5WHeblQcKwPssnSI",
   },
 };
 
@@ -107,11 +113,24 @@ export default function RootLayout({
                   "@type": "SoftwareApplication",
                   "@id": "https://delivero.app/#software",
                   name: "Delivero",
+                  description:
+                    "Delivery management software for Kerala businesses. Manage last-mile delivery, route optimization, subscription orders, and driver assignments from one system.",
                   applicationCategory: "BusinessApplication",
+                  applicationSubCategory: "DeliveryManagement",
                   operatingSystem: ["Android", "Web"],
                   url: "https://delivero.app",
                   downloadUrl: androidDownloadHref,
                   publisher: { "@id": "https://delivero.app/#organization" },
+                  featureList: [
+                    "Last-mile delivery tracking",
+                    "Route optimization",
+                    "Subscription delivery management",
+                    "Proof of delivery",
+                    "Driver app",
+                    "Payment tracking",
+                  ],
+                  areaServed: { "@type": "State", name: "Kerala" },
+                  offers: { "@type": "Offer", url: "https://delivero.app/pricing" },
                 },
               ],
             }),
