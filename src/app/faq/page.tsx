@@ -2,12 +2,14 @@ import Section from "@/components/Section";
 import Link from "next/link";
 import Script from "next/script";
 import CTASection from "@/components/CTASection";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "FAQ",
-  description: "Answers to common questions about Delivero for owners and drivers.",
-  alternates: { canonical: "/faq" },
-};
+export const metadata = buildMetadata({
+  title: "Delivery software FAQ",
+  description:
+    "Answers to common questions about Delivero delivery management software for owners and drivers in Kerala.",
+  path: "/faq",
+});
 
 const faqs = [
   {
@@ -39,7 +41,7 @@ const faqs = [
 export default function FAQPage() {
   return (
     <>
-      <Section title="FAQ" subtitle="Quick answers for owners and drivers.">
+      <Section as="h1" title="Delivery software FAQ" subtitle="Quick answers for owners and drivers.">
         <div className="grid gap-4 lg:grid-cols-2">
           {faqs.map((f) => (
             <details

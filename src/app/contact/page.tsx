@@ -1,17 +1,20 @@
 import Section from "@/components/Section";
 import ContactForm from "./ContactForm";
 import CTASection from "@/components/CTASection";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Contact",
-  description: "Contact Delivero for onboarding, setup guidance, and support.",
-  alternates: { canonical: "/contact" },
-};
+export const metadata = buildMetadata({
+  title: "Contact Delivero",
+  description:
+    "Contact Delivero for onboarding, setup guidance, and support for your Kerala delivery business.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (
     <>
       <Section
+        as="h1"
         title="Contact Delivero"
         subtitle="See how Delivero can help your business manage orders, routes, drivers, payments, and delivery updates from one connected system."
       >
