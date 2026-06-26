@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Contact Delivero",
   description:
-    "Contact Delivero for onboarding, setup guidance, and support for your Kerala delivery business.",
+    "Contact Delivero for onboarding, setup guidance, and support for your delivery business.",
   path: "/contact",
 });
 

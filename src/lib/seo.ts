@@ -13,7 +13,7 @@ const DEFAULT_KEYWORDS = [
   "proof of delivery app",
   "delivery driver app",
   "daily delivery management",
-  "delivery management app Kerala",
+  "delivery management app",
   "delivery operations software",
   "order tracking app",
 ];

@@ -4,15 +4,15 @@ import CTASection from "@/components/CTASection";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Delivery management software pricing — Kerala",
+  title: "Delivery management software pricing",
   description:
-    "Delivery management software pricing for Kerala businesses. Free plan available. INR pricing for milk, bakery, grocery, and meal delivery teams.",
+    "Delivery management software pricing for delivery businesses. Free plan available. Simple pricing for milk, bakery, grocery, and meal delivery teams.",
   path: "/pricing",
   keywords: [
     "how much does delivery software cost",
-    "delivery management software pricing India",
+    "delivery management software pricing",
     "free delivery management app",
-    "delivery software pricing Kerala",
+    "delivery software pricing",
   ],
 });
 
@@ -93,7 +93,7 @@ export default function PricingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(offerJsonLd) }}
       />
-      <Section as="h1" title="Delivery management software pricing — Kerala" subtitle="Simple plans for restaurants and delivery teams.">
+      <Section as="h1" title="Delivery management software pricing" subtitle="Simple plans for restaurants and delivery teams.">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {plans.map((p) => (
             <div
@@ -160,7 +160,7 @@ export default function PricingPage() {
               a: "Delivero offers a free Starter plan with no time limit, suitable for small teams. The Professional plan starts at $49/month (₹3,999/month) for growing delivery businesses.",
             },
             {
-              q: "Is there a free plan for small delivery businesses in Kerala?",
+              q: "Is there a free plan for small delivery businesses?",
               a: "Yes. The Starter plan is free forever and includes up to 5 driver accounts, order management, routes, and live tracking — no credit card required.",
             },
             {

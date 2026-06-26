@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "See Delivero in action",
   description:
-    "Preview Delivero screens for the owner dashboard and driver delivery app. Built for Kerala delivery businesses.",
+    "Preview Delivero screens for the owner dashboard and driver delivery app. Built for delivery businesses.",
   path: "/screenshots",
 });
 

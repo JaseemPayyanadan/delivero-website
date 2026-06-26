@@ -20,11 +20,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://delivero.app"),
   title: {
-    default: "Delivero – Delivery Management Software for Kerala",
+    default: "Delivero – Delivery Management Software",
     template: "%s – Delivero",
   },
   description:
-    "Delivery management software for Kerala businesses. Manage last-mile delivery, routes, subscription orders, and drivers in one system.",
+    "Delivery management software for delivery businesses. Manage last-mile delivery, routes, subscription orders, and drivers in one system.",
   applicationName: "Delivero",
   keywords: [
     "delivery management software",
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
     "milk delivery software",
     "proof of delivery app",
     "delivery driver app",
-    "daily delivery management Kerala",
-    "delivery management app Kerala",
+    "daily delivery management",
+    "delivery management app",
   ],
   icons: {
     icon: "/logo.png",
@@ -134,7 +134,7 @@ export default function RootLayout({
                   "@id": "https://delivero.app/#software",
                   name: "Delivero",
                   description:
-                    "Delivery management software for Kerala businesses. Manage last-mile delivery, route optimization, subscription orders, and driver assignments from one system.",
+                    "Delivery management software for delivery businesses. Manage last-mile delivery, route optimization, subscription orders, and driver assignments from one system.",
                   applicationCategory: "BusinessApplication",
                   applicationSubCategory: "DeliveryManagement",
                   operatingSystem: ["Android", "Web"],
@@ -149,7 +149,6 @@ export default function RootLayout({
                     "Driver app",
                     "Payment tracking",
                   ],
-                  areaServed: { "@type": "State", name: "Kerala" },
                   offers: { "@type": "Offer", url: "https://delivero.app/pricing" },
                 },
               ],

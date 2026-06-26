@@ -4,10 +4,11 @@ import Section from "@/components/Section";
 import FeatureCard from "@/components/FeatureCard";
 import Hero from "@/components/Hero";
 import CTASection from "@/components/CTASection";
+import Reveal from "@/components/Reveal";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Delivery management software for Kerala",
+  title: "Delivery management software for delivery businesses",
   description:
     "Manage last-mile delivery, route optimization, and subscription orders in one system. Delivero connects owners and drivers across web and Android.",
   path: "/",
@@ -25,13 +26,13 @@ export default function Home() {
             "Real-time route and order visibility",
             "Works on Flutter Web and Android",
             "Built for recurring and one-time deliveries",
-          ].map((t) => (
-            <div key={t} className="flex items-start gap-3 rounded-2xl border border-black/8 bg-surface px-5 py-5 shadow-sm">
+          ].map((t, i) => (
+            <Reveal key={t} delay={i * 80} className="flex h-full items-start gap-3 rounded-2xl border border-black/8 bg-surface px-5 py-5 shadow-sm">
               <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-full bg-(--color-primary)/12 text-sm font-semibold text-(--color-primary)">
                 ✓
               </span>
               <div className="text-sm font-semibold leading-snug text-(--color-secondary)">{t}</div>
-            </div>
+            </Reveal>
           ))}
         </div>
         <div className="mt-8 text-center text-sm text-muted">
@@ -44,7 +45,7 @@ export default function Home() {
         subtitle="Manual delivery operations often lead to missed deliveries, duplicate orders, payment confusion, and poor visibility for both owners and drivers. Delivero replaces scattered tools with one connected workflow built for delivery businesses."
       >
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl border border-black/8 bg-surface p-6 shadow-sm md:p-8">
+          <Reveal className="h-full rounded-3xl border border-black/8 bg-surface p-6 shadow-sm md:p-8">
             <div className="flex items-center gap-2 text-xs font-semibold tracking-[0.08em] uppercase text-muted">
               <span className="grid h-10 w-10 place-items-center rounded-2xl bg-(--color-primary)/12 text-(--color-primary)">
                 <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -59,8 +60,8 @@ export default function Home() {
             <p className="mt-3 text-sm leading-relaxed text-muted">
               Manual delivery operations often lead to missed deliveries, duplicate orders, payment confusion, and poor visibility for both owners and drivers. Replace spreadsheets and WhatsApp chats with a system built for daily delivery runs.
             </p>
-          </div>
-          <div className="rounded-3xl border border-black/8 bg-surface p-6 shadow-sm md:p-8">
+          </Reveal>
+          <Reveal delay={120} className="h-full rounded-3xl border border-black/8 bg-surface p-6 shadow-sm md:p-8">
             <div className="flex items-center gap-2 text-xs font-semibold tracking-[0.08em] uppercase text-muted">
               <span className="grid h-10 w-10 place-items-center rounded-2xl bg-(--color-primary)/12 text-(--color-primary)">
                 <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -73,7 +74,7 @@ export default function Home() {
             <p className="mt-3 text-sm leading-relaxed text-muted">
               Owners manage products, customers, orders, routes, drivers, and business performance from one dashboard, while drivers only see assigned deliveries and update order status as work gets done.
             </p>
-          </div>
+          </Reveal>
         </div>
       </Section>
 
@@ -86,38 +87,39 @@ export default function Home() {
           {[
             {
               t: "Bakery delivery software",
-              d: "Create morning routes, assign drivers, and track delivered vs pending orders by customer. Popular with Kerala bakeries that run daily drops.",
-              img: { src: "/image1.png", alt: "Bakery delivery software", position: "50% 50%" },
+              d: "Create morning routes, assign drivers, and track delivered vs pending orders by customer. Popular with bakeries that run daily drops.",
+              img: { src: "/use-bakery.png", alt: "Bakery delivery software", position: "50% 50%" },
             },
             {
               t: "Milk delivery software",
-              d: "Manage recurring quantities, subscription orders, and payment status while keeping drivers focused on assigned drops. Built for Kerala milk and dairy runs.",
-              img: { src: "/image copy 2.png", alt: "Milk delivery software", position: "50% 50%" },
+              d: "Manage recurring quantities, subscription orders, and payment status while keeping drivers focused on assigned drops. Built for milk and dairy runs.",
+              img: { src: "/use-milk.png", alt: "Milk delivery software", position: "50% 50%" },
             },
             {
               t: "Meal delivery software",
               d: "Handle daily order creation, route grouping, and status updates so owners can monitor delivery progress in real time.",
-              img: { src: "/image copy 3.png", alt: "Meal delivery software", position: "50% 50%" },
+              img: { src: "/use-meal.png", alt: "Meal delivery software", position: "50% 50%" },
             },
             {
               t: "Water supply delivery management",
               d: "Keep large, route-based deliveries organized with clear driver assignment and customer contact access on the go.",
-              img: { src: "/image copy 5.png", alt: "Water supply delivery management", position: "50% 50%" },
+              img: { src: "/use-water.png", alt: "Water supply delivery management", position: "50% 50%" },
             },
             {
               t: "Grocery delivery management",
               d: "Track customer records, orders, and payments across routes while replacing spreadsheets and WhatsApp chats with one connected workflow.",
-              img: { src: "/image copy 5.png", alt: "Grocery delivery management", position: "50% 50%" },
+              img: { src: "/use-grocery.png", alt: "Grocery delivery management", position: "50% 50%" },
             },
             {
               t: "Local distributor management",
               d: "Manage multiple products, customers, and drivers with role-based access so the right people see the right data.",
-              img: { src: "/image copy 6.png", alt: "Local distributor management", position: "50% 50%" },
+              img: { src: "/use-distributor.png", alt: "Local distributor management", position: "50% 50%" },
             },
-          ].map((u) => (
-            <div
+          ].map((u, i) => (
+            <Reveal
               key={u.t}
-              className="group rounded-3xl border border-black/8 bg-surface p-6 shadow-sm transition-all duration-200 ease-out hover:border-black/12 hover:-translate-y-0.5 hover:shadow-md md:p-8"
+              delay={i * 80}
+              className="group h-full rounded-3xl border border-black/8 bg-surface p-6 shadow-sm transition-all duration-200 ease-out hover:border-black/12 hover:-translate-y-0.5 hover:shadow-md md:p-8"
             >
               <div className="overflow-hidden rounded-2xl border border-black/8 bg-[#f6f7ff]">
                 <Image
@@ -133,7 +135,7 @@ export default function Home() {
                 <div className="text-base font-semibold text-(--color-secondary)">{u.t}</div>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{u.d}</p>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
         <div className="mt-8 text-center text-sm text-muted">
@@ -185,9 +187,11 @@ export default function Home() {
               ),
             },
           ].map((s, idx) => (
-            <li
+            <Reveal
+              as="li"
               key={s.title}
-              className="group relative rounded-3xl border border-black/8 bg-surface p-6 shadow-sm transition-all duration-200 ease-out hover:border-black/12 hover:-translate-y-0.5 hover:shadow-md md:p-8"
+              delay={idx * 100}
+              className="group relative h-full rounded-3xl border border-black/8 bg-surface p-6 shadow-sm transition-all duration-200 ease-out hover:border-black/12 hover:-translate-y-0.5 hover:shadow-md md:p-8"
             >
               <div className="absolute right-6 top-6 grid h-10 w-10 place-items-center rounded-2xl bg-(--color-primary)/10 text-(--color-primary)">
                 {s.icon}
@@ -197,19 +201,25 @@ export default function Home() {
               </div>
               <div className="text-base font-semibold text-(--color-secondary)">{s.title}</div>
               <p className="mt-2 text-sm leading-relaxed text-muted">{s.desc}</p>
-            </li>
+            </Reveal>
           ))}
         </ol>
       </Section>
 
       <Section id="features" title="Everything needed to manage deliveries smoothly">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          <FeatureCard title="Owner Dashboard" description="Run your business from one dashboard with quick access to products, customers, routes, drivers, and orders." />
-          <FeatureCard title="Product Catalog" description="Add and manage products with pricing, search your catalog quickly, and keep ordering accurate." />
-          <FeatureCard title="Customer Management" description="Store addresses, phone numbers, assigned routes, order history, and pending payment details in one place." />
-          <FeatureCard title="Smart Orders" description="Create daily, one-time, and special orders with fast quantity entry, payment tracking, and clear order statuses." />
-          <FeatureCard title="Routes and Drivers" description="Create routes by area, assign drivers, and keep route-to-driver syncing clear across operations." />
-          <FeatureCard title="Driver App" description="Drivers view assigned deliveries, open customer details, and mark orders delivered with a focused delivery screen." />
+          {[
+            { title: "Owner Dashboard", description: "Run your business from one dashboard with quick access to products, customers, routes, drivers, and orders." },
+            { title: "Product Catalog", description: "Add and manage products with pricing, search your catalog quickly, and keep ordering accurate." },
+            { title: "Customer Management", description: "Store addresses, phone numbers, assigned routes, order history, and pending payment details in one place." },
+            { title: "Smart Orders", description: "Create daily, one-time, and special orders with fast quantity entry, payment tracking, and clear order statuses." },
+            { title: "Routes and Drivers", description: "Create routes by area, assign drivers, and keep route-to-driver syncing clear across operations." },
+            { title: "Driver App", description: "Drivers view assigned deliveries, open customer details, and mark orders delivered with a focused delivery screen." },
+          ].map((f, i) => (
+            <Reveal key={f.title} delay={i * 80} className="h-full">
+              <FeatureCard title={f.title} description={f.description} />
+            </Reveal>
+          ))}
         </div>
       </Section>
 
@@ -218,7 +228,7 @@ export default function Home() {
         title="Built for both owners and drivers"
       >
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl border border-black/8 bg-surface p-6 shadow-sm md:p-8">
+          <Reveal className="h-full rounded-3xl border border-black/8 bg-surface p-6 shadow-sm md:p-8">
             <div className="flex items-center justify-between gap-4">
               <div className="text-xs font-semibold tracking-[0.08em] uppercase text-muted">For owners and managers</div>
               <div className="rounded-full bg-(--color-primary)/12 px-3 py-1 text-xs font-semibold text-(--color-primary)">Owner</div>
@@ -232,8 +242,8 @@ export default function Home() {
               <li>Customer and payment visibility</li>
               <li>Order and fulfillment tracking</li>
             </ul>
-          </div>
-          <div className="rounded-3xl border border-black/8 bg-surface p-6 shadow-sm md:p-8">
+          </Reveal>
+          <Reveal delay={120} className="h-full rounded-3xl border border-black/8 bg-surface p-6 shadow-sm md:p-8">
             <div className="flex items-center justify-between gap-4">
               <div className="text-xs font-semibold tracking-[0.08em] uppercase text-muted">For delivery drivers</div>
               <div className="rounded-full bg-emerald-500/12 px-3 py-1 text-xs font-semibold text-emerald-700">Driver</div>
@@ -247,7 +257,7 @@ export default function Home() {
               <li>Customer address and phone access</li>
               <li>Limited status updates for delivery work</li>
             </ul>
-          </div>
+          </Reveal>
         </div>
       </Section>
 
@@ -314,22 +324,23 @@ export default function Home() {
             { t: "Order management", d: "Daily, one-time, and special orders." },
             { t: "Route setup", d: "Create routes by area and organize stops." },
             { t: "Driver assignments", d: "Assign drivers and sync daily work." },
-          ].map((s) => (
-            <Link
-              key={s.t}
-              href="/screenshots"
-              className="group block rounded-3xl border border-black/8 bg-surface p-6 shadow-sm transition-all duration-200 ease-out hover:border-black/12 hover:-translate-y-0.5 hover:shadow-md"
-            >
-              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-(--color-primary)/12 text-(--color-primary)">
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 4h16v6H4z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 14h7v6H4z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 14h7v6h-7z" />
-                </svg>
-              </div>
-              <div className="mt-4 text-base font-semibold text-(--color-secondary)">{s.t}</div>
-              <div className="mt-2 text-sm leading-relaxed text-muted">{s.d}</div>
-            </Link>
+          ].map((s, i) => (
+            <Reveal key={s.t} delay={i * 80} className="h-full">
+              <Link
+                href="/screenshots"
+                className="group block h-full rounded-3xl border border-black/8 bg-surface p-6 shadow-sm transition-all duration-200 ease-out hover:border-black/12 hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-(--color-primary)/12 text-(--color-primary)">
+                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 4h16v6H4z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 14h7v6H4z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 14h7v6h-7z" />
+                  </svg>
+                </div>
+                <div className="mt-4 text-base font-semibold text-(--color-secondary)">{s.t}</div>
+                <div className="mt-2 text-sm leading-relaxed text-muted">{s.d}</div>
+              </Link>
+            </Reveal>
           ))}
         </div>
       </Section>
@@ -371,9 +382,11 @@ export default function Home() {
               q: "What can drivers do in the app?",
               a: "Drivers can view assigned orders, open order details, access customer address and phone information, and mark deliveries as completed.",
             },
-          ].map((f) => (
-            <details
+          ].map((f, i) => (
+            <Reveal
+              as="details"
               key={f.q}
+              delay={i * 70}
               className="group rounded-2xl border border-black/8 bg-surface p-5 shadow-sm transition-all duration-200 ease-out hover:border-black/12"
             >
               <summary className="cursor-pointer list-none text-sm font-semibold text-(--color-secondary) [&::-webkit-details-marker]:hidden">
@@ -387,7 +400,7 @@ export default function Home() {
                 </div>
               </summary>
               <p className="mt-3 text-sm leading-relaxed text-muted">{f.a}</p>
-            </details>
+            </Reveal>
           ))}
         </div>
         <div className="mt-8 text-center text-sm text-muted">

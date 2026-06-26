@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Delivery software FAQ",
   description:
-    "Answers to common questions about Delivero delivery management software for owners and drivers in Kerala.",
+    "Answers to common questions about Delivero delivery management software for owners and drivers.",
   path: "/faq",
 });
 

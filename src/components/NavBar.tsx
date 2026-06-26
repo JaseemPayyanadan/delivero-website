@@ -1,9 +1,8 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-
-const demoHref = "https://delivero-flutter.vercel.app/#/owner";
 
 const links = [
   { href: "/", label: "Home" },
@@ -21,15 +20,15 @@ export default function NavBar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-black/8 bg-white/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-2 text-base font-semibold text-(--color-secondary)" aria-label="Delivero home">
-          <span className="grid h-8 w-8 place-items-center rounded-xl bg-(--color-primary)/12 text-(--color-primary)">
-            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3 7l9-4 9 4-9 4-9-4z" />
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3 17l9 4 9-4" />
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l9 4 9-4" />
-            </svg>
-          </span>
-          <span>Delivero</span>
+        <Link href="/" className="flex items-center" aria-label="Delivero home">
+          <Image
+            src="/delivro-logo.svg"
+            alt="Delivero"
+            width={132}
+            height={35}
+            className="h-7 w-auto"
+            priority
+          />
         </Link>
 
         <div className="hidden items-center gap-7 md:flex">
@@ -44,12 +43,6 @@ export default function NavBar() {
               {l.label}
             </Link>
           ))}
-        </div>
-
-        <div className="hidden items-center gap-2 md:flex">
-          <Link href={demoHref} className="rounded-full px-5 py-2.5 text-sm font-semibold btn-primary">
-            Get Started
-          </Link>
         </div>
 
         <button
@@ -110,15 +103,6 @@ export default function NavBar() {
                   {l.label}
                 </Link>
               ))}
-              <div className="grid gap-2 pt-2">
-                <Link
-                  href={demoHref}
-                  className="inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-semibold btn-primary"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Get Started
-                </Link>
-              </div>
             </div>
           </div>
         </div>
