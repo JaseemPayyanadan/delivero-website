@@ -26,18 +26,19 @@ const plans = [
     cta: "Get started",
     tone: "border-black/8",
     features: [
-      "Up to 5 driver accounts",
-      "1 owner/dispatch account",
-      "Customers, orders, and routes",
-      "Live status tracking",
+      "Free forever",
+      "1 driver account",
+      "Up to 10 customers",
+      "1 route",
+      "Orders and live status tracking",
       "Basic reports",
       "Email support",
     ],
   },
   {
     name: "Professional",
-    price: "$49",
-    priceInr: "₹3,999",
+    price: "₹499",
+    priceInr: null,
     note: "per month",
     desc: "For growing restaurants that dispatch daily.",
     cta: "Get started",
@@ -75,14 +76,14 @@ const plans = [
 const offerJsonLd = {
   "@context": "https://schema.org",
   "@type": "AggregateOffer",
-  priceCurrency: "USD",
+  priceCurrency: "INR",
   lowPrice: "0",
-  highPrice: "49",
+  highPrice: "499",
   offerCount: "3",
   offers: [
-    { "@type": "Offer", name: "Starter", price: "0", priceCurrency: "USD" },
-    { "@type": "Offer", name: "Professional", price: "49", priceCurrency: "USD" },
-    { "@type": "Offer", name: "Business", price: "0", priceCurrency: "USD", description: "Custom pricing" },
+    { "@type": "Offer", name: "Starter", price: "0", priceCurrency: "INR" },
+    { "@type": "Offer", name: "Professional", price: "499", priceCurrency: "INR" },
+    { "@type": "Offer", name: "Business", price: "0", priceCurrency: "INR", description: "Custom pricing" },
   ],
 };
 
@@ -157,11 +158,11 @@ export default function PricingPage() {
           {[
             {
               q: "How much does delivery management software cost?",
-              a: "Delivero offers a free Starter plan with no time limit, suitable for small teams. The Professional plan starts at $49/month (₹3,999/month) for growing delivery businesses.",
+              a: "Delivero offers a free Starter plan with no time limit, suitable for small teams. The Professional plan starts at ₹499/month for growing delivery businesses.",
             },
             {
               q: "Is there a free plan for small delivery businesses?",
-              a: "Yes. The Starter plan is free forever and includes up to 5 driver accounts, order management, routes, and live tracking — no credit card required.",
+              a: "Yes. The Starter plan is free forever and includes 1 driver account, up to 10 customers, 1 route, order management, and live tracking — no credit card required.",
             },
             {
               q: "How do I install the app?",

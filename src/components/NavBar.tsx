@@ -19,14 +19,14 @@ export default function NavBar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-black/8 bg-white/80 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
+      <nav className="relative mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center" aria-label="Delivero home">
           <Image
             src="/delivro-logo.svg"
             alt="Delivero"
             width={132}
             height={35}
-            className="h-7 w-auto"
+            className="h-6 w-auto"
             priority
           />
         </Link>
@@ -83,30 +83,31 @@ export default function NavBar() {
           </svg>
         </button>
 
-        <div id="mobile-menu" className="md:hidden">
-          <div
-            className={`mx-auto max-w-[1200px] overflow-hidden rounded-3xl border border-black/10 bg-white transition-all duration-200 ease-out ${
-              isOpen ? "mt-4 max-h-[70vh] opacity-100" : "mt-0 max-h-0 opacity-0"
-            }`}
-            aria-hidden={!isOpen}
-          >
-            <div className="flex flex-col gap-1 p-3">
-              {links.map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  className={`block rounded-2xl px-4 py-3 text-sm font-medium transition-colors hover:bg-black/5 ${
-                    pathname === l.href ? "text-(--color-secondary)" : "text-muted"
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {l.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
       </nav>
+
+      <div
+        id="mobile-menu"
+        className={`md:hidden overflow-hidden border-t border-black/8 bg-white/95 backdrop-blur-md transition-all duration-200 ease-out ${
+          isOpen ? "max-h-[80vh] opacity-100" : "pointer-events-none max-h-0 opacity-0"
+        }`}
+        aria-hidden={!isOpen}
+        inert={!isOpen}
+      >
+        <div className="mx-auto flex max-w-[1200px] flex-col gap-1 px-4 py-3">
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className={`block rounded-2xl px-4 py-3 text-sm font-medium transition-colors hover:bg-black/5 ${
+                pathname === l.href ? "text-(--color-secondary)" : "text-muted"
+              }`}
+              onClick={() => setIsOpen(false)}
+            >
+              {l.label}
+            </Link>
+          ))}
+        </div>
+      </div>
     </header>
   );
 }
