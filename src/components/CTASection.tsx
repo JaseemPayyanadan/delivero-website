@@ -1,11 +1,9 @@
-import Button from "@/components/Button";
 import Section from "@/components/Section";
 import IosInstallButton from "@/components/IosInstallButton";
 
 type CTASectionProps = {
   title?: string;
   description?: string;
-  primaryButtonText?: string;
   primaryButtonHref?: string;
   className?: string;
 };
@@ -13,7 +11,6 @@ type CTASectionProps = {
 export default function CTASection({
   title = "Get Delivero",
   description = "Start managing orders, routes, drivers, payments, and delivery updates from one connected system.",
-  primaryButtonText = "Get Started",
   primaryButtonHref = "https://app.delivro.in/#/intro",
   className = "",
 }: CTASectionProps) {
@@ -39,16 +36,7 @@ export default function CTASection({
             {description}
           </p>
 
-          <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:justify-center">
-            <Button
-              href={primaryButtonHref}
-              className="px-8 py-4 text-base font-semibold"
-            >
-              {primaryButtonText}
-            </Button>
-          </div>
-
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
             <a
               href={androidDownloadHref}
               target="_blank"

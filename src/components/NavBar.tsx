@@ -4,8 +4,6 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-const demoHref = "https://app.delivro.in/#/intro";
-
 const links = [
   { href: "/", label: "Home" },
   { href: "/features", label: "Features" },
@@ -45,12 +43,6 @@ export default function NavBar() {
               {l.label}
             </Link>
           ))}
-        </div>
-
-        <div className="hidden items-center gap-2 md:flex">
-          <Link href={demoHref} className="rounded-full px-5 py-2.5 text-sm font-semibold btn-primary">
-            Get Started
-          </Link>
         </div>
 
         <button
@@ -111,15 +103,6 @@ export default function NavBar() {
                   {l.label}
                 </Link>
               ))}
-              <div className="grid gap-2 pt-2">
-                <Link
-                  href={demoHref}
-                  className="inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-semibold btn-primary"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Get Started
-                </Link>
-              </div>
             </div>
           </div>
         </div>

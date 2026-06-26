@@ -1,4 +1,3 @@
-import Button from "@/components/Button";
 import Image from "next/image";
 import IosInstallButton from "@/components/IosInstallButton";
 
@@ -29,9 +28,6 @@ export default function Hero() {
           </p>
 
           <div className="mt-6 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
-            <Button href={webAppHref} className="rounded-full px-7 py-3.5 text-base font-semibold">
-              Get Started
-            </Button>
             <div className="flex flex-wrap items-center gap-3">
             <a
               href={androidDownloadHref}
