@@ -1,5 +1,6 @@
 import Button from "@/components/Button";
 import Section from "@/components/Section";
+import IosInstallButton from "@/components/IosInstallButton";
 
 type CTASectionProps = {
   title?: string;
@@ -13,7 +14,7 @@ export default function CTASection({
   title = "Get Delivero",
   description = "Start managing orders, routes, drivers, payments, and delivery updates from one connected system.",
   primaryButtonText = "Get Started",
-  primaryButtonHref = "https://delivero-flutter.vercel.app/#/owner",
+  primaryButtonHref = "https://app.delivro.in/#/intro",
   className = "",
 }: CTASectionProps) {
   const androidDownloadHref = "https://play.google.com/store/apps/details?id=delivero.com";
@@ -47,7 +48,7 @@ export default function CTASection({
             </Button>
           </div>
 
-          <div className="mt-6 flex justify-center">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <a
               href={androidDownloadHref}
               target="_blank"
@@ -70,6 +71,7 @@ export default function CTASection({
                 <path d="M10.2766 12.4659L15.5098 7.22051L4.14107 0.6138C3.73267 0.366287 3.24829 0.223491 2.72592 0.223491C1.47223 0.223491 0.398994 1.08979 0.0950693 2.2512L10.2861 12.4564L10.2766 12.4659Z" fill="#34A853"></path>
               </svg>
             </a>
+            <IosInstallButton appUrl={primaryButtonHref} />
           </div>
         </div>
       </div>

@@ -1,8 +1,10 @@
 import Button from "@/components/Button";
 import Image from "next/image";
+import IosInstallButton from "@/components/IosInstallButton";
 
 export default function Hero() {
   const androidDownloadHref = "https://play.google.com/store/apps/details?id=delivero.com";
+  const webAppHref = "https://app.delivro.in/#/intro";
 
   return (
     <section className="relative mx-auto w-full max-w-none bg-hero px-4 pb-10 pt-10 sm:px-6 md:pb-12 md:pt-12">
@@ -12,11 +14,11 @@ export default function Hero() {
             <span className="rounded-full bg-(--color-primary)/12 px-2 py-0.5 text-[10px] font-semibold tracking-[0.08em] uppercase text-(--color-primary)">
               New
             </span>
-            Built for Kerala&apos;s daily delivery businesses.
+            Built for daily delivery businesses.
           </div>
 
           <h1 className="mt-4 text-balance text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold leading-[1.08] tracking-[-0.03em] text-(--color-secondary)">
-            Delivery management software for Kerala businesses.
+            Delivery management software for growing businesses.
           </h1>
 
           <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-muted md:text-lg">
@@ -27,7 +29,7 @@ export default function Hero() {
           </p>
 
           <div className="mt-6 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
-            <Button href="https://delivero-flutter.vercel.app/#/owner" className="rounded-full px-7 py-3.5 text-base font-semibold">
+            <Button href={webAppHref} className="rounded-full px-7 py-3.5 text-base font-semibold">
               Get Started
             </Button>
             <div className="flex flex-wrap items-center gap-3">
@@ -53,6 +55,7 @@ export default function Hero() {
                 <path d="M10.2766 12.4659L15.5098 7.22051L4.14107 0.6138C3.73267 0.366287 3.24829 0.223491 2.72592 0.223491C1.47223 0.223491 0.398994 1.08979 0.0950693 2.2512L10.2861 12.4564L10.2766 12.4659Z" fill="#34A853"></path>
               </svg>
             </a>
+            <IosInstallButton appUrl={webAppHref} />
             </div>
           </div>
         </div>

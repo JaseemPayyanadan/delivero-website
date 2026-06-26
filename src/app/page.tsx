@@ -7,7 +7,7 @@ import CTASection from "@/components/CTASection";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Delivery management software for Kerala",
+  title: "Delivery management software for delivery businesses",
   description:
     "Manage last-mile delivery, route optimization, and subscription orders in one system. Delivero connects owners and drivers across web and Android.",
   path: "/",
@@ -86,12 +86,12 @@ export default function Home() {
           {[
             {
               t: "Bakery delivery software",
-              d: "Create morning routes, assign drivers, and track delivered vs pending orders by customer. Popular with Kerala bakeries that run daily drops.",
+              d: "Create morning routes, assign drivers, and track delivered vs pending orders by customer. Popular with bakeries that run daily drops.",
               img: { src: "/image1.png", alt: "Bakery delivery software", position: "50% 50%" },
             },
             {
               t: "Milk delivery software",
-              d: "Manage recurring quantities, subscription orders, and payment status while keeping drivers focused on assigned drops. Built for Kerala milk and dairy runs.",
+              d: "Manage recurring quantities, subscription orders, and payment status while keeping drivers focused on assigned drops. Built for milk and dairy runs.",
               img: { src: "/image copy 2.png", alt: "Milk delivery software", position: "50% 50%" },
             },
             {
