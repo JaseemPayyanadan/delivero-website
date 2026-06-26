@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import Reveal from "@/components/Reveal";
 
 type SectionProps = {
   id?: string;
@@ -13,7 +14,7 @@ export default function Section({ id, title, subtitle, children, className = "",
   return (
     <section id={id} className={`mx-auto w-full max-w-[1200px] px-6 py-20 md:py-24 ${className}`}>
       {title ? (
-        <div className="mb-12 text-center md:mb-14">
+        <Reveal className="mb-12 text-center md:mb-14">
           <Tag className="text-balance text-[clamp(2rem,4vw,3.5rem)] font-bold tracking-[-0.02em] text-(--color-secondary)">
             {title}
           </Tag>
@@ -22,7 +23,7 @@ export default function Section({ id, title, subtitle, children, className = "",
               {subtitle}
             </p>
           ) : null}
-        </div>
+        </Reveal>
       ) : null}
       {children}
     </section>

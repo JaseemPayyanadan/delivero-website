@@ -1,5 +1,6 @@
 import Section from "@/components/Section";
 import IosInstallButton from "@/components/IosInstallButton";
+import Reveal from "@/components/Reveal";
 
 type CTASectionProps = {
   title?: string;
@@ -24,7 +25,7 @@ export default function CTASection({
           <div className="absolute inset-0 opacity-70 bg-linear-to-r from-(--color-primary)/10 via-transparent to-(--color-primary)/10 animate-gradient" />
         </div>
 
-        <div className="relative mx-auto max-w-3xl text-center">
+        <Reveal className="relative mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-3 py-1 text-xs font-semibold tracking-[0.05em] uppercase text-muted">
             Get started today
           </div>
@@ -61,7 +62,7 @@ export default function CTASection({
             </a>
             <IosInstallButton appUrl={primaryButtonHref} />
           </div>
-        </div>
+        </Reveal>
       </div>
     </Section>
   );
