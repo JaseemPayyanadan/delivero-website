@@ -13,7 +13,7 @@ export default function Footer() {
             alt="Delivero"
             width={150}
             height={40}
-            className="h-8 w-auto"
+            className="h-7 w-auto"
           />
           <p className="mt-2 text-sm text-muted">
             Delivero helps delivery businesses run orders, routes, drivers, and payments in one simple system.
