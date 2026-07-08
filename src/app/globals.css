@@ -1,14 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #635bff;
-  --color-secondary: #111827;
-  --color-accent: #635bff;
-  --background: #f6f7ff;
-  --foreground: #111827;
+  /* Primary scale — matches delivero-flutter AppColors */
+  --color-primary: #5a45fe;
+  --color-primary-50: #f5f3ff;
+  --color-primary-100: #ebe8ff;
+  --color-primary-600: #4a38d9;
+  --color-primary-700: #3d2db8;
+
+  /* Brand accents */
+  --color-secondary: #bfe003;
+  --color-accent: #f59e0b;
+
+  /* Neutrals */
+  --background: #ffffff;
+  --foreground: #101828;
   --surface: #ffffff;
-  --muted: #6b7280;
-  --ring: rgba(99, 91, 255, 0.35);
+  --section: #ffffff;
+  --section-alt: #f5f7fa;
+  --muted: #525866;
+  --muted-light: #99a0ae;
+  --border: #e1e4ea;
+  --ring: rgba(90, 69, 254, 0.35);
+  --divider: rgba(16, 24, 40, 0.08);
 }
 
 @theme inline {
@@ -37,7 +51,13 @@ body {
 
 /* Utility tokens mapped to Tailwind theme */
 .bg-surface { background-color: var(--surface); }
+.bg-section { background-color: var(--section); }
+.bg-section-alt { background-color: var(--section-alt); }
 .text-muted { color: var(--muted); }
+.text-accent { color: var(--color-accent); }
+.bg-accent-soft { background-color: rgba(245, 158, 11, 0.12); }
+.border-accent-soft { border-color: rgba(245, 158, 11, 0.22); }
+.border-section { border-color: var(--divider); }
 
 @utility no-scrollbar {
   -ms-overflow-style: none;
@@ -49,22 +69,22 @@ body {
 
 /* Button improvements */
 .btn-primary {
-  background-color: #111827;
+  background-color: var(--color-primary);
   color: #ffffff;
-  border: 1px solid rgba(17, 24, 39, 0.12);
+  border: 1px solid rgba(90, 69, 254, 0.2);
   transition: all 0.2s ease;
 }
 .btn-primary:hover {
-  background-color: #0b1220;
+  background-color: var(--color-primary-600);
 }
 .btn-secondary {
   background-color: #ffffff;
-  color: #111827;
-  border: 1px solid rgba(17, 24, 39, 0.12);
+  color: var(--foreground);
+  border: 1px solid var(--border);
   transition: all 0.2s ease;
 }
 .btn-secondary:hover {
-  background-color: #f3f4f6;
+  background-color: var(--section-alt);
 }
 
 /* Smooth fade-in animations */
@@ -77,6 +97,26 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Modal / bottom-sheet entrance */
+@keyframes modalBackdropIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes modalPanelIn {
+  from { opacity: 0; transform: translateY(100%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes modalPanelInCentered {
+  from { opacity: 0; transform: translateY(12px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-modal-backdrop {
+  animation: modalBackdropIn 0.2s ease-out both;
+}
+.animate-modal-panel {
+  animation: modalPanelInCentered 0.24s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes marquee {
@@ -116,7 +156,9 @@ body {
   .animate-float,
   .animate-gradient,
   .animate-shimmer,
-  .animate-pulse-soft {
+  .animate-pulse-soft,
+  .animate-modal-backdrop,
+  .animate-modal-panel {
     animation: none !important;
   }
   .reveal {
@@ -165,28 +207,28 @@ body {
 
 /* Striped, soft gradient hero background */
 .bg-hero {
-  background-color: #f6f7ff;
+  background-color: var(--color-primary-50);
   background-image:
-    radial-gradient(900px 420px at 75% 20%, rgba(99, 91, 255, 0.20) 0%, transparent 60%),
-    radial-gradient(700px 380px at 20% 10%, rgba(99, 91, 255, 0.14) 0%, transparent 60%),
+    radial-gradient(900px 420px at 75% 20%, rgba(90, 69, 254, 0.20) 0%, transparent 60%),
+    radial-gradient(700px 380px at 20% 10%, rgba(90, 69, 254, 0.14) 0%, transparent 60%),
     linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(255,255,255,0));
 }
 
 * {
-  scrollbar-color: #c7c9d6 #f6f7ff;
+  scrollbar-color: var(--muted-light) var(--color-primary-50);
 }
 
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #f6f7ff;
+  background: var(--color-primary-50);
 }
 ::-webkit-scrollbar-thumb {
-  background: #c7c9d6;
+  background: var(--muted-light);
   border-radius: 9999px;
-  border: 2px solid #f6f7ff;
+  border: 2px solid var(--color-primary-50);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #b2b4c3;
+  background: var(--muted);
 }

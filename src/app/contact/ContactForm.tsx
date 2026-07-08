@@ -11,7 +11,7 @@ export default function ContactForm() {
         <div className="mx-auto grid h-10 w-10 place-items-center rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-300">
           ✓
         </div>
-        <div className="mt-3 font-semibold text-(--color-secondary)">Request received</div>
+        <div className="mt-3 font-semibold text-foreground">Request received</div>
         <div className="mt-1 text-muted">Thanks! We&apos;ll get back to you shortly.</div>
       </div>
     );
@@ -36,7 +36,7 @@ export default function ContactForm() {
             name="name"
             required
             placeholder="Your full name"
-            className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm text-(--color-secondary) placeholder:text-black/40 outline-none transition focus:border-(--color-primary)/60"
+            className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm text-foreground placeholder:text-black/40 outline-none transition focus:border-(--color-primary)/60"
           />
         </div>
         <div>
@@ -45,7 +45,7 @@ export default function ContactForm() {
             name="business_name"
             required
             placeholder="Your business name"
-            className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm text-(--color-secondary) placeholder:text-black/40 outline-none transition focus:border-(--color-primary)/60"
+            className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm text-foreground placeholder:text-black/40 outline-none transition focus:border-(--color-primary)/60"
           />
         </div>
         <div>
@@ -55,7 +55,7 @@ export default function ContactForm() {
             name="phone"
             required
             placeholder="+91 9xxxx xxxxx"
-            className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm text-(--color-secondary) placeholder:text-black/40 outline-none transition focus:border-(--color-primary)/60"
+            className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm text-foreground placeholder:text-black/40 outline-none transition focus:border-(--color-primary)/60"
           />
         </div>
         <div>
@@ -65,7 +65,7 @@ export default function ContactForm() {
             name="email"
             required
             placeholder="you@company.com"
-            className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm text-(--color-secondary) placeholder:text-black/40 outline-none transition focus:border-(--color-primary)/60"
+            className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm text-foreground placeholder:text-black/40 outline-none transition focus:border-(--color-primary)/60"
           />
         </div>
         <div className="sm:col-span-2">
@@ -73,7 +73,7 @@ export default function ContactForm() {
           <select
             name="business_type"
             required
-            className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm text-(--color-secondary) outline-none transition focus:border-(--color-primary)/60"
+            className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-(--color-primary)/60"
             defaultValue=""
           >
             <option value="" disabled>
@@ -96,7 +96,7 @@ export default function ContactForm() {
           rows={5}
           required
           placeholder="Tell us about your routes, drivers, and daily orders…"
-          className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm text-(--color-secondary) placeholder:text-black/40 outline-none transition focus:border-(--color-primary)/60"
+          className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm text-foreground placeholder:text-black/40 outline-none transition focus:border-(--color-primary)/60"
         />
       </div>
       {/* Honeypot */}

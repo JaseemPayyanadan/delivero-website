@@ -13,7 +13,7 @@ export const metadata = buildMetadata({
 function Shot({ title, subtitle, src }: { title: string; subtitle: string; src: string }) {
   return (
     <figure className="group rounded-3xl border border-black/8 bg-surface p-5 shadow-sm transition-all duration-200 ease-out hover:border-black/12 hover:-translate-y-0.5 hover:shadow-md">
-      <div className="relative overflow-hidden rounded-2xl border border-black/8 bg-[#f6f7ff]">
+      <div className="relative overflow-hidden rounded-2xl border border-black/8 bg-(--color-primary-50)">
         <Image
           src={src}
           alt={title}
@@ -23,7 +23,7 @@ function Shot({ title, subtitle, src }: { title: string; subtitle: string; src: 
         />
       </div>
       <figcaption className="mt-4">
-        <div className="text-sm font-semibold text-(--color-secondary)">{title}</div>
+        <div className="text-sm font-semibold text-foreground">{title}</div>
         <div className="mt-1 text-xs text-muted">{subtitle}</div>
       </figcaption>
     </figure>

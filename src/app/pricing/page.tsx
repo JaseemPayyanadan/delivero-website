@@ -102,17 +102,17 @@ export default function PricingPage() {
               className={`relative rounded-3xl border bg-surface p-6 shadow-sm transition-all duration-200 ease-out hover:border-black/12 hover:-translate-y-0.5 hover:shadow-md md:p-8 ${p.tone}`}
             >
               {p.highlight ? (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full border border-black/10 bg-white px-4 py-1 text-xs font-semibold tracking-[0.08em] uppercase text-muted shadow-sm">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full border border-accent-soft bg-accent-soft px-4 py-1 text-xs font-semibold tracking-[0.08em] uppercase text-accent shadow-sm">
                   Most popular
                 </div>
               ) : null}
 
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <div className={`text-sm font-semibold ${p.highlight ? "text-(--color-primary)" : "text-(--color-secondary)"}`}>{p.name}</div>
+                  <div className={`text-sm font-semibold ${p.highlight ? "text-(--color-primary)" : "text-foreground"}`}>{p.name}</div>
                   <div className="mt-2 text-sm text-muted">{p.desc}</div>
                 </div>
-                <div className={`rounded-full px-3 py-1 text-xs font-semibold ${p.highlight ? "bg-(--color-primary)/12 text-(--color-primary)" : "bg-black/5 text-(--color-secondary)"}`}>
+                <div className={`rounded-full px-3 py-1 text-xs font-semibold ${p.highlight ? "bg-(--color-primary)/12 text-(--color-primary)" : "bg-black/5 text-foreground"}`}>
                   {p.note}
                 </div>
               </div>
@@ -190,7 +190,7 @@ export default function PricingPage() {
             },
           ].map((item) => (
             <details key={item.q} className="group rounded-2xl border border-black/8 bg-surface p-5 shadow-sm transition-all duration-200 ease-out hover:border-black/12">
-              <summary className="cursor-pointer text-base font-semibold text-(--color-secondary) transition-colors [&::-webkit-details-marker]:hidden">
+              <summary className="cursor-pointer text-base font-semibold text-foreground transition-colors [&::-webkit-details-marker]:hidden">
                 <div className="flex items-center justify-between">
                   <span>{item.q}</span>
                   <svg className="h-5 w-5 shrink-0 transition-transform group-open:rotate-180 text-black/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">

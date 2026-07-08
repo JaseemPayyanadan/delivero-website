@@ -36,8 +36,10 @@ export default function NavBar() {
             <Link
               key={l.href}
               href={l.href}
-              className={`text-sm font-medium transition-colors hover:text-(--color-secondary) ${
-                pathname === l.href ? "text-(--color-secondary)" : "text-muted"
+              className={`relative text-sm font-medium transition-colors hover:text-foreground ${
+                pathname === l.href
+                  ? "text-foreground after:absolute after:-bottom-4 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-(--color-accent)"
+                  : "text-muted"
               }`}
             >
               {l.label}
@@ -47,7 +49,7 @@ export default function NavBar() {
 
         <button
           type="button"
-          className="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-(--color-secondary) transition-colors hover:bg-black/5"
+          className="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-foreground transition-colors hover:bg-black/5"
           aria-label="Toggle menu"
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
@@ -99,7 +101,7 @@ export default function NavBar() {
               key={l.href}
               href={l.href}
               className={`block rounded-2xl px-4 py-3 text-sm font-medium transition-colors hover:bg-black/5 ${
-                pathname === l.href ? "text-(--color-secondary)" : "text-muted"
+                pathname === l.href ? "bg-accent-soft text-foreground" : "text-muted"
               }`}
               onClick={() => setIsOpen(false)}
             >

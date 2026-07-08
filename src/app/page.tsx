@@ -19,7 +19,7 @@ export default function Home() {
     <div>
       <Hero />
 
-      <Section className="py-16 md:py-20">
+      <Section tone="base" className="py-16 md:py-20">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
             "Owner dashboard + driver app in one system",
@@ -31,7 +31,7 @@ export default function Home() {
               <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-full bg-(--color-primary)/12 text-sm font-semibold text-(--color-primary)">
                 ✓
               </span>
-              <div className="text-sm font-semibold leading-snug text-(--color-secondary)">{t}</div>
+              <div className="text-sm font-semibold leading-snug text-foreground">{t}</div>
             </Reveal>
           ))}
         </div>
@@ -41,6 +41,7 @@ export default function Home() {
       </Section>
 
       <Section
+        tone="alt"
         title="Still managing deliveries through chats and spreadsheets?"
         subtitle="Manual delivery operations often lead to missed deliveries, duplicate orders, payment confusion, and poor visibility for both owners and drivers. Delivero replaces scattered tools with one connected workflow built for delivery businesses."
       >
@@ -56,7 +57,7 @@ export default function Home() {
               </span>
               Problem
             </div>
-            <div className="mt-3 text-xl font-semibold text-(--color-secondary)">Still managing deliveries through chats and spreadsheets?</div>
+            <div className="mt-3 text-xl font-semibold text-foreground">Still managing deliveries through chats and spreadsheets?</div>
             <p className="mt-3 text-sm leading-relaxed text-muted">
               Manual delivery operations often lead to missed deliveries, duplicate orders, payment confusion, and poor visibility for both owners and drivers. Replace spreadsheets and WhatsApp chats with a system built for daily delivery runs.
             </p>
@@ -70,7 +71,7 @@ export default function Home() {
               </span>
               Solution
             </div>
-            <div className="mt-3 text-xl font-semibold text-(--color-secondary)">A simpler way to run delivery operations</div>
+            <div className="mt-3 text-xl font-semibold text-foreground">A simpler way to run delivery operations</div>
             <p className="mt-3 text-sm leading-relaxed text-muted">
               Owners manage products, customers, orders, routes, drivers, and business performance from one dashboard, while drivers only see assigned deliveries and update order status as work gets done.
             </p>
@@ -79,6 +80,7 @@ export default function Home() {
       </Section>
 
       <Section
+        tone="base"
         id="use-cases"
         title="Use cases"
         subtitle="Built for local delivery businesses that run recurring and one-time drops—without enterprise complexity."
@@ -121,7 +123,7 @@ export default function Home() {
               delay={i * 80}
               className="group h-full rounded-3xl border border-black/8 bg-surface p-6 shadow-sm transition-all duration-200 ease-out hover:border-black/12 hover:-translate-y-0.5 hover:shadow-md md:p-8"
             >
-              <div className="overflow-hidden rounded-2xl border border-black/8 bg-[#f6f7ff]">
+              <div className="overflow-hidden rounded-2xl border border-black/8 bg-(--color-primary-50)">
                 <Image
                   src={u.img.src}
                   alt={u.img.alt}
@@ -132,7 +134,7 @@ export default function Home() {
                 />
               </div>
               <div className="mt-5">
-                <div className="text-base font-semibold text-(--color-secondary)">{u.t}</div>
+                <div className="text-base font-semibold text-foreground">{u.t}</div>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{u.d}</p>
               </div>
             </Reveal>
@@ -148,6 +150,7 @@ export default function Home() {
       </Section>
 
       <Section
+        tone="alt"
         id="how-it-works"
         title="How Delivero works"
       >
@@ -199,14 +202,14 @@ export default function Home() {
               <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-(--color-primary)/10 text-xl font-bold text-(--color-primary)">
                 {idx + 1}
               </div>
-              <div className="text-base font-semibold text-(--color-secondary)">{s.title}</div>
+              <div className="text-base font-semibold text-foreground">{s.title}</div>
               <p className="mt-2 text-sm leading-relaxed text-muted">{s.desc}</p>
             </Reveal>
           ))}
         </ol>
       </Section>
 
-      <Section id="features" title="Everything needed to manage deliveries smoothly">
+      <Section tone="base" id="features" title="Everything needed to manage deliveries smoothly">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {[
             { title: "Owner Dashboard", description: "Run your business from one dashboard with quick access to products, customers, routes, drivers, and orders." },
@@ -224,6 +227,7 @@ export default function Home() {
       </Section>
 
       <Section
+        tone="alt"
         id="roles"
         title="Built for both owners and drivers"
       >
@@ -261,13 +265,13 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section id="screens">
+      <Section tone="base" id="screens">
         <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.2fr]">
           <div>
-            <div className="inline-flex items-center rounded-full border border-black/10 bg-white px-3 py-1 text-xs font-semibold tracking-[0.08em] uppercase text-muted">
+            <div className="inline-flex items-center rounded-full border border-accent-soft bg-accent-soft px-3 py-1 text-xs font-semibold tracking-[0.08em] uppercase text-accent">
               See Delivero in action
             </div>
-            <h3 className="mt-5 text-balance text-[clamp(2.25rem,4vw,3.25rem)] font-bold tracking-[-0.02em] text-(--color-secondary)">
+            <h3 className="mt-5 text-balance text-[clamp(2.25rem,4vw,3.25rem)] font-bold tracking-[-0.02em] text-foreground">
               A connected workflow from setup to final delivery updates
             </h3>
             <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
@@ -304,14 +308,14 @@ export default function Home() {
             <div className="pointer-events-none absolute -left-3 top-10 hidden w-[260px] -rotate-2 lg:block">
               <div className="rounded-3xl border border-black/10 bg-white/80 p-5 shadow-sm backdrop-blur-[16px]">
                 <div className="text-xs font-semibold tracking-[0.08em] uppercase text-muted">Driver</div>
-                <div className="mt-2 text-sm font-semibold text-(--color-secondary)">Assigned deliveries</div>
+                <div className="mt-2 text-sm font-semibold text-foreground">Assigned deliveries</div>
                 <div className="mt-1 text-xs text-muted">Only assigned orders and status updates.</div>
               </div>
             </div>
             <div className="pointer-events-none absolute -right-3 bottom-10 hidden w-[280px] rotate-2 lg:block">
               <div className="rounded-3xl border border-black/10 bg-white/80 p-5 shadow-sm backdrop-blur-[16px]">
                 <div className="text-xs font-semibold tracking-[0.08em] uppercase text-muted">Owner</div>
-                <div className="mt-2 text-sm font-semibold text-(--color-secondary)">Routes + payments</div>
+                <div className="mt-2 text-sm font-semibold text-foreground">Routes + payments</div>
                 <div className="mt-1 text-xs text-muted">Track route progress and paid/unpaid status.</div>
               </div>
             </div>
@@ -337,7 +341,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13 14h7v6h-7z" />
                   </svg>
                 </div>
-                <div className="mt-4 text-base font-semibold text-(--color-secondary)">{s.t}</div>
+                <div className="mt-4 text-base font-semibold text-foreground">{s.t}</div>
                 <div className="mt-2 text-sm leading-relaxed text-muted">{s.d}</div>
               </Link>
             </Reveal>
@@ -346,6 +350,7 @@ export default function Home() {
       </Section>
 
       <Section
+        tone="alt"
         id="security"
         title="Clear roles, controlled access"
         subtitle="Delivero uses role-based access so owners can manage full business data while delivery staff only see the orders and updates relevant to their assigned work. This keeps operations organized and reduces mistakes caused by unnecessary access."
@@ -355,7 +360,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section id="faq" title="FAQ" subtitle="Quick answers for owners and drivers.">
+      <Section tone="base" id="faq" title="FAQ" subtitle="Quick answers for owners and drivers.">
         <div className="grid gap-4 lg:grid-cols-2">
           {[
             {
@@ -389,10 +394,10 @@ export default function Home() {
               delay={i * 70}
               className="group rounded-2xl border border-black/8 bg-surface p-5 shadow-sm transition-all duration-200 ease-out hover:border-black/12"
             >
-              <summary className="cursor-pointer list-none text-sm font-semibold text-(--color-secondary) [&::-webkit-details-marker]:hidden">
+              <summary className="cursor-pointer list-none text-sm font-semibold text-foreground [&::-webkit-details-marker]:hidden">
                 <div className="flex items-center justify-between gap-4">
                   <span>{f.q}</span>
-                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-black/5 text-(--color-secondary) transition-transform group-open:rotate-180">
+                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-black/5 text-foreground transition-transform group-open:rotate-180">
                     <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
