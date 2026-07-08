@@ -8,6 +8,7 @@ export type Industry = {
   metaDescription: string;
   h1: string;
   intro: string;
+  image: { src: string; alt: string };
   painPoints: string[];
   features: SolutionFeature[];
   useCases: string[];
@@ -25,6 +26,7 @@ export const industries: Industry[] = [
     h1: "Milk delivery software for daily subscriptions",
     intro:
       "Run your dairy round from one system. Delivero manages recurring milk subscriptions, morning routes, driver runs, and payment collection so every doorstep is covered without spreadsheets or phone calls.",
+    image: { src: "/use-milk.png", alt: "Milk delivery software" },
     painPoints: [
       "Daily subscriptions tracked in notebooks and WhatsApp, so quantities and pauses get missed.",
       "No clear view of who paid, who owes, and how much across a growing customer list.",
@@ -60,6 +62,7 @@ export const industries: Industry[] = [
     h1: "Bakery delivery software for daily routes",
     intro:
       "Get fresh bakery orders out the door on time. Delivero organizes daily and standing orders, plans delivery routes, and keeps drivers and payments in sync so every shop and doorstep gets the right order.",
+    image: { src: "/use-bakery.png", alt: "Bakery delivery software" },
     painPoints: [
       "Standing orders for shops and cafes change often and are hard to track on paper.",
       "Early-morning routes depend on one person remembering who gets what.",
@@ -95,6 +98,7 @@ export const industries: Industry[] = [
     h1: "Grocery delivery management software",
     intro:
       "Deliver grocery orders reliably without the coordination chaos. Delivero brings orders, delivery routes, drivers, and payments into one system so your store or distribution business runs smoothly every day.",
+    image: { src: "/use-grocery.png", alt: "Grocery delivery management" },
     painPoints: [
       "Orders arrive by phone, WhatsApp, and walk-in with no single list to work from.",
       "Assigning deliveries to drivers by area is slow and error-prone.",
@@ -130,6 +134,7 @@ export const industries: Industry[] = [
     h1: "Water delivery management app for suppliers",
     intro:
       "Keep water cans and bottles moving without the daily guesswork. Delivero manages recurring and on-demand water orders, plans delivery routes, and tracks drivers and payments across your customer base.",
+    image: { src: "/use-water.png", alt: "Water delivery management" },
     painPoints: [
       "Recurring can deliveries are tracked from memory, so customers get missed.",
       "Hard to know each day which routes to run and who's due for a refill.",
@@ -165,6 +170,7 @@ export const industries: Industry[] = [
     h1: "Tiffin delivery management software",
     intro:
       "Serve every tiffin on time without the daily scramble. Delivero manages recurring meal subscriptions, plans delivery routes, and keeps drivers and payments in sync so lunches and dinners reach every customer.",
+    image: { src: "/use-meal.png", alt: "Tiffin delivery management" },
     painPoints: [
       "Daily meal subscriptions, pauses, and skips are hard to track on paper.",
       "Time-bound lunch and dinner routes depend on manual coordination.",
@@ -200,6 +206,7 @@ export const industries: Industry[] = [
     h1: "Meal delivery software for kitchens and caterers",
     intro:
       "Deliver every meal order accurately and on time. Delivero manages recurring and one-time meal orders, plans delivery routes, and keeps drivers and payments connected so your kitchen runs without the chaos.",
+    image: { src: "/use-distributor.png", alt: "Meal delivery software" },
     painPoints: [
       "Recurring meal orders and one-off changes are scattered across calls and messages.",
       "Assigning deliveries and building routes by hand slows down every service.",

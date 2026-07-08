@@ -1,13 +1,12 @@
 import Link from "next/link";
-import Image from "next/image";
 import Section from "@/components/Section";
 import FeatureCard from "@/components/FeatureCard";
 import Hero from "@/components/Hero";
 import CTASection from "@/components/CTASection";
-import FAQ from "@/components/FAQ";
 import PricingTeaser from "@/components/PricingTeaser";
 import Reveal from "@/components/Reveal";
-import { generalFaqs } from "@/content/faq";
+import SolutionCard from "@/components/SolutionCard";
+import { industries } from "@/content/solutions/industries";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -22,359 +21,89 @@ export default function Home() {
     <div>
       <Hero />
 
-      <Section tone="base" className="py-16 md:py-20">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            "Owner dashboard + driver app in one system",
-            "Real-time route and order visibility",
-            "Works on Flutter Web and Android",
-            "Built for recurring and one-time deliveries",
-          ].map((t, i) => (
-            <Reveal key={t} delay={i * 80} className="flex h-full items-start gap-3 rounded-2xl border border-black/8 bg-surface px-5 py-5 shadow-sm">
-              <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-full bg-(--color-primary)/12 text-sm font-semibold text-(--color-primary)">
-                ✓
-              </span>
-              <div className="text-sm font-semibold leading-snug text-foreground">{t}</div>
-            </Reveal>
-          ))}
-        </div>
-        <div className="mt-8 text-center text-sm text-muted">
-          One connected system for orders, routes, drivers, payments, and delivery updates.
-        </div>
-      </Section>
-
-      <Section
-        tone="alt"
-        title="Still managing deliveries through chats and spreadsheets?"
-        subtitle="Manual delivery operations often lead to missed deliveries, duplicate orders, payment confusion, and poor visibility for both owners and drivers. Delivero replaces scattered tools with one connected workflow built for delivery businesses."
-      >
-        <div className="grid gap-6 md:grid-cols-2">
-          <Reveal className="h-full rounded-3xl border border-black/8 bg-surface p-6 shadow-sm md:p-8">
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-[0.08em] uppercase text-muted">
-              <span className="grid h-10 w-10 place-items-center rounded-2xl bg-(--color-primary)/12 text-(--color-primary)">
-                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v4" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 17h.01" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
-                </svg>
-              </span>
-              Problem
-            </div>
-            <div className="mt-3 text-xl font-semibold text-foreground">Still managing deliveries through chats and spreadsheets?</div>
-            <p className="mt-3 text-sm leading-relaxed text-muted">
-              Manual delivery operations often lead to missed deliveries, duplicate orders, payment confusion, and poor visibility for both owners and drivers. Replace spreadsheets and WhatsApp chats with a system built for daily delivery runs.
-            </p>
-          </Reveal>
-          <Reveal delay={120} className="h-full rounded-3xl border border-black/8 bg-surface p-6 shadow-sm md:p-8">
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-[0.08em] uppercase text-lime">
-              <span className="grid h-10 w-10 place-items-center rounded-2xl bg-lime-soft text-lime">
-                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M20 7 10 17l-5-5" />
-                </svg>
-              </span>
-              Solution
-            </div>
-            <div className="mt-3 text-xl font-semibold text-foreground">A simpler way to run delivery operations</div>
-            <p className="mt-3 text-sm leading-relaxed text-muted">
-              Owners manage products, customers, orders, routes, drivers, and business performance from one dashboard, while drivers only see assigned deliveries and update order status as work gets done.
-            </p>
-          </Reveal>
-        </div>
-      </Section>
-
-      <Section
-        tone="base"
-        id="use-cases"
-        title="Use cases"
-        subtitle="Built for local delivery businesses that run recurring and one-time drops—without enterprise complexity."
-      >
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            {
-              t: "Bakery delivery software",
-              d: "Create morning routes, assign drivers, and track delivered vs pending orders by customer. Popular with bakeries that run daily drops.",
-              img: { src: "/use-bakery.png", alt: "Bakery delivery software", position: "50% 50%" },
-            },
-            {
-              t: "Milk delivery software",
-              d: "Manage recurring quantities, subscription orders, and payment status while keeping drivers focused on assigned drops. Built for milk and dairy runs.",
-              img: { src: "/use-milk.png", alt: "Milk delivery software", position: "50% 50%" },
-            },
-            {
-              t: "Meal delivery software",
-              d: "Handle daily order creation, route grouping, and status updates so owners can monitor delivery progress in real time.",
-              img: { src: "/use-meal.png", alt: "Meal delivery software", position: "50% 50%" },
-            },
-            {
-              t: "Water supply delivery management",
-              d: "Keep large, route-based deliveries organized with clear driver assignment and customer contact access on the go.",
-              img: { src: "/use-water.png", alt: "Water supply delivery management", position: "50% 50%" },
-            },
-            {
-              t: "Grocery delivery management",
-              d: "Track customer records, orders, and payments across routes while replacing spreadsheets and WhatsApp chats with one connected workflow.",
-              img: { src: "/use-grocery.png", alt: "Grocery delivery management", position: "50% 50%" },
-            },
-            {
-              t: "Local distributor management",
-              d: "Manage multiple products, customers, and drivers with role-based access so the right people see the right data.",
-              img: { src: "/use-distributor.png", alt: "Local distributor management", position: "50% 50%" },
-            },
-          ].map((u, i) => (
-            <Reveal
-              key={u.t}
-              delay={i * 80}
-              className="group h-full rounded-3xl border border-black/8 bg-surface p-6 shadow-sm transition-all duration-200 ease-out hover:border-black/12 hover:-translate-y-0.5 hover:shadow-md md:p-8"
-            >
-              <div className="overflow-hidden rounded-2xl border border-black/8 bg-(--color-primary-50)">
-                <Image
-                  src={u.img.src}
-                  alt={u.img.alt}
-                  width={1200}
-                  height={675}
-                  className="h-40 w-full object-cover sm:h-44"
-                  style={{ objectPosition: u.img.position }}
-                />
-              </div>
-              <div className="mt-5">
-                <div className="text-base font-semibold text-foreground">{u.t}</div>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{u.d}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-        <div className="mt-8 text-center text-sm text-muted">
-          Have a different workflow?{" "}
-          <Link href="/contact" className="font-semibold text-(--color-primary) hover:underline">
-            Contact us
-          </Link>{" "}
-          and we’ll map Delivero to your routes and order types.
-        </div>
-      </Section>
-
-      <Section
-        tone="alt"
-        id="how-it-works"
-        title="How Delivero works"
-      >
+      <Section tone="alt" id="how-it-works" title="How Delivero works">
         <ol className="grid gap-6 md:grid-cols-3">
           {[
             {
-              title: "Step 1 — Set up your operations",
+              title: "Set up your operations",
               desc: "Add products, customers, delivery routes, and drivers to match your business workflow.",
-              icon: (
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 4h16v6H4z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 14h7v6H4z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 14h7v6h-7z" />
-                </svg>
-              ),
             },
             {
-              title: "Step 2 — Create and organize orders",
+              title: "Create and organize orders",
               desc: "Create daily, one-time, or special orders, set quantities and payment details, and manage them from one place.",
-              icon: (
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M8 6h13" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h13" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M8 18h13" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 6h.01M3 12h.01M3 18h.01" />
-                </svg>
-              ),
             },
             {
-              title: "Step 3 — Deliver with clarity",
-              desc: "Drivers automatically see assigned route orders, open customer details, and update delivery status as deliveries are completed.",
-              icon: (
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 18h6" />
-                </svg>
-              ),
+              title: "Deliver with clarity",
+              desc: "Drivers see assigned route orders, open customer details, and update delivery status as work gets done.",
             },
           ].map((s, idx) => (
             <Reveal
               as="li"
               key={s.title}
               delay={idx * 100}
-              className="group relative h-full rounded-3xl border border-black/8 bg-surface p-6 shadow-sm transition-all duration-200 ease-out hover:border-black/12 hover:-translate-y-0.5 hover:shadow-md md:p-8"
+              className="card-surface relative h-full rounded-3xl p-8"
             >
-              <div className="absolute right-6 top-6 grid h-10 w-10 place-items-center rounded-2xl bg-(--color-primary)/10 text-(--color-primary)">
-                {s.icon}
-              </div>
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-(--color-primary)/10 text-xl font-bold text-(--color-primary)">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-(--color-primary)/10 text-lg font-bold text-(--color-primary)">
                 {idx + 1}
               </div>
               <div className="text-base font-semibold text-foreground">{s.title}</div>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{s.desc}</p>
+              <p className="mt-3 text-sm leading-relaxed text-muted">{s.desc}</p>
             </Reveal>
           ))}
         </ol>
       </Section>
 
-      <Section tone="base" id="features" title="Everything needed to manage deliveries smoothly">
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <Section
+        tone="base"
+        id="features"
+        title="Built for daily delivery teams"
+        subtitle="Owner dashboard and driver app in one connected workflow."
+      >
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            { title: "Owner Dashboard", description: "Run your business from one dashboard with quick access to products, customers, routes, drivers, and orders." },
-            { title: "Product Catalog", description: "Add and manage products with pricing, search your catalog quickly, and keep ordering accurate." },
-            { title: "Customer Management", description: "Store addresses, phone numbers, assigned routes, order history, and pending payment details in one place." },
-            { title: "Smart Orders", description: "Create daily, one-time, and special orders with fast quantity entry, payment tracking, and clear order statuses." },
-            { title: "Routes and Drivers", description: "Create routes by area, assign drivers, and keep route-to-driver syncing clear across operations." },
-            { title: "Driver App", description: "Drivers view assigned deliveries, open customer details, and mark orders delivered with a focused delivery screen." },
+            { title: "Owner Dashboard", description: "Manage products, customers, routes, drivers, orders, and payments from one place." },
+            { title: "Smart Orders", description: "Handle daily, one-time, and special orders with payment tracking and clear statuses." },
+            { title: "Driver App", description: "Drivers view assigned deliveries, customer details, and update status on the go." },
           ].map((f, i) => (
             <Reveal key={f.title} delay={i * 80} className="h-full">
               <FeatureCard title={f.title} description={f.description} />
             </Reveal>
           ))}
         </div>
+        <div className="mt-10 text-center">
+          <Link href="/features" className="text-sm font-semibold text-(--color-primary) hover:underline">
+            View all features →
+          </Link>
+        </div>
       </Section>
 
       <Section
         tone="alt"
-        id="roles"
-        title="Built for both owners and drivers"
+        id="solutions"
+        title="Solutions by industry"
+        subtitle="Built for local delivery businesses that run recurring and one-time drops."
       >
-        <div className="grid gap-6 md:grid-cols-2">
-          <Reveal className="h-full rounded-3xl border border-black/8 bg-surface p-6 shadow-sm md:p-8">
-            <div className="flex items-center justify-between gap-4">
-              <div className="text-xs font-semibold tracking-[0.08em] uppercase text-muted">For owners and managers</div>
-              <div className="rounded-full bg-lime-soft px-3 py-1 text-xs font-semibold text-lime">Owner</div>
-            </div>
-            <p className="mt-3 text-sm leading-relaxed text-muted">
-              Manage customers, products, orders, routes, drivers, payments, and daily performance with full access to business operations.
-            </p>
-            <ul className="mt-5 space-y-2 text-sm text-muted">
-              <li>Quick actions for daily work</li>
-              <li>Revenue and order KPIs</li>
-              <li>Customer and payment visibility</li>
-              <li>Order and fulfillment tracking</li>
-            </ul>
-          </Reveal>
-          <Reveal delay={120} className="h-full rounded-3xl border border-black/8 bg-surface p-6 shadow-sm md:p-8">
-            <div className="flex items-center justify-between gap-4">
-              <div className="text-xs font-semibold tracking-[0.08em] uppercase text-muted">For delivery drivers</div>
-              <div className="rounded-full bg-emerald-500/12 px-3 py-1 text-xs font-semibold text-emerald-700">Driver</div>
-            </div>
-            <p className="mt-3 text-sm leading-relaxed text-muted">
-              Give drivers a simple assigned order list with customer details and the ability to update delivery status quickly.
-            </p>
-            <ul className="mt-5 space-y-2 text-sm text-muted">
-              <li>Assigned orders only</li>
-              <li>Clear route-based delivery list</li>
-              <li>Customer address and phone access</li>
-              <li>Limited status updates for delivery work</li>
-            </ul>
-          </Reveal>
-        </div>
-      </Section>
-
-      <Section tone="base" id="screens">
-        <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.2fr]">
-          <div>
-            <div className="inline-flex items-center rounded-full border border-accent-soft bg-accent-soft px-3 py-1 text-xs font-semibold tracking-[0.08em] uppercase text-accent">
-              See Delivero in action
-            </div>
-            <h3 className="mt-5 text-balance text-[clamp(2.25rem,4vw,3.25rem)] font-bold tracking-[-0.02em] text-foreground">
-              A connected workflow from setup to final delivery updates
-            </h3>
-            <span aria-hidden="true" className="lime-accent-bar mt-4" />
-            <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
-              From products and customers to routes, drivers, and order status, Delivero keeps every step connected across owner and driver workflows.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link href="/screenshots" className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold btn-primary">
-                View screens
-              </Link>
-            </div>
-            <div className="mt-6 text-sm text-muted">
-              Screenshots gallery coming soon. For a full walkthrough,{" "}
-              <Link href="/contact" className="font-semibold text-(--color-primary) hover:underline">
-                contact us
-              </Link>
-              .
-            </div>
-          </div>
-
-          <div className="relative">
-            <div className="relative overflow-hidden rounded-[28px] border border-black/8 bg-white shadow-xl shadow-black/5 ring-1 ring-black/5">
-              <Image
-                src="/hero.png"
-                alt="Delivero product preview"
-                width={1200}
-                height={675}
-                className="h-[320px] w-full object-cover sm:h-[380px] lg:h-[420px]"
-                style={{ objectPosition: "50% 50%" }}
-                priority={false}
-              />
-              <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_20%,rgba(99,91,255,0.18)_0%,transparent_55%)]" />
-            </div>
-
-            <div className="pointer-events-none absolute -left-3 top-10 hidden w-[260px] -rotate-2 lg:block">
-              <div className="rounded-3xl border border-black/10 bg-white/80 p-5 shadow-sm backdrop-blur-[16px]">
-                <div className="text-xs font-semibold tracking-[0.08em] uppercase text-muted">Driver</div>
-                <div className="mt-2 text-sm font-semibold text-foreground">Assigned deliveries</div>
-                <div className="mt-1 text-xs text-muted">Only assigned orders and status updates.</div>
-              </div>
-            </div>
-            <div className="pointer-events-none absolute -right-3 bottom-10 hidden w-[280px] rotate-2 lg:block">
-              <div className="rounded-3xl border border-black/10 bg-white/80 p-5 shadow-sm backdrop-blur-[16px]">
-                <div className="text-xs font-semibold tracking-[0.08em] uppercase text-muted">Owner</div>
-                <div className="mt-2 text-sm font-semibold text-foreground">Routes + payments</div>
-                <div className="mt-1 text-xs text-muted">Track route progress and paid/unpaid status.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            { t: "Dashboard overview", d: "Business snapshot and quick actions." },
-            { t: "Order management", d: "Daily, one-time, and special orders." },
-            { t: "Route setup", d: "Create routes by area and organize stops." },
-            { t: "Driver assignments", d: "Assign drivers and sync daily work." },
-          ].map((s, i) => (
-            <Reveal key={s.t} delay={i * 80} className="h-full">
-              <Link
-                href="/screenshots"
-                className="group block h-full rounded-3xl border border-black/8 bg-surface p-6 shadow-sm transition-all duration-200 ease-out hover:border-black/12 hover:-translate-y-0.5 hover:shadow-md"
-              >
-                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-(--color-primary)/12 text-(--color-primary)">
-                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 4h16v6H4z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 14h7v6H4z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 14h7v6h-7z" />
-                  </svg>
-                </div>
-                <div className="mt-4 text-base font-semibold text-foreground">{s.t}</div>
-                <div className="mt-2 text-sm leading-relaxed text-muted">{s.d}</div>
-              </Link>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {industries.map((industry, i) => (
+            <Reveal key={industry.slug} delay={i * 60} className="h-full">
+              <SolutionCard industry={industry} />
             </Reveal>
           ))}
         </div>
-      </Section>
-
-      <Section
-        tone="alt"
-        id="security"
-        title="Clear roles, controlled access"
-        subtitle="Delivero uses role-based access so owners can manage full business data while delivery staff only see the orders and updates relevant to their assigned work. This keeps operations organized and reduces mistakes caused by unnecessary access."
-      >
-        <div className="rounded-3xl border border-black/8 bg-surface p-6 text-sm text-muted shadow-sm md:p-8">
-          Owners have full access to manage products, customers, routes, drivers, orders, and payments. Drivers only see assigned deliveries and the status updates needed to complete their work.
+        <div className="mt-10 text-center">
+          <Link href="/solutions" className="text-sm font-semibold text-(--color-primary) hover:underline">
+            View all solutions →
+          </Link>
         </div>
       </Section>
 
       <Section
-        tone="alt"
+        tone="base"
         id="pricing"
         title="Simple pricing for every team size"
         subtitle="Start free and upgrade as your routes, drivers, and customers grow."
       >
         <PricingTeaser />
-      </Section>
-
-      <Section tone="base" id="faq" title="Questions & answers" subtitle="Quick answers for owners and drivers.">
-        <FAQ items={generalFaqs} variant="static" columns={2} animate showContactLink />
       </Section>
 
       <CTASection />

@@ -1,8 +1,6 @@
 import Section from "@/components/Section";
 import FeatureCard from "@/components/FeatureCard";
 import CTASection from "@/components/CTASection";
-import PricingTeaser from "@/components/PricingTeaser";
-import PromoBanner from "@/components/PromoBanner";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -22,10 +20,7 @@ export default function FeaturesPage() {
         title="Last-mile delivery & route management features"
         subtitle="Owner dashboard + driver app in one connected system."
       >
-        <p className="mx-auto mb-10 max-w-3xl text-center text-sm leading-relaxed text-muted md:text-base">
-          Delivero connects products, customers, orders, routes, drivers, and payments so owners and drivers work from the same workflow.
-        </p>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <FeatureCard
             title="Owner Dashboard"
             description="Run your business from one dashboard with quick access to products, customers, routes, drivers, and orders."
@@ -123,25 +118,9 @@ export default function FeaturesPage() {
         </div>
       </Section>
 
-      <Section
-        tone="alt"
-        title="Plans that scale with your deliveries"
-        subtitle="Every feature above is included in our plans — pick the tier that matches your team."
-      >
-        <PricingTeaser />
-      </Section>
-
-      <Section tone="base">
-        <PromoBanner
-          title="See it in your workflow"
-          description="Set up products, customers, routes, and drivers — then run your first delivery day on Delivero."
-          primaryLabel="Start free trial"
-        />
-      </Section>
-
       <CTASection
         title="Ready to get started?"
-        description="Get started and see how Delivero fits your routes, drivers, and daily orders."
+        description="Set up products, customers, routes, and drivers — then run your first delivery day on Delivero."
       />
     </>
   );
