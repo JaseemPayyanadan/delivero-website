@@ -18,8 +18,8 @@ export default function CTASection({
   const androidDownloadHref = "https://play.google.com/store/apps/details?id=delivero.com";
 
   return (
-    <Section tone="alt" className={`py-12 md:py-16 ${className}`}>
-      <div className="relative overflow-hidden rounded-[28px] border border-black/8 bg-white px-6 py-12 text-foreground shadow-sm md:px-12 md:py-16">
+    <Section tone="alt" className={`!py-20 md:!py-24 ${className}`}>
+      <div className="card-surface relative overflow-hidden rounded-[2rem] px-6 py-14 text-foreground md:px-14 md:py-16">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_60%,rgba(90,69,254,0.16)_0%,transparent_70%)]" />
           <div className="absolute inset-0 opacity-70 bg-linear-to-r from-(--color-primary)/10 via-transparent to-(--color-primary)/10 animate-gradient" />
@@ -30,15 +30,15 @@ export default function CTASection({
             Get started today
           </div>
 
-          <h3 className="mt-4 text-balance text-3xl font-bold tracking-tight md:text-4xl">
+          <h3 className="mt-5 text-balance text-3xl font-bold tracking-tight md:text-4xl">
             {title}
           </h3>
-          <span aria-hidden="true" className="lime-accent-bar mx-auto mt-4" />
-          <p className="mt-4 text-pretty text-base text-muted md:text-lg">
+          <span aria-hidden="true" className="lime-accent-bar mx-auto mt-5" />
+          <p className="mt-5 text-pretty text-base text-muted md:text-lg">
             {description}
           </p>
 
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a
               href={androidDownloadHref}
               target="_blank"

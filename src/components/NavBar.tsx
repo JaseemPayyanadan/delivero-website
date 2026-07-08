@@ -97,9 +97,9 @@ export default function NavBar() {
   }, [isOpen]);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-black/8 bg-white/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-soft bg-white/75 backdrop-blur-lg">
       <nav
-        className="relative mx-auto flex max-w-[1200px] items-center justify-between gap-4 px-6 py-4"
+        className="relative mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 sm:px-8 md:py-5"
         aria-label="Main navigation"
       >
         <Link href="/" className="flex shrink-0 items-center" aria-label="Delivero home">
@@ -141,13 +141,13 @@ export default function NavBar() {
 
       <div
         id="mobile-menu"
-        className={`md:hidden overflow-hidden border-t border-black/8 bg-white/95 backdrop-blur-md transition-all duration-200 ease-out ${
+        className={`md:hidden overflow-hidden border-t border-soft bg-white/90 backdrop-blur-lg transition-all duration-200 ease-out ${
           isOpen ? "max-h-[85vh] opacity-100" : "pointer-events-none max-h-0 opacity-0"
         }`}
         aria-hidden={!isOpen}
         inert={!isOpen}
       >
-        <div className="mx-auto flex max-w-[1200px] flex-col px-4 py-3">
+        <div className="mx-auto flex max-w-6xl flex-col px-5 py-4 sm:px-8">
           <div className="flex flex-col gap-1">
             {mainNavLinks.map((link) => (
               <NavItem
@@ -159,7 +159,7 @@ export default function NavBar() {
               />
             ))}
           </div>
-          <div className="mt-3 border-t border-black/8 pt-3">
+          <div className="mt-4 border-t border-soft pt-4">
             <Button href={WEB_APP_HREF} className="w-full justify-center py-3" onClick={closeMenu}>
               Get started
             </Button>

@@ -15,14 +15,20 @@
   /* Neutrals */
   --background: #ffffff;
   --foreground: #101828;
-  --surface: #ffffff;
+  --surface: rgba(255, 255, 255, 0.92);
   --section: #ffffff;
-  --section-alt: #f5f7fa;
-  --muted: #525866;
-  --muted-light: #99a0ae;
-  --border: #e1e4ea;
+  --section-alt: rgba(255, 255, 255, 0.58);
+  --muted: #667085;
+  --muted-light: #98a2b3;
+  --border: rgba(90, 69, 254, 0.12);
+  --border-soft: rgba(16, 24, 40, 0.06);
   --ring: rgba(90, 69, 254, 0.35);
-  --divider: rgba(16, 24, 40, 0.08);
+  --divider: rgba(16, 24, 40, 0.06);
+
+  /* Layout rhythm */
+  --content-max: 72rem;
+  --section-py: clamp(4.5rem, 8vw, 7rem);
+  --section-px: clamp(1.25rem, 4vw, 2rem);
 }
 
 @theme inline {
@@ -52,14 +58,31 @@ body {
 /* Utility tokens mapped to Tailwind theme */
 .bg-surface { background-color: var(--surface); }
 .bg-section { background-color: var(--section); }
-.bg-section-alt { background-color: var(--section-alt); }
+.bg-section-alt {
+  background-color: var(--section-alt);
+  backdrop-filter: blur(10px);
+}
 .text-muted { color: var(--muted); }
 .text-accent { color: var(--color-accent); }
-.bg-accent-soft { background-color: rgba(245, 158, 11, 0.12); }
-.border-accent-soft { border-color: rgba(245, 158, 11, 0.22); }
+.bg-accent-soft { background-color: rgba(245, 158, 11, 0.1); }
+.border-accent-soft { border-color: rgba(245, 158, 11, 0.2); }
 .text-lime { color: var(--color-secondary); }
-.bg-lime-soft { background-color: rgba(191, 224, 3, 0.14); }
-.border-lime-soft { border-color: rgba(191, 224, 3, 0.28); }
+.bg-lime-soft { background-color: rgba(191, 224, 3, 0.12); }
+.border-lime-soft { border-color: rgba(191, 224, 3, 0.24); }
+.border-soft { border-color: var(--border-soft); }
+.shadow-card {
+  box-shadow:
+    0 1px 2px rgba(16, 24, 40, 0.04),
+    0 10px 28px rgba(90, 69, 254, 0.07);
+}
+.card-surface {
+  border: 1px solid var(--border-soft);
+  background-color: var(--surface);
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 1px 2px rgba(16, 24, 40, 0.04),
+    0 10px 28px rgba(90, 69, 254, 0.07);
+}
 .lime-accent-bar {
   display: block;
   height: 4px;
@@ -219,9 +242,9 @@ body {
 .bg-hero {
   background-color: var(--color-primary-50);
   background-image:
-    radial-gradient(ellipse 90% 70% at 72% -8%, rgba(90, 69, 254, 0.34) 0%, transparent 68%),
-    radial-gradient(ellipse 70% 55% at 12% 4%, rgba(90, 69, 254, 0.22) 0%, transparent 62%),
-    radial-gradient(ellipse 55% 45% at 88% 92%, rgba(90, 69, 254, 0.14) 0%, transparent 58%);
+    radial-gradient(ellipse 95% 75% at 72% -12%, rgba(90, 69, 254, 0.28) 0%, transparent 70%),
+    radial-gradient(ellipse 75% 60% at 8% 6%, rgba(90, 69, 254, 0.16) 0%, transparent 64%),
+    radial-gradient(ellipse 60% 50% at 92% 88%, rgba(191, 224, 3, 0.1) 0%, transparent 58%);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }

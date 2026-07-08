@@ -21,19 +21,22 @@ export default function Section({
   tone = "base",
   as: Tag = "h2",
 }: SectionProps) {
-  const toneClass = tone === "alt" ? "bg-section-alt" : "bg-transparent";
+  const toneClass =
+    tone === "alt"
+      ? "border-y border-white/50 bg-section-alt"
+      : "bg-transparent";
 
   return (
     <section id={id} className={`w-full ${toneClass}`}>
-      <div className={`mx-auto w-full max-w-[1200px] px-6 py-20 md:py-24 ${className}`}>
+      <div className={`mx-auto w-full max-w-6xl px-5 sm:px-8 py-24 md:py-32 ${className}`}>
         {title ? (
-          <Reveal className="mb-12 text-center md:mb-14">
-            <Tag className="text-balance text-[clamp(2rem,4vw,3.5rem)] font-bold tracking-[-0.02em] text-foreground">
+          <Reveal className="mb-14 text-center md:mb-16">
+            <Tag className="text-balance text-[clamp(2rem,4vw,3.25rem)] font-bold leading-[1.1] tracking-[-0.02em] text-foreground">
               {title}
             </Tag>
-            <span aria-hidden="true" className="lime-accent-bar mx-auto mt-4" />
+            <span aria-hidden="true" className="lime-accent-bar mx-auto mt-5" />
             {subtitle ? (
-              <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-muted md:text-lg">
+              <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
                 {subtitle}
               </p>
             ) : null}

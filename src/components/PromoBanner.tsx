@@ -19,7 +19,7 @@ export default function PromoBanner({
   secondaryHref = "/contact",
 }: PromoBannerProps) {
   return (
-    <Reveal className="relative overflow-hidden rounded-2xl border border-black/8 bg-white px-6 py-10 shadow-sm md:px-10 md:py-12">
+    <Reveal className="card-surface relative overflow-hidden rounded-[2rem] px-6 py-12 md:px-12 md:py-14">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(90,69,254,0.12)_0%,transparent_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_50%,rgba(191,224,3,0.10)_0%,transparent_55%)]" />
