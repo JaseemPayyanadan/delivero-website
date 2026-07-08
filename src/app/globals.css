@@ -57,6 +57,16 @@ body {
 .text-accent { color: var(--color-accent); }
 .bg-accent-soft { background-color: rgba(245, 158, 11, 0.12); }
 .border-accent-soft { border-color: rgba(245, 158, 11, 0.22); }
+.text-lime { color: var(--color-secondary); }
+.bg-lime-soft { background-color: rgba(191, 224, 3, 0.14); }
+.border-lime-soft { border-color: rgba(191, 224, 3, 0.28); }
+.lime-accent-bar {
+  display: block;
+  height: 4px;
+  width: 40px;
+  border-radius: 4px;
+  background-color: var(--color-secondary);
+}
 .border-section { border-color: var(--divider); }
 
 @utility no-scrollbar {

@@ -31,6 +31,7 @@ export default function Section({
             <Tag className="text-balance text-[clamp(2rem,4vw,3.5rem)] font-bold tracking-[-0.02em] text-foreground">
               {title}
             </Tag>
+            <span aria-hidden="true" className="lime-accent-bar mx-auto mt-4" />
             {subtitle ? (
               <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-muted md:text-lg">
                 {subtitle}

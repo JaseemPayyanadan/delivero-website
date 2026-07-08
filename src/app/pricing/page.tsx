@@ -1,6 +1,8 @@
 import Section from "@/components/Section";
 import Button from "@/components/Button";
 import CTASection from "@/components/CTASection";
+import FAQ from "@/components/FAQ";
+import { pricingFaqs } from "@/content/faq";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -152,56 +154,8 @@ export default function PricingPage() {
         </div>
       </Section>
 
-      {/* FAQ Section */}
       <Section title="Frequently Asked Questions" subtitle="Common questions about Delivero pricing.">
-        <div className="grid gap-4 lg:grid-cols-2">
-          {[
-            {
-              q: "How much does delivery management software cost?",
-              a: "Delivero offers a free Starter plan with no time limit, suitable for small teams. The Professional plan starts at ₹499/month for growing delivery businesses.",
-            },
-            {
-              q: "Is there a free plan for small delivery businesses?",
-              a: "Yes. The Starter plan is free forever and includes 1 driver account, up to 10 customers, 1 route, order management, and live tracking — no credit card required.",
-            },
-            {
-              q: "How do I install the app?",
-              a: "Download from the Play Store (package: delivero.com) and sign in with your account credentials.",
-            },
-            {
-              q: "Which devices are supported?",
-              a: "The app supports Android 8.0+ and works on phones and small tablets.",
-            },
-            {
-              q: "Does it work offline?",
-              a: "Core actions are cached offline and automatically sync when you're back online.",
-            },
-            {
-              q: "What roles are available?",
-              a: "There are two main roles: Owner/Manager (for managing customers, orders, and reports) and Driver (for viewing orders and updating delivery status).",
-            },
-            {
-              q: "How is my data secured?",
-              a: "All data is encrypted in transit and at rest. We use role-based access controls to ensure only authorized users can access relevant information.",
-            },
-            {
-              q: "How do I get support?",
-              a: "Email support is included with all plans. Priority support and SLA options are available on Professional and Business plans.",
-            },
-          ].map((item) => (
-            <details key={item.q} className="group rounded-2xl border border-black/8 bg-surface p-5 shadow-sm transition-all duration-200 ease-out hover:border-black/12">
-              <summary className="cursor-pointer text-base font-semibold text-foreground transition-colors [&::-webkit-details-marker]:hidden">
-                <div className="flex items-center justify-between">
-                  <span>{item.q}</span>
-                  <svg className="h-5 w-5 shrink-0 transition-transform group-open:rotate-180 text-black/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
-              </summary>
-              <p className="mt-3 text-sm leading-relaxed text-muted">{item.a}</p>
-            </details>
-          ))}
-        </div>
+        <FAQ items={pricingFaqs} />
         <div className="mt-8 text-center">
           <Button href="/faq" variant="ghost" className="text-base">
             View all FAQs →

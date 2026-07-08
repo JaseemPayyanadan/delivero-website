@@ -30,7 +30,7 @@ export default function ContactPage() {
           </div>
 
           <div className="rounded-3xl border border-black/8 bg-surface p-6 shadow-sm md:p-8">
-            <div className="text-xs font-semibold tracking-[0.08em] uppercase text-muted">What happens next</div>
+            <div className="text-xs font-semibold tracking-[0.08em] uppercase text-lime">What happens next</div>
             <ol className="mt-4 space-y-3 text-sm text-muted">
               <li className="flex gap-3">
                 <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-(--color-primary)/12 text-xs font-bold text-(--color-primary)">1</span>
@@ -46,7 +46,7 @@ export default function ContactPage() {
               </li>
             </ol>
 
-            <div className="mt-6 rounded-2xl border border-black/8 bg-(--color-primary-50) p-5 text-sm">
+            <div className="mt-6 rounded-2xl border border-lime-soft bg-lime-soft p-5 text-sm">
               <div className="text-xs font-semibold text-muted">Support email</div>
               <a className="mt-2 inline-block font-semibold text-(--color-primary) hover:underline" href="mailto:support@delivero.app">
                 support@delivero.app

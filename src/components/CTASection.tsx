@@ -33,6 +33,7 @@ export default function CTASection({
           <h3 className="mt-4 text-balance text-3xl font-bold tracking-tight md:text-4xl">
             {title}
           </h3>
+          <span aria-hidden="true" className="lime-accent-bar mx-auto mt-4" />
           <p className="mt-4 text-pretty text-base text-muted md:text-lg">
             {description}
           </p>

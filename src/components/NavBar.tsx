@@ -38,7 +38,7 @@ export default function NavBar() {
               href={l.href}
               className={`relative text-sm font-medium transition-colors hover:text-foreground ${
                 pathname === l.href
-                  ? "text-foreground after:absolute after:-bottom-4 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-(--color-accent)"
+                  ? "text-foreground after:absolute after:-bottom-4 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-(--color-secondary)"
                   : "text-muted"
               }`}
             >
@@ -101,7 +101,7 @@ export default function NavBar() {
               key={l.href}
               href={l.href}
               className={`block rounded-2xl px-4 py-3 text-sm font-medium transition-colors hover:bg-black/5 ${
-                pathname === l.href ? "bg-accent-soft text-foreground" : "text-muted"
+                pathname === l.href ? "bg-lime-soft text-foreground" : "text-muted"
               }`}
               onClick={() => setIsOpen(false)}
             >
