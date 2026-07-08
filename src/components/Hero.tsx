@@ -6,29 +6,29 @@ export default function Hero() {
   const webAppHref = "https://app.delivro.in/#/intro";
 
   return (
-    <section className="relative mx-auto w-full max-w-none bg-hero px-4 pb-10 pt-10 sm:px-6 md:pb-12 md:pt-12">
-      <div className="mx-auto grid max-w-[1200px] items-center gap-8 md:grid-cols-2 md:gap-10">
+    <section className="relative mx-auto w-full max-w-none bg-hero px-5 pb-16 pt-12 sm:px-8 md:pb-20 md:pt-16">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2 md:gap-14">
         <div className="animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-3 py-1 text-xs font-semibold text-foreground">
+          <div className="inline-flex items-center gap-2 rounded-full border border-soft bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-foreground shadow-card backdrop-blur-sm">
             <span className="rounded-full bg-accent-soft px-2 py-0.5 text-[10px] font-semibold tracking-[0.08em] uppercase text-accent">
               New
             </span>
             Built for daily delivery businesses.
           </div>
 
-          <h1 className="mt-4 text-balance text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold leading-[1.08] tracking-[-0.03em] text-foreground">
+          <h1 className="mt-6 text-balance text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold leading-[1.08] tracking-[-0.03em] text-foreground">
             Delivery management software for growing businesses.
           </h1>
-          <span aria-hidden="true" className="lime-accent-bar mt-4" />
+          <span aria-hidden="true" className="lime-accent-bar mt-5" />
 
-          <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-muted md:text-lg">
+          <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted md:text-lg">
             Manage last-mile delivery, route optimization, and subscription orders.
             Proof of delivery and driver app included.
             <br />
             Works on web and Android.
           </p>
 
-          <div className="mt-6 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+          <div className="mt-8 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center">
             <div className="flex flex-wrap items-center gap-3">
             <a
               href={androidDownloadHref}

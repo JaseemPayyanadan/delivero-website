@@ -38,7 +38,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative mt-16 overflow-hidden bg-(--color-primary) text-white">
+    <footer className="relative mt-24 overflow-hidden bg-(--color-primary) text-white">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(255,255,255,0.14)_0%,transparent_55%)]"
@@ -48,8 +48,8 @@ export default function Footer() {
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_100%_100%,rgba(191,224,3,0.12)_0%,transparent_45%)]"
       />
 
-      <div className="relative mx-auto max-w-[1200px] px-6 pt-14 pb-10 md:pt-16 md:pb-12">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,2fr)] lg:gap-16">
+      <div className="relative mx-auto max-w-6xl px-5 pt-16 pb-12 sm:px-8 md:pt-20 md:pb-16">
+        <div className="grid gap-14 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,2fr)] lg:gap-20">
           <div className="max-w-sm">
             <Link href="/" aria-label="Delivero home">
               <Image
@@ -115,7 +115,7 @@ export default function Footer() {
       </div>
 
       <div className="relative border-t border-white/15">
-        <div className="mx-auto flex max-w-[1200px] flex-col items-center justify-between gap-3 px-6 py-6 text-xs text-white/65 sm:flex-row">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-7 text-xs text-white/70 sm:flex-row sm:px-8">
           <p>© {year} Delivero. All rights reserved.</p>
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
             <Link href="/terms" className="transition-colors hover:text-white">

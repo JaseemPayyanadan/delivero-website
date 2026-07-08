@@ -5,7 +5,6 @@ import Section from "@/components/Section";
 import FeatureCard from "@/components/FeatureCard";
 import CTASection from "@/components/CTASection";
 import FAQ from "@/components/FAQ";
-import PromoBanner from "@/components/PromoBanner";
 import Reveal from "@/components/Reveal";
 import { buildFaqJsonLd } from "@/content/faq";
 import { buildMetadata, buildBreadcrumbJsonLd } from "@/lib/seo";
@@ -91,26 +90,9 @@ export default async function SolutionPage({ params }: PageProps) {
       </Section>
 
       <Section title={`How Delivero handles ${industry.name.toLowerCase()}`}>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {industry.features.map((feature) => (
             <FeatureCard key={feature.title} title={feature.title} description={feature.description} icon={featureIcon} />
-          ))}
-        </div>
-      </Section>
-
-      <Section title="Who it's for" className="py-12 md:py-16">
-        <div className="mx-auto grid max-w-3xl gap-3">
-          {industry.useCases.map((useCase) => (
-            <Reveal
-              key={useCase}
-              className="flex items-start gap-3 rounded-2xl border border-black/8 bg-surface p-5 text-sm leading-relaxed text-muted shadow-sm"
-            >
-              <svg className="mt-0.5 h-5 w-5 shrink-0 text-(--color-primary)" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
-              </svg>
-              <span>{useCase}</span>
-            </Reveal>
           ))}
         </div>
       </Section>
@@ -119,11 +101,7 @@ export default async function SolutionPage({ params }: PageProps) {
         <FAQ items={industry.faq} variant="static" columns={2} animate />
       </Section>
 
-      <Section tone="alt" className="py-12 md:py-16">
-        <PromoBanner title="Ready to get started?" description={industry.ctaText} primaryLabel="Get started free" />
-      </Section>
-
-      <CTASection title="Download Delivero" description={industry.ctaText} />
+      <CTASection title="Get started with Delivero" description={industry.ctaText} />
     </>
   );
 }

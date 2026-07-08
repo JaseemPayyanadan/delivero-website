@@ -9,7 +9,7 @@ type ButtonProps = {
 };
 
 export default function Button({ href, children, variant = "primary", className = "", onClick }: ButtonProps) {
-  const base = "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition-all duration-200 ease-out focus-visible:outline-none";
+  const base = "inline-flex items-center justify-center rounded-full px-6 py-3.5 text-sm font-medium transition-all duration-200 ease-out focus-visible:outline-none";
   const styles =
     variant === "primary"
       ? "btn-primary"

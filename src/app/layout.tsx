@@ -104,7 +104,7 @@ export default function RootLayout({
         <NavBar />
         {/* Anchor for app download CTA */}
         <div id="get-app" className="sr-only" />
-        <main>{children}</main>
+        <main className="relative">{children}</main>
         {/* JSON-LD schema */}
         <script
           type="application/ld+json"

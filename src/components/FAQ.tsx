@@ -55,10 +55,10 @@ export default function FAQ({
   className = "",
 }: FAQProps) {
   const gridClass =
-    columns === 1 ? "grid gap-4" : "grid gap-4 lg:grid-cols-2";
+    columns === 1 ? "grid gap-5" : "grid gap-5 lg:grid-cols-2 lg:gap-6";
   const accordionClass =
-    "group rounded-2xl border border-black/8 bg-surface p-5 shadow-sm transition-all duration-200 ease-out hover:border-black/12";
-  const staticClass = "rounded-2xl border border-black/8 bg-surface p-6 shadow-sm";
+    "group card-surface rounded-3xl p-6 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-(--color-primary)/20";
+  const staticClass = "card-surface rounded-3xl p-7";
 
   return (
     <>

@@ -3,7 +3,6 @@ import Button from "@/components/Button";
 import CTASection from "@/components/CTASection";
 import FAQ from "@/components/FAQ";
 import PricingTable, { type PricingPlan } from "@/components/PricingTable";
-import PromoBanner from "@/components/PromoBanner";
 import { pricingFaqs } from "@/content/faq";
 import { buildMetadata } from "@/lib/seo";
 
@@ -105,13 +104,6 @@ export default function PricingPage() {
         subtitle="Simple, transparent pricing for delivery businesses — from solo drivers to multi-location teams."
       >
         <PricingTable plans={plans} />
-      </Section>
-
-      <Section tone="alt">
-        <PromoBanner
-          title="Just getting started?"
-          description="Try Delivero free with one driver, ten customers, and a single route. No credit card required — upgrade when your team grows."
-        />
       </Section>
 
       <Section title="Questions & answers" subtitle="Common questions about Delivero pricing and plans.">
