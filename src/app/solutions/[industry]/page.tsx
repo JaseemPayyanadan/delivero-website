@@ -4,7 +4,9 @@ import { notFound } from "next/navigation";
 import Section from "@/components/Section";
 import FeatureCard from "@/components/FeatureCard";
 import CTASection from "@/components/CTASection";
+import FAQ from "@/components/FAQ";
 import Reveal from "@/components/Reveal";
+import { buildFaqJsonLd } from "@/content/faq";
 import { buildMetadata, buildBreadcrumbJsonLd } from "@/lib/seo";
 import { getIndustry, getIndustrySlugs } from "@/content/solutions/industries";
 
@@ -49,15 +51,7 @@ export default async function SolutionPage({ params }: PageProps) {
     { name: industry.name, url: `/solutions/${industry.slug}` },
   ]);
 
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: industry.faq.map((item) => ({
-      "@type": "Question",
-      name: item.q,
-      acceptedAnswer: { "@type": "Answer", text: item.a },
-    })),
-  };
+  const faqJsonLd = buildFaqJsonLd(industry.faq);
 
   return (
     <>
@@ -121,14 +115,7 @@ export default async function SolutionPage({ params }: PageProps) {
       </Section>
 
       <Section title="Frequently asked questions" className="py-12 md:py-16">
-        <div className="mx-auto grid max-w-3xl gap-4">
-          {industry.faq.map((item) => (
-            <Reveal key={item.q} className="rounded-2xl border border-black/8 bg-surface p-6 shadow-sm">
-              <h3 className="text-base font-semibold text-foreground">{item.q}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{item.a}</p>
-            </Reveal>
-          ))}
-        </div>
+        <FAQ items={industry.faq} variant="static" columns={1} animate className="mx-auto max-w-3xl" />
       </Section>
 
       <CTASection title="Ready to get started?" description={industry.ctaText} />

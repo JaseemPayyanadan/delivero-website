@@ -3,6 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import Button from "@/components/Button";
+
+const webAppHref = "https://app.delivro.in/#/intro";
 
 const links = [
   { href: "/", label: "Home" },
@@ -38,23 +41,30 @@ export default function NavBar() {
               href={l.href}
               className={`relative text-sm font-medium transition-colors hover:text-foreground ${
                 pathname === l.href
-                  ? "text-foreground after:absolute after:-bottom-4 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-(--color-accent)"
+                  ? "text-foreground after:absolute after:-bottom-4 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-(--color-secondary)"
                   : "text-muted"
               }`}
             >
               {l.label}
             </Link>
           ))}
+          <Button href={webAppHref} className="px-4 py-2">
+            Get started
+          </Button>
         </div>
 
-        <button
-          type="button"
-          className="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-foreground transition-colors hover:bg-black/5"
-          aria-label="Toggle menu"
-          aria-expanded={isOpen}
-          aria-controls="mobile-menu"
-          onClick={() => setIsOpen((v) => !v)}
-        >
+        <div className="flex items-center gap-3 md:hidden">
+          <Button href={webAppHref} className="px-4 py-2">
+            Get started
+          </Button>
+          <button
+            type="button"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-foreground transition-colors hover:bg-black/5"
+            aria-label="Toggle menu"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            onClick={() => setIsOpen((v) => !v)}
+          >
           <span className="sr-only">Open main menu</span>
           <svg
             className={`h-5 w-5 ${isOpen ? "hidden" : "block"}`}
@@ -83,7 +93,8 @@ export default function NavBar() {
             <line x1="18" y1="6" x2="6" y2="18" />
             <line x1="6" y1="6" x2="18" y2="18" />
           </svg>
-        </button>
+          </button>
+        </div>
 
       </nav>
 
@@ -101,7 +112,7 @@ export default function NavBar() {
               key={l.href}
               href={l.href}
               className={`block rounded-2xl px-4 py-3 text-sm font-medium transition-colors hover:bg-black/5 ${
-                pathname === l.href ? "bg-accent-soft text-foreground" : "text-muted"
+                pathname === l.href ? "bg-lime-soft text-foreground" : "text-muted"
               }`}
               onClick={() => setIsOpen(false)}
             >

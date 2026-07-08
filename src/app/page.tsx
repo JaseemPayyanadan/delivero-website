@@ -4,7 +4,9 @@ import Section from "@/components/Section";
 import FeatureCard from "@/components/FeatureCard";
 import Hero from "@/components/Hero";
 import CTASection from "@/components/CTASection";
+import FAQ from "@/components/FAQ";
 import Reveal from "@/components/Reveal";
+import { generalFaqs } from "@/content/faq";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -63,8 +65,8 @@ export default function Home() {
             </p>
           </Reveal>
           <Reveal delay={120} className="h-full rounded-3xl border border-black/8 bg-surface p-6 shadow-sm md:p-8">
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-[0.08em] uppercase text-muted">
-              <span className="grid h-10 w-10 place-items-center rounded-2xl bg-(--color-primary)/12 text-(--color-primary)">
+            <div className="flex items-center gap-2 text-xs font-semibold tracking-[0.08em] uppercase text-lime">
+              <span className="grid h-10 w-10 place-items-center rounded-2xl bg-lime-soft text-lime">
                 <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M20 7 10 17l-5-5" />
                 </svg>
@@ -235,7 +237,7 @@ export default function Home() {
           <Reveal className="h-full rounded-3xl border border-black/8 bg-surface p-6 shadow-sm md:p-8">
             <div className="flex items-center justify-between gap-4">
               <div className="text-xs font-semibold tracking-[0.08em] uppercase text-muted">For owners and managers</div>
-              <div className="rounded-full bg-(--color-primary)/12 px-3 py-1 text-xs font-semibold text-(--color-primary)">Owner</div>
+              <div className="rounded-full bg-lime-soft px-3 py-1 text-xs font-semibold text-lime">Owner</div>
             </div>
             <p className="mt-3 text-sm leading-relaxed text-muted">
               Manage customers, products, orders, routes, drivers, payments, and daily performance with full access to business operations.
@@ -274,6 +276,7 @@ export default function Home() {
             <h3 className="mt-5 text-balance text-[clamp(2.25rem,4vw,3.25rem)] font-bold tracking-[-0.02em] text-foreground">
               A connected workflow from setup to final delivery updates
             </h3>
+            <span aria-hidden="true" className="lime-accent-bar mt-4" />
             <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
               From products and customers to routes, drivers, and order status, Delivero keeps every step connected across owner and driver workflows.
             </p>
@@ -361,60 +364,7 @@ export default function Home() {
       </Section>
 
       <Section tone="base" id="faq" title="FAQ" subtitle="Quick answers for owners and drivers.">
-        <div className="grid gap-4 lg:grid-cols-2">
-          {[
-            {
-              q: "How do drivers get orders?",
-              a: "Owners assign drivers to routes, and drivers automatically see the orders connected to their assigned route.",
-            },
-            {
-              q: "What is a Special order type?",
-              a: "Special orders stay separate and do not merge into existing daily or one-time orders.",
-            },
-            {
-              q: "Does Delivero work on web and mobile?",
-              a: "Yes. Delivero is available on Flutter Web and Android.",
-            },
-            {
-              q: "Can payments be tracked?",
-              a: "Yes. Orders can be marked as paid, unpaid, or partial, and the amount paid can also be recorded.",
-            },
-            {
-              q: "Who is Delivero built for?",
-              a: "Delivero is built for delivery-based businesses such as bakeries, milk delivery services, meal providers, grocery delivery teams, water suppliers, and local distributors.",
-            },
-            {
-              q: "What can drivers do in the app?",
-              a: "Drivers can view assigned orders, open order details, access customer address and phone information, and mark deliveries as completed.",
-            },
-          ].map((f, i) => (
-            <Reveal
-              as="details"
-              key={f.q}
-              delay={i * 70}
-              className="group rounded-2xl border border-black/8 bg-surface p-5 shadow-sm transition-all duration-200 ease-out hover:border-black/12"
-            >
-              <summary className="cursor-pointer list-none text-sm font-semibold text-foreground [&::-webkit-details-marker]:hidden">
-                <div className="flex items-center justify-between gap-4">
-                  <span>{f.q}</span>
-                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-black/5 text-foreground transition-transform group-open:rotate-180">
-                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </div>
-              </summary>
-              <p className="mt-3 text-sm leading-relaxed text-muted">{f.a}</p>
-            </Reveal>
-          ))}
-        </div>
-        <div className="mt-8 text-center text-sm text-muted">
-          Not seeing your question?{" "}
-          <Link href="/contact" className="font-semibold text-(--color-primary) hover:underline">
-            Contact us
-          </Link>
-          .
-        </div>
+        <FAQ items={generalFaqs} animate showContactLink />
       </Section>
 
       <CTASection />

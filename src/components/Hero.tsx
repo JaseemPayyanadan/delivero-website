@@ -19,6 +19,7 @@ export default function Hero() {
           <h1 className="mt-4 text-balance text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold leading-[1.08] tracking-[-0.03em] text-foreground">
             Delivery management software for growing businesses.
           </h1>
+          <span aria-hidden="true" className="lime-accent-bar mt-4" />
 
           <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-muted md:text-lg">
             Manage last-mile delivery, route optimization, and subscription orders.
