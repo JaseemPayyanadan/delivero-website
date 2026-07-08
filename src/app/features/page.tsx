@@ -1,6 +1,8 @@
 import Section from "@/components/Section";
 import FeatureCard from "@/components/FeatureCard";
 import CTASection from "@/components/CTASection";
+import PricingTeaser from "@/components/PricingTeaser";
+import PromoBanner from "@/components/PromoBanner";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -119,6 +121,22 @@ export default function FeaturesPage() {
             }
           />
         </div>
+      </Section>
+
+      <Section
+        tone="alt"
+        title="Plans that scale with your deliveries"
+        subtitle="Every feature above is included in our plans — pick the tier that matches your team."
+      >
+        <PricingTeaser />
+      </Section>
+
+      <Section tone="base">
+        <PromoBanner
+          title="See it in your workflow"
+          description="Set up products, customers, routes, and drivers — then run your first delivery day on Delivero."
+          primaryLabel="Start free trial"
+        />
       </Section>
 
       <CTASection

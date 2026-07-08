@@ -2,24 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { industries } from "@/content/solutions/industries";
-
-const webAppHref = "https://app.delivro.in/#/intro";
-const supportEmail = "support@delivero.app";
-
-const productLinks = [
-  { href: "/features", label: "Features" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/#how-it-works", label: "How it works" },
-  { href: "/screenshots", label: "Screenshots" },
-  { href: "/faq", label: "FAQ" },
-];
-
-const companyLinks = [
-  { href: "/contact", label: "Contact" },
-  { href: "/solutions", label: "All solutions" },
-  { href: "/terms", label: "Terms" },
-  { href: "/privacy", label: "Privacy" },
-];
+import {
+  ANDROID_APP_HREF,
+  SUPPORT_EMAIL,
+  WEB_APP_HREF,
+  footerCompanyLinks,
+  footerProductLinks,
+} from "@/content/navigation";
 
 function FooterLink({ href, label }: { href: string; label: string }) {
   return (
@@ -76,20 +65,20 @@ export default function Footer() {
               Delivery management software for orders, routes, drivers, and payments — built for daily and recurring delivery businesses.
             </p>
             <a
-              href={`mailto:${supportEmail}`}
+              href={`mailto:${SUPPORT_EMAIL}`}
               className="mt-4 inline-block text-sm font-medium text-white transition-colors hover:text-white/90"
             >
-              {supportEmail}
+              {SUPPORT_EMAIL}
             </a>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href={webAppHref}
+                href={WEB_APP_HREF}
                 className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white px-5 py-2.5 text-sm font-semibold text-(--color-primary) transition-colors hover:bg-white/90"
               >
                 Get started
               </a>
               <a
-                href="https://play.google.com/store/apps/details?id=delivero.com"
+                href={ANDROID_APP_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:border-white/35 hover:bg-white/10"
@@ -101,7 +90,7 @@ export default function Footer() {
 
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             <FooterColumn title="Product">
-              {productLinks.map((link) => (
+              {footerProductLinks.map((link) => (
                 <FooterLink key={link.href} {...link} />
               ))}
             </FooterColumn>
@@ -117,7 +106,7 @@ export default function Footer() {
             </FooterColumn>
 
             <FooterColumn title="Company">
-              {companyLinks.map((link) => (
+              {footerCompanyLinks.map((link) => (
                 <FooterLink key={link.href} {...link} />
               ))}
             </FooterColumn>

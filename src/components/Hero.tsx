@@ -6,7 +6,7 @@ export default function Hero() {
   const webAppHref = "https://app.delivro.in/#/intro";
 
   return (
-    <section className="relative mx-auto w-full max-w-none bg-hero px-4 pb-10 pt-10 sm:px-6 md:pb-12 md:pt-12">
+    <section className="relative mx-auto w-full max-w-none px-4 pb-10 pt-10 sm:px-6 md:pb-12 md:pt-12">
       <div className="mx-auto grid max-w-[1200px] items-center gap-8 md:grid-cols-2 md:gap-10">
         <div className="animate-fade-in-up">
           <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-3 py-1 text-xs font-semibold text-foreground">

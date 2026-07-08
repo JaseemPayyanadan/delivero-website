@@ -90,7 +90,7 @@ export default function RootLayout({
         `}</Script>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-hero antialiased`}
       >
         <noscript>
           <iframe
