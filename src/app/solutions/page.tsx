@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
+import PromoBanner from "@/components/PromoBanner";
 import Reveal from "@/components/Reveal";
 import { buildMetadata } from "@/lib/seo";
 import { industries } from "@/content/solutions/industries";
@@ -43,9 +44,17 @@ export default function SolutionsPage() {
         </div>
       </Section>
 
+      <Section tone="alt">
+        <PromoBanner
+          title="Not sure which industry fits?"
+          description="Delivero works for any daily or recurring delivery business. Start free and configure it around your routes and order types."
+          primaryLabel="Get started free"
+        />
+      </Section>
+
       <CTASection
-        title="Not sure which fits?"
-        description="Delivero works for any daily or recurring delivery business. Get started and set it up around your routes."
+        title="Download Delivero"
+        description="Get the app and set up your routes, drivers, and daily orders in one connected system."
       />
     </>
   );

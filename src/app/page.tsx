@@ -5,6 +5,7 @@ import FeatureCard from "@/components/FeatureCard";
 import Hero from "@/components/Hero";
 import CTASection from "@/components/CTASection";
 import FAQ from "@/components/FAQ";
+import PricingTeaser from "@/components/PricingTeaser";
 import Reveal from "@/components/Reveal";
 import { generalFaqs } from "@/content/faq";
 import { buildMetadata } from "@/lib/seo";
@@ -363,8 +364,17 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section tone="base" id="faq" title="FAQ" subtitle="Quick answers for owners and drivers.">
-        <FAQ items={generalFaqs} animate showContactLink />
+      <Section
+        tone="alt"
+        id="pricing"
+        title="Simple pricing for every team size"
+        subtitle="Start free and upgrade as your routes, drivers, and customers grow."
+      >
+        <PricingTeaser />
+      </Section>
+
+      <Section tone="base" id="faq" title="Questions & answers" subtitle="Quick answers for owners and drivers.">
+        <FAQ items={generalFaqs} variant="static" columns={2} animate showContactLink />
       </Section>
 
       <CTASection />

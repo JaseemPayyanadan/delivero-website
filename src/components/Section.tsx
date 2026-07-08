@@ -7,7 +7,7 @@ type SectionProps = {
   subtitle?: string;
   children: ReactNode;
   className?: string;
-  /** Alternating section background: base white, alt neutral-50 */
+  /** Alternating section background: base transparent (shows page gradient), alt neutral-50 */
   tone?: "base" | "alt";
   as?: "h1" | "h2";
 };
@@ -21,7 +21,7 @@ export default function Section({
   tone = "base",
   as: Tag = "h2",
 }: SectionProps) {
-  const toneClass = tone === "alt" ? "bg-section-alt" : "bg-section";
+  const toneClass = tone === "alt" ? "bg-section-alt" : "bg-transparent";
 
   return (
     <section id={id} className={`w-full ${toneClass}`}>

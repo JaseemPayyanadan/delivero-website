@@ -5,6 +5,7 @@ import Section from "@/components/Section";
 import FeatureCard from "@/components/FeatureCard";
 import CTASection from "@/components/CTASection";
 import FAQ from "@/components/FAQ";
+import PromoBanner from "@/components/PromoBanner";
 import Reveal from "@/components/Reveal";
 import { buildFaqJsonLd } from "@/content/faq";
 import { buildMetadata, buildBreadcrumbJsonLd } from "@/lib/seo";
@@ -114,11 +115,15 @@ export default async function SolutionPage({ params }: PageProps) {
         </div>
       </Section>
 
-      <Section title="Frequently asked questions" className="py-12 md:py-16">
-        <FAQ items={industry.faq} variant="static" columns={1} animate className="mx-auto max-w-3xl" />
+      <Section title="Questions & answers" className="py-12 md:py-16">
+        <FAQ items={industry.faq} variant="static" columns={2} animate />
       </Section>
 
-      <CTASection title="Ready to get started?" description={industry.ctaText} />
+      <Section tone="alt" className="py-12 md:py-16">
+        <PromoBanner title="Ready to get started?" description={industry.ctaText} primaryLabel="Get started free" />
+      </Section>
+
+      <CTASection title="Download Delivero" description={industry.ctaText} />
     </>
   );
 }
