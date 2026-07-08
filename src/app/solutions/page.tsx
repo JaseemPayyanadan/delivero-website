@@ -27,7 +27,7 @@ export default function SolutionsPage() {
                 href={`/solutions/${industry.slug}`}
                 className="group flex h-full flex-col rounded-2xl border border-black/8 bg-surface p-7 shadow-sm transition-all duration-200 ease-out hover:border-black/12 hover:-translate-y-0.5 hover:shadow-md"
               >
-                <div className="text-base font-semibold text-(--color-secondary) transition-colors group-hover:text-(--color-primary)">
+                <div className="text-base font-semibold text-foreground transition-colors group-hover:text-(--color-primary)">
                   {industry.name}
                 </div>
                 <p className="mt-3 grow text-sm leading-relaxed text-muted">{industry.intro}</p>

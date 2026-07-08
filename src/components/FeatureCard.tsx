@@ -15,7 +15,7 @@ export default function FeatureCard({ title, description, icon }: FeatureCardPro
             {icon}
           </span>
         ) : null}
-        <div className="text-base font-semibold text-(--color-secondary) transition-colors group-hover:text-(--color-primary)">
+        <div className="text-base font-semibold text-foreground transition-colors group-hover:text-(--color-primary)">
           {title}
         </div>
       </div>

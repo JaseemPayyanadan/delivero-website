@@ -21,29 +21,29 @@ export default function Footer() {
         </div>
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
           <div>
-            <div className="mb-3 text-xs font-semibold tracking-[0.08em] uppercase text-(--color-secondary)">Links</div>
+            <div className="mb-3 text-xs font-semibold tracking-[0.08em] uppercase text-foreground">Links</div>
             <ul className="space-y-2 text-sm">
-              <li><Link className="text-muted hover:text-(--color-secondary) transition-colors" href="/">Home</Link></li>
-              <li><Link className="text-muted hover:text-(--color-secondary) transition-colors" href="/features">Features</Link></li>
-              <li><Link className="text-muted hover:text-(--color-secondary) transition-colors" href="/pricing">Pricing</Link></li>
-              <li><Link className="text-muted hover:text-(--color-secondary) transition-colors" href="/#how-it-works">How It Works</Link></li>
-              <li><Link className="text-muted hover:text-(--color-secondary) transition-colors" href="/faq">FAQ</Link></li>
-              <li><Link className="text-muted hover:text-(--color-secondary) transition-colors" href="/contact">Contact</Link></li>
+              <li><Link className="text-muted hover:text-foreground transition-colors" href="/">Home</Link></li>
+              <li><Link className="text-muted hover:text-foreground transition-colors" href="/features">Features</Link></li>
+              <li><Link className="text-muted hover:text-foreground transition-colors" href="/pricing">Pricing</Link></li>
+              <li><Link className="text-muted hover:text-foreground transition-colors" href="/#how-it-works">How It Works</Link></li>
+              <li><Link className="text-muted hover:text-foreground transition-colors" href="/faq">FAQ</Link></li>
+              <li><Link className="text-muted hover:text-foreground transition-colors" href="/contact">Contact</Link></li>
             </ul>
           </div>
           <div>
-            <div className="mb-3 text-xs font-semibold tracking-[0.08em] uppercase text-(--color-secondary)">Solutions</div>
+            <div className="mb-3 text-xs font-semibold tracking-[0.08em] uppercase text-foreground">Solutions</div>
             <ul className="space-y-2 text-sm">
-              <li><Link className="text-muted hover:text-(--color-secondary) transition-colors" href="/solutions/milk-delivery">Milk Delivery</Link></li>
-              <li><Link className="text-muted hover:text-(--color-secondary) transition-colors" href="/solutions/bakery-delivery">Bakery Delivery</Link></li>
-              <li><Link className="text-muted hover:text-(--color-secondary) transition-colors" href="/solutions/grocery-delivery">Grocery Delivery</Link></li>
+              <li><Link className="text-muted hover:text-foreground transition-colors" href="/solutions/milk-delivery">Milk Delivery</Link></li>
+              <li><Link className="text-muted hover:text-foreground transition-colors" href="/solutions/bakery-delivery">Bakery Delivery</Link></li>
+              <li><Link className="text-muted hover:text-foreground transition-colors" href="/solutions/grocery-delivery">Grocery Delivery</Link></li>
             </ul>
           </div>
           <div>
-            <div className="mb-3 text-xs font-semibold tracking-[0.08em] uppercase text-(--color-secondary)">Legal</div>
+            <div className="mb-3 text-xs font-semibold tracking-[0.08em] uppercase text-foreground">Legal</div>
             <ul className="space-y-2 text-sm">
-              <li><Link className="text-muted hover:text-(--color-secondary) transition-colors" href="/terms">Terms</Link></li>
-              <li><Link className="text-muted hover:text-(--color-secondary) transition-colors" href="/privacy">Privacy</Link></li>
+              <li><Link className="text-muted hover:text-foreground transition-colors" href="/terms">Terms</Link></li>
+              <li><Link className="text-muted hover:text-foreground transition-colors" href="/privacy">Privacy</Link></li>
             </ul>
           </div>
         </div>

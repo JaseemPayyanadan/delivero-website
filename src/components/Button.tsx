@@ -14,7 +14,7 @@ export default function Button({ href, children, variant = "primary", className 
       ? "btn-primary"
       : variant === "secondary"
       ? "btn-secondary"
-      : "border border-black/10 bg-white text-(--color-secondary) hover:bg-black/5";
+      : "border border-black/10 bg-white text-foreground hover:bg-black/5";
 
   if (href) {
     const isExternal = /^https?:\/\//i.test(href);

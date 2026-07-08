@@ -67,11 +67,11 @@ export default async function SolutionPage({ params }: PageProps) {
       <Section as="h1" title={industry.h1} className="pb-10 md:pb-12">
         <Reveal className="mx-auto -mt-6 mb-2 flex justify-center">
           <nav aria-label="Breadcrumb" className="text-xs text-muted">
-            <Link className="hover:text-(--color-secondary) transition-colors" href="/">Home</Link>
+            <Link className="hover:text-foreground transition-colors" href="/">Home</Link>
             <span className="mx-2">/</span>
-            <Link className="hover:text-(--color-secondary) transition-colors" href="/solutions">Solutions</Link>
+            <Link className="hover:text-foreground transition-colors" href="/solutions">Solutions</Link>
             <span className="mx-2">/</span>
-            <span className="text-(--color-secondary)">{industry.name}</span>
+            <span className="text-foreground">{industry.name}</span>
           </nav>
         </Reveal>
         <p className="mx-auto max-w-3xl text-center text-sm leading-relaxed text-muted md:text-base">
@@ -124,7 +124,7 @@ export default async function SolutionPage({ params }: PageProps) {
         <div className="mx-auto grid max-w-3xl gap-4">
           {industry.faq.map((item) => (
             <Reveal key={item.q} className="rounded-2xl border border-black/8 bg-surface p-6 shadow-sm">
-              <h3 className="text-base font-semibold text-(--color-secondary)">{item.q}</h3>
+              <h3 className="text-base font-semibold text-foreground">{item.q}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{item.a}</p>
             </Reveal>
           ))}

@@ -18,15 +18,15 @@ export default function CTASection({
   const androidDownloadHref = "https://play.google.com/store/apps/details?id=delivero.com";
 
   return (
-    <Section className={`py-12 md:py-16 ${className}`}>
-      <div className="relative overflow-hidden rounded-[28px] border border-black/8 bg-white px-6 py-12 text-(--color-secondary) shadow-sm md:px-12 md:py-16">
+    <Section tone="alt" className={`py-12 md:py-16 ${className}`}>
+      <div className="relative overflow-hidden rounded-[28px] border border-black/8 bg-white px-6 py-12 text-foreground shadow-sm md:px-12 md:py-16">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_60%,rgba(99,91,255,0.16)_0%,transparent_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_60%,rgba(90,69,254,0.16)_0%,transparent_70%)]" />
           <div className="absolute inset-0 opacity-70 bg-linear-to-r from-(--color-primary)/10 via-transparent to-(--color-primary)/10 animate-gradient" />
         </div>
 
         <Reveal className="relative mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-3 py-1 text-xs font-semibold tracking-[0.05em] uppercase text-muted">
+          <div className="inline-flex items-center gap-2 rounded-full border border-accent-soft bg-accent-soft px-3 py-1 text-xs font-semibold tracking-[0.05em] uppercase text-accent">
             Get started today
           </div>
 
